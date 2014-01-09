@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/action_add_img"
+          android:icon="@drawable/ic_device_access_camera"
+          android:title="@string/device_camera"
+          android:showAsAction="ifRoom" />
+    <item android:id="@+id/action_save_note"
+          android:icon="@drawable/ic_save_accept"
+          android:title="@string/add_value"
+          android:showAsAction="ifRoom" />
+
+</menu>
+<!-- From: file:/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/menu/new_add_note.xml -->

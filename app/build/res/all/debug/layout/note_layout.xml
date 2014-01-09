@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@drawable/listview_back"
+    android:layout_marginTop="5dp">
+    
+    <TextView
+        android:id="@+id/textView_Nome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:textAppearance="?android:attr/textAppearanceMedium" 
+        android:singleLine="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="2dp"/>
+
+    <TextView
+        android:id="@+id/textView_Desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView_Nome"
+        android:textAppearance="?android:attr/textAppearanceSmall" 
+        android:singleLine="false"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="2dp"/>
+
+    <TextView
+        android:id="@+id/textView_Data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView_Nome"
+        android:layout_alignBottom="@+id/textView_Nome"
+        android:layout_alignParentRight="true"
+        android:textAppearance="?android:attr/textAppearanceSmall" 
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"/>
+
+    <ImageView
+        android:id="@+id/imageView1_listnotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_Desc"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/image_view_presentation"
+         />
+
+</RelativeLayout>
+<!-- android:background="@drawable/listview_back" --><!-- From: file:/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/layout/note_layout.xml -->

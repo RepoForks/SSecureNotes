@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res" >
+            <file
+                name="undobar_divider"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/drawable-xhdpi/undobar_divider.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/drawable-xhdpi/ic_launcher.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="undobar_button_focused"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/drawable-xhdpi/undobar_button_focused.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="undobar_button_pressed"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/drawable-xhdpi/undobar_button_pressed.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_undobar_undo"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/drawable-xhdpi/ic_undobar_undo.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="undobar"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/drawable-xhdpi/undobar.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/drawable-xxhdpi/ic_launcher.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/values-v14/styles.xml"
+                qualifiers="v14" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light.DarkActionBar" >
+
+                    <!-- API 14 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/values-sw720dp-land/dimens.xml"
+                qualifiers="sw720dp-land" >
+                <dimen name="activity_horizontal_margin" >128dp
+                </dimen>
+            </file>
+            <file
+                name="ic_launcher"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/drawable-mdpi/ic_launcher.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_content_new_event"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/drawable-hdpi/ic_content_new_event.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/drawable-hdpi/ic_launcher.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_add_new"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/drawable-hdpi/ic_add_new.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_device_access_camera"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/drawable-hdpi/ic_device_access_camera.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_content_picture"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/drawable-hdpi/ic_content_picture.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_save_accept"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/drawable-hdpi/ic_save_accept.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="undobar_button"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/drawable/undobar_button.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="listview_back"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/drawable/listview_back.9.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="activity_main_signin"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/layout/activity_main_signin.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_settings"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/layout/activity_settings.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_notes"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/layout/activity_notes.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_main"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/layout/activity_main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="note_layout"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/layout/note_layout.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="note_layout_no_image"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/layout/note_layout_no_image.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_add_note"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/layout/activity_add_note.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="password_alert_dialog_layout"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/layout/password_alert_dialog_layout.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/values-v11/styles.xml"
+                qualifiers="v11" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light" >
+
+                    <!-- API 11 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                name="settingsfile"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/xml/settingsfile.xml"
+                qualifiers=""
+                type="xml" />
+            <file
+                name="main"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/menu/main.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="new_add_note"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/menu/new_add_note.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="notes"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/menu/notes.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="add_note"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/menu/add_note.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="settings"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/menu/settings.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/values/styles.xml"
+                qualifiers="" >
+
+                <style name="UndoBarButton" >
+                    <item name="android:layout_width">
+wrap_content
+                    </item>
+                    <item name="android:layout_height">
+match_parent
+                    </item>
+                    <item name="android:paddingLeft">
+16dp
+                    </item>
+                    <item name="android:paddingRight">
+16dp
+                    </item>
+                    <item name="android:background">
+@drawable/undobar_button
+                    </item>
+                    <item name="android:drawableLeft">
+@drawable/ic_undobar_undo
+                    </item>
+                    <item name="android:drawablePadding">
+12dp
+                    </item>
+                    <item name="android:textAppearance">
+?android:textAppearanceSmall
+                    </item>
+                    <item name="android:textAllCaps">
+true
+                    </item>
+                    <item name="android:textStyle">
+bold
+                    </item>
+                    <item name="android:textColor">
+#fff
+                    </item>
+                    <item name="android:text">
+@string/undo
+                    </item>
+                </style>
+
+                <style name="UndoBarMessage" >
+                    <item name="android:layout_width">
+0dp
+                    </item>
+                    <item name="android:layout_weight">
+1
+                    </item>
+                    <item name="android:layout_height">
+wrap_content
+                    </item>
+                    <item name="android:layout_marginLeft">
+16dp
+                    </item>
+                    <item name="android:layout_gravity">
+center_vertical
+                    </item>
+                    <item name="android:layout_marginRight">
+16dp
+                    </item>
+                    <item name="android:textAppearance">
+?android:textAppearanceMedium
+                    </item>
+                    <item name="android:textColor">
+#fff
+                    </item>
+                </style>
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Light" >
+
+                    <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+                    -->
+                </style>
+
+                <style name="UndoBar" >
+                    <item name="android:layout_width">
+match_parent
+                    </item>
+                    <item name="android:layout_height">
+48dp
+                    </item>
+                    <item name="android:layout_gravity">
+bottom
+                    </item>
+                    <item name="android:layout_marginLeft">
+8dp
+                    </item>
+                    <item name="android:layout_marginRight">
+8dp
+                    </item>
+                    <item name="android:layout_marginBottom">
+16dp
+                    </item>
+                    <item name="android:orientation">
+horizontal
+                    </item>
+                    <item name="android:background">
+@drawable/undobar
+                    </item>
+                    <item name="android:clickable">
+true
+                    </item>
+                    <item name="android:showDividers">
+middle
+                    </item>
+                    <item name="android:divider">
+@drawable/undobar_divider
+                    </item>
+                    <item name="android:dividerPadding">
+10dp
+                    </item>
+                </style>
+
+                <style
+                    name="AppTheme"
+                    parent="AppBaseTheme" >
+
+                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+                </style>
+            </file>
+            <file
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/values/dimens.xml"
+                qualifiers="" >
+                <dimen name="activity_horizontal_margin" >16dp
+                </dimen>
+                <dimen name="activity_vertical_margin" >16dp
+                </dimen>
+            </file>
+            <file
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/values/strings.xml"
+                qualifiers="" >
+                <string name="title_activity_settings" > Settings
+                </string>
+                <string name="title_activity_password" >PasswordActivity
+                </string>
+                <string name="titolo_alert_dialog_mod_password" >Modifica Password
+                </string>
+                <string name="esito_ok" >OK!
+                </string>
+                <string name="title_activity_add_note" >AddNoteActivity
+                </string>
+                <string name="title_activity_notes" >NotesActivity
+                </string>
+                <string name="title_activity_info" >InfoActivity
+                </string>
+                <string name="annulla_button" >Annulla
+                </string>
+                <string name="import_notes" >Import Notes…
+                </string>
+                <string name="action_export" >Export Notes
+                </string>
+                <string name="error_update_db" >Problema to update DB
+                </string>
+                <string name="error_export_db" >Can\'t read External storage
+                </string>
+                <string name="disabled" >Disabilitato
+                </string>
+                <string name="generated_file" >Generated file: 
+                </string>
+
+                <string-array name="seconds_wait" >
+                    <item name="5">
+5 seconds
+                    </item>
+                    <item name="10">
+10 seconds
+                    </item>
+                    <item name="30">
+30 seconds
+                    </item>
+                    <item name="60">
+60 seconds
+                    </item>
+                </string-array>
+
+                <string name="image_view_presentation" >imgimg
+                </string>
+                <string name="imposta_password" >Set Password
+                </string>
+                <string name="import_ok" >Import
+                </string>
+
+                <string-array name="encryption_algorithms_values" >
+                    <item name="pbkdf2">
+0
+                    </item>
+                    <item name="pkcs12">
+1
+                    </item>
+                </string-array>
+
+                <string name="password_diverse" >Ricontrollare le Password inserite
+                </string>
+                <string name="action_inport" >Import Notes
+                </string>
+                <string name="device_camera" >devicecamera
+                </string>
+                <string name="name_encryption_algorithms" >Algorithm to encrypt data
+                </string>
+                <string name="add_value" >Add Note
+                </string>
+                <string name="import_ok_esito" >Import Completed:
+                </string>
+                <string name="text_import_notes" >To import notes you must be sure that your password is the same as the one used to encrypt them
+                </string>
+                <string name="action_settings" >Settings
+                </string>
+                <string name="ins_old_password" >Inserisci Password Attuale
+                </string>
+                <string name="password_impostata" >Nuova Password Impostata
+                </string>
+                <string name="undobar_message" >Note Deleted
+                </string>
+                <string name="add_text" ><i>
+Nota
+                    </i></string>
+
+                <string-array name="seconds_wait_values" >
+                    <item name="5">
+5
+                    </item>
+                    <item name="10">
+10
+                    </item>
+                    <item name="30">
+30
+                    </item>
+                    <item name="60">
+60
+                    </item>
+                </string-array>
+
+                <string name="hint_edtx" >password…
+                </string>
+                <string name="empty_input_field" >Bisogna inserire una Password
+                </string>
+                <string name="loading_notes" >Loading Notes…
+                </string>
+                <string name="reins_password" >Conferma Password
+                </string>
+                <string name="signin" >Sign in
+                </string>
+                <string name="titolo_alert_dialog_nuova_password" >Imposta Password
+                </string>
+
+                <string-array name="encryption_algorithms" >
+                    <item name="pbkdf2">
+PBKDF2
+                    </item>
+                    <item name="pkcs12">
+PKCS#12
+                    </item>
+                </string-array>
+
+                <string name="second_to_wait_for_finish" >Auto lock Secure Notes after
+                </string>
+                <string name="export_ok" >Export
+                </string>
+                <string name="freeze_activity" >Inserimento Disabilitato
+                </string>
+                <string name="hello_world" >Hello world!
+                </string>
+
+                <string-array name="choices_img" >
+                    <item name="delete_img">
+Delete Image
+                    </item>
+                </string-array>
+
+                <string name="ok_button" >Salva
+                </string>
+                <string name="esito_no" >Password Errata!
+                </string>
+                <string name="hint_old_password" >Attuale Password
+                </string>
+                <string name="undo" >Undo
+                </string>
+                <string name="app_name_2" >Secure Notes
+                </string>
+                <string name="add_title" ><b>
+Titolo
+                    </b></string>
+                <string name="hint_ins_password" >Nuova Password
+                </string>
+                <string name="desc_preferences_second_to_wait_for_finish" >After switching to another app, how long shold SecureNotes stay unlocked?
+                </string>
+                <string name="ins_password" >Inserisci Nuova Password
+                </string>
+                <string name="accedi" >Accedi
+                </string>
+                <string name="exporting_notes" >Export Notes…
+                </string>
+                <string name="sure_delete_img" >Are you sure to delete image? 
+                </string>
+                <string name="error_write_db" >Problem to write on DB
+                </string>
+                <string name="attenzione_password_obbligatoria" >La Password deve essere impostata necessariamente
+                </string>
+                <string name="app_name" >SecureNotes
+                </string>
+                <string name="no_more_input" >Troppi Errori: Inserimento bloccato per 30 secondi
+                </string>
+                <string name="desc_encryption_algorithms" >Choose Algorithm to encrypt Password and Data
+                </string>
+                <string name="annulla" >Annulla
+                </string>
+            </file>
+            <file
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/values/integers.xml"
+                qualifiers="" >
+                <integer name="undobar_hide_delay" >
+5000
+                </integer>
+            </file>
+            <file
+                name="export_dialog_fragment_layout"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/layout/export_dialog_fragment_layout.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_info"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/layout/activity_info.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/values-w820dp/dimens.xml"
+                qualifiers="w820dp" >
+                <dimen name="activity_horizontal_margin" >64dp
+                </dimen>
+            </file>
+            <file
+                name="info"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/menu/info.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="fragment_info"
+                path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/main/res/layout/fragment_info.xml"
+                qualifiers=""
+                type="layout" />
+        </source>
+        <source path="/home/angelo/AndroidStudioPojects/SecureNotes/app/build/res/rs/debug" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/home/angelo/AndroidStudioPojects/SecureNotes/app/src/debug/res" />
+    </dataSet>
+
+</merger>

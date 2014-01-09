@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+	<item android:id="@+id/action_add"
+          android:icon="@drawable/ic_add_new"
+          android:title="@string/add_value"
+          android:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_settings"/>
+
+    <item
+        android:id="@+id/action_export"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_export"/>
+
+    <item
+        android:id="@+id/action_import"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_inport"/>
+
+</menu>

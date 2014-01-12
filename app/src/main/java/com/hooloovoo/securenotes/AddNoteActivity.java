@@ -193,12 +193,18 @@ public class AddNoteActivity extends Activity {
 
                     listView.startAnimation(getAnimation(0.0f,-1.0f));
                     listView.setVisibility(View.GONE);
-                    if(image.getVisibility()==View.VISIBLE) mView.setVisibility(View.GONE);
+                    if(image.getVisibility()==View.VISIBLE){
+                        mView.startAnimation(getAnimation(0.0f,-1.0f));
+                        mView.setVisibility(View.GONE);
+                    }
                     openListView = false;
                 }else{
                     listView.startAnimation(getAnimation(-1.0f,0.0f));
                     listView.setVisibility(View.VISIBLE);
-                    if(image.getVisibility()==View.VISIBLE) mView.setVisibility(View.VISIBLE);
+                    if(image.getVisibility()==View.VISIBLE) {
+                        mView.startAnimation(getAnimation(-1.0f,0.0f));
+                        mView.setVisibility(View.VISIBLE);
+                    }
                     openListView = true;
                 }
             }

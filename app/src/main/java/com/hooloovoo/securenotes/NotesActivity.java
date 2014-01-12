@@ -65,6 +65,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 	int seconds = 0;
 
     Encryptor encryptor;
+    ProgressDialog progressDialog;
 
     Context mContext;
 	
@@ -145,6 +146,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 		Log.d("NOTEACTIVITY", "sameApp: "+sameApp);
         SingletonParametersBridge.getInstance().addParameter("adapter",mAdapter);
         SingletonParametersBridge.getInstance().addParameter("cachenotes",mData);
+        if(progressDialog != null && progressDialog.isShowing()) progressDialog.dismiss();
 		if(!sameApp){
 			//timer
 			tPause = setTimeFinish();
@@ -442,13 +444,24 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 	
 	}
 
+    /**
+     * this method set prograss dialog
+     */
+    private void setProgressDialog(String message){
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage(message);
+        progressDialog.setCancelable(false);
+    }
+
+
     private class NoteLoaderTask extends AsyncTask<Void,Void,Boolean>{
-        ProgressDialog progressDialog;
+
 
         @Override
         protected void onPreExecute(){
             super.onPreExecute();
-            progressDialog = ProgressDialog.show(mContext,"",mContext.getResources().getString(R.string.loading_notes));
+            setProgressDialog(mContext.getResources().getString(R.string.loading_notes));
+            progressDialog.show();
         }
         @Override
         protected Boolean doInBackground(Void... voids) {
@@ -490,7 +503,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
      * AsyncTask to export Notes to xml file. Notice that notes are encrypted
      */
     private class ExportNotesTask extends AsyncTask<Void,Void,Boolean>{
-        ProgressDialog progressDialog;
+
         String filename;
         String path = "";
 
@@ -501,7 +514,8 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            progressDialog = ProgressDialog.show(mContext,"",mContext.getResources().getString(R.string.exporting_notes));
+            setProgressDialog(mContext.getResources().getString(R.string.exporting_notes));
+            progressDialog.show();
         }
 
         @Override
@@ -534,7 +548,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 
 
     private class ImportNotesTask extends AsyncTask<Void,Void,Boolean>{
-        ProgressDialog progressDialog;
+
         boolean esito;
         String filename;
 
@@ -544,7 +558,8 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            progressDialog = ProgressDialog.show(mContext,"",mContext.getResources().getString(R.string.import_notes));
+            setProgressDialog(mContext.getResources().getString(R.string.import_notes));
+            progressDialog.show();
         }
 
         @Override

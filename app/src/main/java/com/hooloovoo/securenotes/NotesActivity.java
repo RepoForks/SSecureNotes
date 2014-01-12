@@ -8,20 +8,21 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 
-import com.hooloovoo.securenotes.object.Crypto;
 import com.hooloovoo.securenotes.object.DAO;
 import com.hooloovoo.securenotes.object.Encryptor;
 import com.hooloovoo.securenotes.object.Note;
 import com.hooloovoo.securenotes.object.PBKDF2Encryptor;
-import com.hooloovoo.securenotes.object.PKCS12Encryptor;
 import com.hooloovoo.securenotes.object.SingletonParametersBridge;
 import com.hooloovoo.securenotes.widget.NoteAdapter;
 import com.hooloovoo.securenotes.widget.SwipeDismissListViewTouchListener;
 import com.hooloovoo.securenotes.widget.UndoBarController;
 
 
+import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -34,6 +35,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.Toast;
 import android.widget.ListView;
@@ -42,11 +44,11 @@ import org.xmlpull.v1.XmlPullParserException;
 
 public class NotesActivity extends ListActivity implements ListView.OnItemClickListener,
 															UndoBarController.UndoListener{
-//	private final static String toDebug  = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 	private final static int NOTE_CREATE_REQUEST = 1;
 	private final static int NOTE_UPDATE_REQUEST = 2;
 	ArrayList<Note> mData;
 	NoteAdapter mAdapter;
+
 	
 	UndoBarController mUndoBarController;
 
@@ -79,7 +81,9 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 //		dao.openDB();
 //		setDataArrayList();
 		setWidgetListener();
+
 		Log.d("NOTEACTIVITY","Start noteactivity");
+
 
 	}
 	
@@ -107,12 +111,15 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 		super.onResume();
 		//boolean orientation = (getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE)?
 			//	true:false;
+        //setActionBar();
 		if(tPause != null){ tPause.cancel(); tPause.purge(); Log.d("NOTES ACTIVITY","Timer closed");}
 
 
         try{
             mData = (ArrayList<Note>) SingletonParametersBridge.getInstance().getParameter("cachenotes");
-            mAdapter = new NoteAdapter(this,mData);
+            //mAdapter = new NoteAdapter(this,mData);
+            mAdapter = (NoteAdapter) SingletonParametersBridge.getInstance().getParameter("adapter");
+            mAdapter.data = mData;
             setListAdapter(mAdapter);
         }catch (NullPointerException ex){
             ex.printStackTrace();
@@ -136,6 +143,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 	public void onPause(){
 		super.onPause();
 		Log.d("NOTEACTIVITY", "sameApp: "+sameApp);
+        SingletonParametersBridge.getInstance().addParameter("adapter",mAdapter);
         SingletonParametersBridge.getInstance().addParameter("cachenotes",mData);
 		if(!sameApp){
 			//timer
@@ -235,6 +243,13 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 		startActivityForResult(intent, NOTE_CREATE_REQUEST);
 		
 	}
+
+    /*private void setActionBar(){
+        getWindow().requestFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
+        ActionBar actionBar = getActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#330000ff")));
+        actionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.parseColor("#550000ff")));
+    }*/
 	
     private boolean setEncryptor(){
         try{
@@ -429,6 +444,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 
     private class NoteLoaderTask extends AsyncTask<Void,Void,Boolean>{
         ProgressDialog progressDialog;
+
         @Override
         protected void onPreExecute(){
             super.onPreExecute();

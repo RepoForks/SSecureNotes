@@ -11,6 +11,8 @@ import com.hooloovoo.securenotes.object.Note;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,6 +42,7 @@ public class NoteAdapter extends BaseAdapter {
 	
 	boolean noImage = false;
 	boolean bNoImage = false; //alla view prima suppongo che sia con l'immagine
+    boolean onlyImage;
 	
 	
 
@@ -82,35 +85,47 @@ public class NoteAdapter extends BaseAdapter {
 		mViewHolder = null;
 		final Note note = (Note) data.get(position);
 		noImage = (note.getImageLen()==1)?true:false;
+        onlyImage = note.getmName().equals("") && note.getmDesc().equals("");
 		if(!noImage ){
-			view = mLayoutInflater.inflate(R.layout.note_layout, null);
+            if(onlyImage){
+                view = mLayoutInflater.inflate(R.layout.sv_layout_listview_item_img, null);
+            }else{
+                view = mLayoutInflater.inflate(R.layout.sv_layout_listview_item_img_text, null);
+            }
+
 			mViewHolder = new ViewHolder();
-			mViewHolder.nome = (TextView) view.findViewById(R.id.textView_Nome);
-			mViewHolder.desc = (TextView) view.findViewById(R.id.textView_Desc);
-			mViewHolder.data = (TextView) view.findViewById(R.id.textView_Data);
 			mViewHolder.image = (ImageView) view.findViewById(R.id.imageView1_listnotes);
-			
 			view.setTag(mViewHolder);
 			bNoImage = false;
 		}else if(noImage  ){
-			view = mLayoutInflater.inflate(R.layout.note_layout_no_image, null);
+			view = mLayoutInflater.inflate(R.layout.sv_layout_listview_item_text, null);
 			mViewHolder = new ViewHolder();
-			mViewHolder.nome = (TextView) view.findViewById(R.id.textView_Nome_noL);
-			mViewHolder.desc = (TextView) view.findViewById(R.id.textView_Desc_noL);
-			mViewHolder.data = (TextView) view.findViewById(R.id.textView_Data_noL);
 			view.setTag(mViewHolder);
 			bNoImage = true;
 		}else{
 			mViewHolder = (ViewHolder) view.getTag();
 		}
-		
-		mViewHolder.nome.setText(note.getmName());
-		mViewHolder.desc.setText(note.getmDesc());
-		mViewHolder.data.setText(note.getmDataString());
+        //view.setBackgroundColor(Color.parseColor("#669900"));
+
+        if(!onlyImage){
+            //set text
+            mViewHolder.nome = (TextView) view.findViewById(R.id.textView_Nome);
+            mViewHolder.desc = (TextView) view.findViewById(R.id.textView_Desc);
+
+
+
+		    mViewHolder.nome.setText(note.getmName());
+            if(note.getmName().equals("") && !note.getmDesc().equals("")){
+                mViewHolder.nome.setText(note.getmDesc());
+            }else{
+		        mViewHolder.desc.setText(note.getmDesc());
+            }
+        }
+
 		//imposto la foto!
 		
 		if(!noImage){
-			mImgLoader.loadBitmap(note, mViewHolder.image);
+            mImgLoader.loadBitmap(note, mViewHolder.image,onlyImage);
 			Log.w("CARICA BITMAP", "dentro");
 		}
 		

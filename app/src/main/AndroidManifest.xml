@@ -53,6 +53,9 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+
+        <!-- roba de slidingdrawer -->
+
     </application>
     <!-- android:windowSoftInputMode="stateVisible" -->
 

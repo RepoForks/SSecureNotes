@@ -22,19 +22,22 @@ public final class R {
         public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
-        public static final int ic_add_new=0x7f020000;
-        public static final int ic_content_new_event=0x7f020001;
-        public static final int ic_content_picture=0x7f020002;
-        public static final int ic_device_access_camera=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int ic_save_accept=0x7f020005;
-        public static final int ic_undobar_undo=0x7f020006;
-        public static final int listview_back=0x7f020007;
-        public static final int undobar=0x7f020008;
-        public static final int undobar_button=0x7f020009;
-        public static final int undobar_button_focused=0x7f02000a;
-        public static final int undobar_button_pressed=0x7f02000b;
-        public static final int undobar_divider=0x7f02000c;
+        public static final int dc=0x7f020000;
+        public static final int ic_add_new=0x7f020001;
+        public static final int ic_but=0x7f020002;
+        public static final int ic_content_new_event=0x7f020003;
+        public static final int ic_content_picture=0x7f020004;
+        public static final int ic_device_access_camera=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int ic_load_img=0x7f020007;
+        public static final int ic_save_accept=0x7f020008;
+        public static final int ic_undobar_undo=0x7f020009;
+        public static final int listview_back=0x7f02000a;
+        public static final int undobar=0x7f02000b;
+        public static final int undobar_button=0x7f02000c;
+        public static final int undobar_button_focused=0x7f02000d;
+        public static final int undobar_button_pressed=0x7f02000e;
+        public static final int undobar_divider=0x7f02000f;
     }
     public static final class id {
         public static final int action_add=0x7f0b001d;
@@ -43,33 +46,33 @@ public final class R {
         public static final int action_import=0x7f0b001f;
         public static final int action_save_note=0x7f0b001a;
         public static final int action_settings=0x7f0b001c;
-        public static final int button_accedi=0x7f0b0007;
-        public static final int button_signin=0x7f0b000b;
-        public static final int container=0x7f0b0003;
-        public static final int editText_export_notes_fragment=0x7f0b0010;
-        public static final int editText_ins_password=0x7f0b0008;
-        public static final int editText_pass1_alertdialog_password=0x7f0b0019;
-        public static final int editText_pass2_alertdialog_password=0x7f0b0018;
-        public static final int editText_password=0x7f0b0004;
-        public static final int editText_reins_password=0x7f0b000a;
-        public static final int editText_text_addnote=0x7f0b0001;
-        public static final int editText_titolo_addnote=0x7f0b0000;
-        public static final int imageView1_addnote=0x7f0b0002;
-        public static final int imageView1_listnotes=0x7f0b0014;
+        public static final int button_accedi=0x7f0b000a;
+        public static final int button_signin=0x7f0b000e;
+        public static final int container=0x7f0b0006;
+        public static final int editText_export_notes_fragment=0x7f0b0013;
+        public static final int editText_ins_password=0x7f0b000b;
+        public static final int editText_pass1_alertdialog_password=0x7f0b0016;
+        public static final int editText_pass2_alertdialog_password=0x7f0b0015;
+        public static final int editText_password=0x7f0b0007;
+        public static final int editText_reins_password=0x7f0b000d;
+        public static final int editText_text_addnote=0x7f0b0005;
+        public static final int editText_titolo_addnote=0x7f0b0004;
+        public static final int imageButton_addnote=0x7f0b0002;
+        public static final int imageView=0x7f0b0014;
+        public static final int imageView1_addnote=0x7f0b0000;
+        public static final int imageView1_listnotes=0x7f0b0017;
         public static final int imposta_password=0x7f0b0020;
-        public static final int textView=0x7f0b000f;
-        public static final int textView_Data=0x7f0b0013;
-        public static final int textView_Data_noL=0x7f0b0017;
-        public static final int textView_Desc=0x7f0b0012;
-        public static final int textView_Desc_noL=0x7f0b0016;
-        public static final int textView_Nome=0x7f0b0011;
-        public static final int textView_Nome_noL=0x7f0b0015;
-        public static final int textView_appname2=0x7f0b0005;
-        public static final int textView_esito=0x7f0b0006;
-        public static final int textView_esito_signin=0x7f0b0009;
-        public static final int undobar=0x7f0b000c;
-        public static final int undobar_button=0x7f0b000e;
-        public static final int undobar_message=0x7f0b000d;
+        public static final int popup_window=0x7f0b0003;
+        public static final int textView=0x7f0b0012;
+        public static final int textView_Desc=0x7f0b0019;
+        public static final int textView_Nome=0x7f0b0018;
+        public static final int textView_appname2=0x7f0b0008;
+        public static final int textView_esito=0x7f0b0009;
+        public static final int textView_esito_signin=0x7f0b000c;
+        public static final int trasparent_view=0x7f0b0001;
+        public static final int undobar=0x7f0b000f;
+        public static final int undobar_button=0x7f0b0011;
+        public static final int undobar_message=0x7f0b0010;
     }
     public static final class integer {
         public static final int undobar_hide_delay=0x7f070000;
@@ -83,17 +86,17 @@ public final class R {
         public static final int activity_settings=0x7f030005;
         public static final int export_dialog_fragment_layout=0x7f030006;
         public static final int fragment_info=0x7f030007;
-        public static final int note_layout=0x7f030008;
-        public static final int note_layout_no_image=0x7f030009;
-        public static final int password_alert_dialog_layout=0x7f03000a;
+        public static final int password_alert_dialog_layout=0x7f030008;
+        public static final int sv_layout_listview_item_img=0x7f030009;
+        public static final int sv_layout_listview_item_img_text=0x7f03000a;
+        public static final int sv_layout_listview_item_text=0x7f03000b;
     }
     public static final class menu {
         public static final int add_note=0x7f0a0000;
-        public static final int info=0x7f0a0001;
-        public static final int main=0x7f0a0002;
-        public static final int new_add_note=0x7f0a0003;
-        public static final int notes=0x7f0a0004;
-        public static final int settings=0x7f0a0005;
+        public static final int main=0x7f0a0001;
+        public static final int new_add_note=0x7f0a0002;
+        public static final int notes=0x7f0a0003;
+        public static final int settings=0x7f0a0004;
     }
     public static final class string {
         public static final int accedi=0x7f080000;

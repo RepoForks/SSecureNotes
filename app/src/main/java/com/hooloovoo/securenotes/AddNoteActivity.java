@@ -4,48 +4,57 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import com.hooloovoo.securenotes.object.Note;
 
+import android.animation.ValueAnimator;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.app.ActionBar;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.DialogFragment;
-import android.app.Fragment;
 import android.content.ActivityNotFoundException;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.BitmapRegionDecoder;
 import android.graphics.Point;
-import android.graphics.Rect;
 import android.util.Log;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnLongClickListener;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
+
 
 public class AddNoteActivity extends Activity {
 	private final static int CAMERA_PIC_REQUEST = 1337;
 	private final static int PIC_CROP_REQUEST = 1338;
 
+    SharedPreferences mSharedPreferences;
+    int seconds;
+
 	private Note newNote;
 	EditText titolo;
 	EditText text;
 	ImageView image;
-	
-	Bitmap mBitmap;
+    ImageButton button;
+    LinearLayout listView;
+    View mView;
+    boolean openListView;
+    ValueAnimator mAnimator;
+
+    Bitmap mBitmap;
 	String mFileImagePath;
 	boolean imgToCompress;
 	byte[] imgCompressed;
@@ -53,6 +62,8 @@ public class AddNoteActivity extends Activity {
 	
 	String mTitolo;
 	String mText;
+
+    boolean toDestroy;
 	
 	
 	@Override
@@ -61,6 +72,7 @@ public class AddNoteActivity extends Activity {
 		setContentView(R.layout.activity_add_note);
 		setNavigationBar();
 		setLayout();
+        toDestroy = false;
 		Log.d("ADDNOTEACTIVITY","Start Add noteactivity");
 		
 	}
@@ -78,6 +90,7 @@ public class AddNoteActivity extends Activity {
 		
 		case R.id.action_add_img:
 			Log.d("menu", "action_add_img");
+            toDestroy = false;
 			startCameraActivity();
 			break;
 		case R.id.action_save_note:
@@ -110,8 +123,9 @@ public class AddNoteActivity extends Activity {
 		if(mTitolo != null) titolo.setText(mTitolo);
 		if(mText != null) text.setText(mText);
 	}
-	
-	@Override 
+
+
+    @Override
 	public void onPause(){
 		super.onPause();
 		//delete file if exists
@@ -126,41 +140,29 @@ public class AddNoteActivity extends Activity {
     		mText = text.getText().toString();
     		text.getText().clear();
     	}
+
+        //if (toDestroy) setTimeFinish();
 	}
 	
 	@Override 
 	public void onActivityResult(int requestCode, int resultCode, Intent data){
 		if (requestCode == CAMERA_PIC_REQUEST && resultCode == RESULT_OK) {  
 			BitmapFactory.Options op = new BitmapFactory.Options();
-			op.inSampleSize = 1;
+            toDestroy = true;
+			op.inSampleSize = 2;
 	    	mBitmap = BitmapFactory.decodeFile(mFileImagePath,op);
+            imgToCompress = true;
+            //image.setImageBitmap(mBitmap);
+            setmBitmapImage(mBitmap,true);
 
-			int width = mBitmap.getWidth();
-			int height = mBitmap.getHeight();
-			
-			BitmapRegionDecoder brd;
-			try {
-				op.inSampleSize=2;
-				 brd = BitmapRegionDecoder.newInstance(mFileImagePath, false);
-					mBitmap = brd.decodeRegion(new Rect(0, (height/2)-512, width, (height/2)+512), op);
-			    	imgToCompress = true;
-			    	image.setImageBitmap(mBitmap);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
 
-//	    	Log.d("Before CROP", "Siamo prima del crop");
-//	    	performCrop();
-	    	
 	    }  else if(requestCode == PIC_CROP_REQUEST && resultCode == RESULT_OK){
 	    	Bundle extras = data.getExtras();
 	    	mBitmap = extras.getParcelable("data");
 	    	image.setImageBitmap(mBitmap);
 	    	
-	    	Log.d("After CROP","siamo dopo del crop");
-//	    	//delete file if exists
-//	    	File f = new File(mFileImagePath);
-//	    	if(f.exists()) f.delete();
+
+//
 	    }
 	}
 	
@@ -172,28 +174,45 @@ public class AddNoteActivity extends Activity {
 	}
 	
 	private void setLayout(){
-
+        openListView = true;
 		titolo = (EditText) findViewById(R.id.editText_titolo_addnote);
 		text = (EditText) findViewById(R.id.editText_text_addnote);
 		image = (ImageView) findViewById(R.id.imageView1_addnote);
-//		image.setOnLongClickListener(new OnLongClickListener() {
-//			
-//			@Override
-//			public boolean onLongClick(View v) {
-//				ChoicesImageDialogFragment choideFragment = new ChoicesImageDialogFragment();
-//				choideFragment.bitmap=mBitmap;
-//				choideFragment.image=image;
-//				choideFragment.show(getFragmentManager(), "choice_fragment");
-//				return true;
-//			}
-//		});
+        listView = (LinearLayout) findViewById(R.id.popup_window);
+        mView = (View) findViewById(R.id.trasparent_view);
+        mView.setVisibility(View.VISIBLE);
+        listView.setVisibility(View.VISIBLE);
+
+
+
+        button = (ImageButton) findViewById(R.id.imageButton_addnote);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(openListView){
+
+                    listView.startAnimation(getAnimation(0.0f,-1.0f));
+                    listView.setVisibility(View.GONE);
+                    if(image.getVisibility()==View.VISIBLE) mView.setVisibility(View.GONE);
+                    openListView = false;
+                }else{
+                    listView.startAnimation(getAnimation(-1.0f,0.0f));
+                    listView.setVisibility(View.VISIBLE);
+                    if(image.getVisibility()==View.VISIBLE) mView.setVisibility(View.VISIBLE);
+                    openListView = true;
+                }
+            }
+        });
+
 		
 		Bundle bun;
 		mBitmap = null;
+        boolean exiImg = false;
 		if((bun = getIntent().getExtras())!=null){
 			newNote = (Note) bun.getParcelable("noteToUpdate");
 			titolo.setText(newNote.getmName());
 			text.setText(newNote.getmDesc());
+
 			//creo immagine da byte[]
 			if(newNote.getmImage().length != 1){
 				imgCompressed = newNote.getmImage();
@@ -201,16 +220,41 @@ public class AddNoteActivity extends Activity {
 				//mBitmap = (Bitmap) bun.getParcelable("BitmapToUpdate");  
 				/*if (mBitmap == null) */mBitmap = BitmapFactory.decodeByteArray(imgCompressed, 0, imgCompressed.length);
 				imgToCompress = false;
+                exiImg = true;
 				if(mBitmap == null) Log.e("BITMAP LOAD","NULL");
 				
 			}
 			
 		}
-		image.setImageBitmap(mBitmap);
+		setmBitmapImage(mBitmap,exiImg);
 
 		
 	}
-	
+
+
+    private void setmBitmapImage(Bitmap toAdd, boolean visible){
+        if(visible){
+            image.setVisibility(View.VISIBLE);
+            mView.setVisibility(View.VISIBLE);
+        }else{
+            image.setVisibility(View.GONE);
+            mView.setVisibility(View.GONE);
+        }
+        image.setImageBitmap(toAdd);
+    }
+
+
+    private TranslateAnimation getAnimation(float first,float second){
+        TranslateAnimation animation = new TranslateAnimation(
+                Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 0.0f,
+                Animation.RELATIVE_TO_SELF, first, Animation.RELATIVE_TO_SELF, second
+        );
+        animation.setDuration(500);
+        return animation;
+    }
+
+
+
 	
 	private boolean createNote(){
 		mTitolo = titolo.getText().toString();
@@ -261,6 +305,7 @@ public class AddNoteActivity extends Activity {
 		intent.putExtras(bundle);
 		setResult(esito,intent);  
 		finish();
+
 	}
 	
 	private Bitmap compressBitmap(Bitmap toCompress){
@@ -324,51 +369,43 @@ public class AddNoteActivity extends Activity {
 		    toast.show();
 		}
 	}
+
+    public Timer setTimeFinish(){
+        final Timer t;
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        final int endSeconds = Integer.parseInt(mSharedPreferences.getString("secondWaitToFinish", "10"));
+        Log.d("NOTESACTIVITY", "Second to wait: " + endSeconds);
+        t = new Timer();
+        t.scheduleAtFixedRate(new TimerTask() {
+
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+
+                    @Override
+                    public void run() {
+
+                        if( seconds == endSeconds ){
+
+                            t.cancel();
+                            t.purge();
+                            seconds = 0;
+                            finishAffinity();
+                        }
+                        seconds += 1;
+                    }
+                });
+
+            }
+        }, 0, 1000);
+
+        return t;
+
+
+
+    }
+
+
 	
-//	static public class ChoicesImageDialogFragment extends DialogFragment{
-//		Bitmap bitmap;
-//		ImageView image;
-//		@Override
-//		public Dialog onCreateDialog(Bundle savedInstanceState) {
-//		    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-//		    builder
-//		           .setItems(R.array.choices_img, new DialogInterface.OnClickListener() {
-//		               public void onClick(DialogInterface dialog, int which) {
-//		               if(which==0){
-//		            	 //cancello immagine
-//		            	   SureDeleteImageDialogFragment deleteFragmet = new SureDeleteImageDialogFragment();
-//		            	   deleteFragmet.bitmap = bitmap;
-//		            	   deleteFragmet.image = image;
-//		            	   deleteFragmet.show(getFragmentManager(), "sure_delete_img_fragment");
-//		               }
-//		           }
-//		    });
-//		    return builder.create();
-//		}
-//	}
-//	
-//	static public class SureDeleteImageDialogFragment extends DialogFragment{
-//		Bitmap bitmap;
-//		ImageView image;
-//		@Override
-//	    public Dialog onCreateDialog(Bundle savedInstanceState) {
-//	        // Use the Builder class for convenient dialog construction
-//	        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-//	        builder.setMessage(R.string.sure_delete_img)
-//	               .setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
-//	                   public void onClick(DialogInterface dialog, int id) {
-//	                       // elimino
-//	                	  bitmap = null;
-//	                	  image.setImageBitmap(bitmap);
-//	                   }
-//	               })
-//	               .setNegativeButton(R.string.annulla, new DialogInterface.OnClickListener() {
-//	                   public void onClick(DialogInterface dialog, int id) {
-//	                       // User cancelled the dialog
-//	                   }
-//	               });
-//	        // Create the AlertDialog object and return it
-//	        return builder.create();
-//	    }
-//	}
+
 }

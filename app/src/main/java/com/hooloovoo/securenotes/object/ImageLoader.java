@@ -1,5 +1,6 @@
 package com.hooloovoo.securenotes.object;
 
+import java.io.IOException;
 import java.lang.ref.WeakReference;
 
 import com.hooloovoo.securenotes.R;
@@ -8,6 +9,8 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.BitmapRegionDecoder;
+import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
@@ -19,20 +22,27 @@ import android.widget.ImageView;
 public class ImageLoader  {
 	private Context mContext;
 	private LruCache<Integer, Bitmap> mCache;
+    private boolean mOnlyImage;
 	
 	public ImageLoader(Context context){
 		this.mContext = context;
 		setCache();
 	}
-	
-	public void loadBitmap(Note note, ImageView imageView) {
-		final Bitmap bitmap = getBitmapFromMemCache(note.getmId());
+
+	public void loadBitmap(Note note, ImageView imageView,boolean onlyImage) {
+        Bitmap b = getBitmapFromMemCache(note.getmId());
+
+
+		final Bitmap bitmap = (b!= null && b.getWidth()>200 && !onlyImage)? null:b;
+
+
+        mOnlyImage = onlyImage;
 		if(bitmap != null){
 			imageView.setImageBitmap(bitmap);
 		}else if (cancelPotentialWork(note, imageView)) {
 	        final ImageLoaderTask task = new ImageLoaderTask(imageView);
 	        final AsyncDrawable asyncDrawable =
-	                new AsyncDrawable(mContext.getResources(), BitmapFactory.decodeResource(mContext.getResources(), R.drawable.ic_content_picture), task);
+	                new AsyncDrawable(mContext.getResources(), BitmapFactory.decodeResource(mContext.getResources(), R.drawable.ic_load_img), task);
 	        imageView.setImageDrawable(asyncDrawable);
 	        task.execute(note);
 	    }
@@ -165,7 +175,25 @@ public class ImageLoader  {
             }
 
             //////////////
-			Bitmap bitmap = decodeSampledBitmapFromResource(mContext.getResources(), img, 700, 100);
+            BitmapRegionDecoder bitmapRegionDecoder;
+            Bitmap bitmap = null;
+            try {
+                BitmapFactory.Options op = new BitmapFactory.Options();
+                op.inSampleSize = 1;
+                bitmapRegionDecoder = BitmapRegionDecoder.newInstance(img,0,img.length,true);
+                Bitmap bit = BitmapFactory.decodeByteArray(img,0,img.length,op);
+                int w = bit.getWidth();
+                int h = bit.getHeight();
+                if(nota.getmDesc().equals("")&& nota.getmName().equals("")){
+                    bitmap = bitmapRegionDecoder.decodeRegion(new Rect(0,(h/2)-125, w, (h/2)+125),op);Log.d("caricamento solo img",""+mOnlyImage);
+                }else{
+                    bitmap = bitmapRegionDecoder.decodeRegion(new Rect((w/2)-100,(h/2)-100, (w/2)+100, (h/2)+100),op);Log.d("caricamento solo img",""+mOnlyImage);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            //Bitmap bitmap = decodeSampledBitmapFromResource(mContext.getResources(), img, 100, 100);
+
             try {
                 addBitmapToMemoryCache(nota.getmId(), bitmap);
             }catch (NullPointerException ex){

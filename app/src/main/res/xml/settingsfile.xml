@@ -11,8 +11,12 @@
         <Preference android:title="Info" android:summary="About SecureNotes">
             <intent android:action="com.hooloovoo.Info"></intent>
         </Preference>
+        <Preference android:title="Baracca Software" android:summary="About BaraccaSoftware" android:key="infobaracca" />
+
+
     </PreferenceCategory>
     
 <!-- <ListPreference android:summary="@string/desc_encryption_algorithms" android:title="@string/name_encryption_algorithms" android:entries="@array/encryption_algorithms" android:key="encryptionAlgorithms" android:entryValues="@array/encryption_algorithms_values" android:defaultValue="0"/>
+<intent android:action="android.intent.action.VIEW" android:data="http://www.baraccasoftware.com"/>
 -->
 </PreferenceScreen>

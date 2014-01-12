@@ -17,7 +17,7 @@ public class InfoActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
-
+        setNavigationBar();
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceholderFragment())
@@ -44,6 +44,11 @@ public class InfoActivity extends Activity {
             return true;
         }*/
         return super.onOptionsItemSelected(item);
+    }
+
+    private void setNavigationBar(){
+        ActionBar mActionBar = getActionBar();
+        mActionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     /**

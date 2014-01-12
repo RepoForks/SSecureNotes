@@ -88,6 +88,7 @@
     <string name="add_text"><i>Nota</i></string>
     <string name="device_camera">devicecamera</string>
     <string name="sure_delete_img">Are you sure to delete image? </string>
+    <string name="img_deleted">Image deleted</string>
 
     <string-array name="choices_img">
         <item name="delete_img">Delete Image</item>

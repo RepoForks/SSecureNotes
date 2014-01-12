@@ -27,6 +27,7 @@
         </activity>
         <activity
             android:name="com.hooloovoo.securenotes.NotesActivity"
+
             android:label="@string/title_activity_notes" >
         </activity>
         <activity
@@ -48,13 +49,16 @@
         <activity
             android:name="com.hooloovoo.securenotes.InfoActivity"
             android:label="@string/title_activity_info" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.hooloovoo.securenotes.SettingsActivity" />
             <intent-filter>
                 <action android:name="com.hooloovoo.Info" />
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
 
-        <!-- roba de slidingdrawer -->
+
 
     </application>
     <!-- android:windowSoftInputMode="stateVisible" -->

@@ -8,12 +8,15 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import com.hooloovoo.securenotes.object.Note;
+import com.hooloovoo.securenotes.object.SingletonParametersBridge;
+import com.hooloovoo.securenotes.widget.UndoBarController;
 
-import android.animation.ValueAnimator;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Parcelable;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.app.ActionBar;
@@ -37,7 +40,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 
-public class AddNoteActivity extends Activity {
+public class AddNoteActivity extends Activity implements UndoBarController.UndoListener{
 	private final static int CAMERA_PIC_REQUEST = 1337;
 	private final static int PIC_CROP_REQUEST = 1338;
 
@@ -49,14 +52,16 @@ public class AddNoteActivity extends Activity {
 	EditText text;
 	ImageView image;
     ImageButton button;
+    ImageButton deleteImg;
     LinearLayout listView;
     View mView;
     boolean openListView;
-    ValueAnimator mAnimator;
+
+    UndoBarController mUndoBarController;
 
     Bitmap mBitmap;
 	String mFileImagePath;
-	boolean imgToCompress;
+	boolean imgChanged;
 	byte[] imgCompressed;
 	Uri outputFileUri;
 	
@@ -64,6 +69,7 @@ public class AddNoteActivity extends Activity {
 	String mText;
 
     boolean toDestroy;
+
 	
 	
 	@Override
@@ -72,6 +78,7 @@ public class AddNoteActivity extends Activity {
 		setContentView(R.layout.activity_add_note);
 		setNavigationBar();
 		setLayout();
+        populateLayout();
         toDestroy = false;
 		Log.d("ADDNOTEACTIVITY","Start Add noteactivity");
 		
@@ -96,6 +103,7 @@ public class AddNoteActivity extends Activity {
 		case R.id.action_save_note:
 			Log.d("menu", "action_save_note");
 			int esito = (createNote())?RESULT_OK:RESULT_CANCELED;
+            deleteFileImage();
 			finishThisActivity(esito);
 			break;
 		default:
@@ -107,6 +115,7 @@ public class AddNoteActivity extends Activity {
 	@Override
 	public void onBackPressed(){
 		super.onBackPressed();
+
 	}
 	
 	@Override
@@ -117,11 +126,12 @@ public class AddNoteActivity extends Activity {
 	    File newdir = new File(dir); 
 	    newdir.mkdirs();
 	    mFileImagePath = dir+"file.jpg";
-	        
-		if(mBitmap != null) image.setImageBitmap(mBitmap);
+
+	    //mBitmap = (Bitmap) SingletonParametersBridge.getInstance().getParameter("bitmaptornc");
+		if(mBitmap != null) setmBitmapImage(mBitmap, true);
 		
-		if(mTitolo != null) titolo.setText(mTitolo);
-		if(mText != null) text.setText(mText);
+		if(mTitolo != null && !mTitolo.equals("") ) titolo.setText(mTitolo);
+		if(mText != null && !mText.equals("")) text.setText(mText);
 	}
 
 
@@ -129,8 +139,7 @@ public class AddNoteActivity extends Activity {
 	public void onPause(){
 		super.onPause();
 		//delete file if exists
-    	File f = new File(mFileImagePath);
-    	if(f.exists()) f.delete();
+
     	
     	if(titolo.length()>0){
 	    	mTitolo = titolo.getText().toString();
@@ -143,17 +152,30 @@ public class AddNoteActivity extends Activity {
 
         //if (toDestroy) setTimeFinish();
 	}
-	
-	@Override 
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+
+    }
+
+    @Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data){
 		if (requestCode == CAMERA_PIC_REQUEST && resultCode == RESULT_OK) {  
 			BitmapFactory.Options op = new BitmapFactory.Options();
             toDestroy = true;
 			op.inSampleSize = 2;
 	    	mBitmap = BitmapFactory.decodeFile(mFileImagePath,op);
-            imgToCompress = true;
+            imgCompressed = compressBitmap(mBitmap);
             //image.setImageBitmap(mBitmap);
             setmBitmapImage(mBitmap,true);
+            //if bitmap is changed
+            imgChanged = true;
+            try{
+                SingletonParametersBridge.getInstance().addParameter("nota:"+newNote.getmId(),Boolean.valueOf(imgChanged));
+            }catch(NullPointerException ex){//do nothing
+            }
 
 
 	    }  else if(requestCode == PIC_CROP_REQUEST && resultCode == RESULT_OK){
@@ -165,24 +187,63 @@ public class AddNoteActivity extends Activity {
 //
 	    }
 	}
-	
-	
-	 
-	private void setNavigationBar(){
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putCharSequence("titolo",mTitolo);
+        outState.putCharSequence("text",mText);
+        outState.putByteArray("bitmap", imgCompressed);
+        outState.putBoolean("tocompress",imgChanged);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        if(savedInstanceState != null){
+            mTitolo = savedInstanceState.getString("titolo","");
+            mText = savedInstanceState.getString("text","");
+            imgCompressed = savedInstanceState.getByteArray("bitmap");
+            imgChanged = savedInstanceState.getBoolean("tocompress", false);
+            new ReloadImageTask().execute();
+        }
+
+    }
+
+    @Override
+    public void onUndo(Parcelable token) {
+        //mBitmap = (Bitmap) token;
+
+        image.setVisibility(View.VISIBLE);
+        deleteImg.setVisibility(View.VISIBLE);
+        imgCompressed = compressBitmap(mBitmap);
+    }
+
+
+
+
+    private void deleteFileImage(){
+        File f = new File(mFileImagePath);
+        if(f.exists()) f.delete();
+    }
+
+    private void setNavigationBar(){
 		ActionBar mActionBar = getActionBar();
 		mActionBar.setDisplayHomeAsUpEnabled(true);
 	}
-	
+
+
+
 	private void setLayout(){
         openListView = true;
 		titolo = (EditText) findViewById(R.id.editText_titolo_addnote);
 		text = (EditText) findViewById(R.id.editText_text_addnote);
 		image = (ImageView) findViewById(R.id.imageView1_addnote);
         listView = (LinearLayout) findViewById(R.id.popup_window);
-        mView = (View) findViewById(R.id.trasparent_view);
+        mView =  findViewById(R.id.trasparent_view);
         mView.setVisibility(View.VISIBLE);
         listView.setVisibility(View.VISIBLE);
-
+        mUndoBarController = new UndoBarController(findViewById(R.id.undobar), this);
 
 
         button = (ImageButton) findViewById(R.id.imageButton_addnote);
@@ -196,7 +257,10 @@ public class AddNoteActivity extends Activity {
                     if(image.getVisibility()==View.VISIBLE){
                         mView.startAnimation(getAnimation(0.0f,-1.0f));
                         mView.setVisibility(View.GONE);
+                        //img button to delete image
+                        deleteImg.setVisibility(View.VISIBLE);
                     }
+                    button.setImageResource(R.drawable.ic_expand);
                     openListView = false;
                 }else{
                     listView.startAnimation(getAnimation(-1.0f,0.0f));
@@ -204,39 +268,57 @@ public class AddNoteActivity extends Activity {
                     if(image.getVisibility()==View.VISIBLE) {
                         mView.startAnimation(getAnimation(-1.0f,0.0f));
                         mView.setVisibility(View.VISIBLE);
+                        //img button to delete image
+                        deleteImg.setVisibility(View.GONE);
                     }
+                    button.setImageResource(R.drawable.ic_collapse);
                     openListView = true;
                 }
             }
         });
 
-		
-		Bundle bun;
-		mBitmap = null;
-        boolean exiImg = false;
-		if((bun = getIntent().getExtras())!=null){
-			newNote = (Note) bun.getParcelable("noteToUpdate");
-			titolo.setText(newNote.getmName());
-			text.setText(newNote.getmDesc());
 
-			//creo immagine da byte[]
-			if(newNote.getmImage().length != 1){
-				imgCompressed = newNote.getmImage();
-				Log.d("ImageLeght--3", ""+newNote.getmImage().length);
-				//mBitmap = (Bitmap) bun.getParcelable("BitmapToUpdate");  
-				/*if (mBitmap == null) */mBitmap = BitmapFactory.decodeByteArray(imgCompressed, 0, imgCompressed.length);
-				imgToCompress = false;
-                exiImg = true;
-				if(mBitmap == null) Log.e("BITMAP LOAD","NULL");
-				
-			}
-			
-		}
-		setmBitmapImage(mBitmap,exiImg);
+        deleteImg = (ImageButton) findViewById(R.id.imageButton_delete_img);
+        deleteImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //cancello foto
+                setmBitmapImage(mBitmap,false);
+                imgCompressed = new byte[1];
+                deleteImg.setVisibility(View.GONE);
+                mUndoBarController.showUndoBar(false, getString(R.string.img_deleted), mBitmap);
+            }
+        });
 
+        deleteImg.setVisibility(View.GONE);
 		
 	}
 
+    /**
+     * this method inserts into textview and imageview info passed by possible note
+     */
+    private void populateLayout(){
+        Bundle bun;
+        mBitmap = null;
+        boolean exiImg = false;
+        if((bun = getIntent().getExtras())!=null){
+            newNote = (Note) bun.getParcelable("noteToUpdate");
+            titolo.setText(newNote.getmName());
+            text.setText(newNote.getmDesc());
+
+            //creo immagine da byte[]
+            if(newNote.getmImage().length != 1){
+                imgCompressed = newNote.getmImage();
+                Log.d("ImageLeght--3", ""+newNote.getmImage().length);
+               new ReloadImageTask().execute();
+                exiImg = true;
+                if(mBitmap == null) Log.e("BITMAP LOAD","NULL");
+
+            }
+
+        }
+        setmBitmapImage(mBitmap,exiImg);
+    }
 
     private void setmBitmapImage(Bitmap toAdd, boolean visible){
         if(visible){
@@ -245,11 +327,18 @@ public class AddNoteActivity extends Activity {
         }else{
             image.setVisibility(View.GONE);
             mView.setVisibility(View.GONE);
+
         }
         image.setImageBitmap(toAdd);
     }
 
 
+    /**
+     * thi method return a animation top to bottom
+     * @param first
+     * @param second
+     * @return
+     */
     private TranslateAnimation getAnimation(float first,float second){
         TranslateAnimation animation = new TranslateAnimation(
                 Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 0.0f,
@@ -260,38 +349,15 @@ public class AddNoteActivity extends Activity {
     }
 
 
-
+    /**
+     * this method create note!
+     * @return
+     */
 	
 	private boolean createNote(){
 		mTitolo = titolo.getText().toString();
 		mText = text.getText().toString();
-		
-		//estraggo img
-//		if(mBitmap == null) Log.d("ADDNOTEACTIVITY", "BITMA NULLNULL");
-		if(mBitmap != null && imgToCompress){		
-			Log.d("IMAGE DRAWABLE", mBitmap.toString());
-			ByteArrayOutputStream stream = new ByteArrayOutputStream();
-			
-			try {
-				mBitmap.compress(Bitmap.CompressFormat.JPEG, 70, stream);
-				imgCompressed = stream.toByteArray(); 
-				stream.close();
-				Log.d("COMPRESSION IMAGE", ""+imgCompressed.length);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}finally{
-				//stream.close();
-			}
-		}else if(mBitmap == null){
-			imgCompressed = new byte[1];
-			Log.d("COMPRESSION IMAGE", "no image");
 
-		}else{
-			Log.d("COMPRESSION IMAGE", "gia' compressa");
-		}
-		
-		
 		if( (!mTitolo.equals("")) || (!mText.equals("")) || (imgCompressed.length > 1)){
 			int id = (newNote==null)? 0 : newNote.getmId();
 			newNote = new Note(id, mTitolo,mText, new Date(),imgCompressed.length, imgCompressed);	
@@ -307,6 +373,7 @@ public class AddNoteActivity extends Activity {
 		Intent intent = new Intent();
 		Bundle bundle = new Bundle();
 		bundle.putParcelable("note", newNote);
+
 		//bundle.putParcelable("bitmapNote", compressBitmap(mBitmap));
 		intent.putExtras(bundle);
 		setResult(esito,intent);  
@@ -314,19 +381,19 @@ public class AddNoteActivity extends Activity {
 
 	}
 	
-	private Bitmap compressBitmap(Bitmap toCompress){
+	private byte[] compressBitmap(Bitmap toCompress){
 		Bitmap compressedBitmap;
 		ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        byte[] byteC;
 		try{
 			toCompress.compress(Bitmap.CompressFormat.JPEG, 70, stream);
-			byte[] byteC = stream.toByteArray();
-			stream.close();
-			compressedBitmap = BitmapFactory.decodeByteArray(byteC, 0, byteC.length);
-		}catch(IOException ex){
+			byteC = stream.toByteArray();
+
+		}catch(Exception ex){
 			ex.printStackTrace();
-			compressedBitmap = null;
+			byteC = new byte[1];
 		}
-		return compressedBitmap;
+		return byteC;
 	}
 	
 	private void startCameraActivity(){
@@ -409,6 +476,26 @@ public class AddNoteActivity extends Activity {
 
 
 
+    }
+
+    private class ReloadImageTask extends AsyncTask<Void,Void,Void>{
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            try{
+                mBitmap = BitmapFactory.decodeByteArray(imgCompressed,0,imgCompressed.length);
+            }catch (NullPointerException ex){
+
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            setmBitmapImage(mBitmap,true);
+
+        }
     }
 
 

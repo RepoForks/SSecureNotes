@@ -31,13 +31,27 @@ public class ImageLoader  {
 
 	public void loadBitmap(Note note, ImageView imageView,boolean onlyImage) {
         Bitmap b = getBitmapFromMemCache(note.getmId());
+        boolean imgChanged;
+        try{
+            imgChanged = (Boolean) SingletonParametersBridge.getInstance().getParameter("nota:"+note.getmId());
+        }catch (NullPointerException ex){
+            imgChanged = false;
+        }
 
+		final Bitmap bitmap;
 
-		final Bitmap bitmap = (b!= null && b.getWidth()>200 && !onlyImage)? null:b;
-
+        if( b!= null && b.getWidth()>200 && !onlyImage){
+            bitmap = null;
+        }else if(b!= null && b.getWidth()<100 && onlyImage){
+            bitmap = null;
+        }else if(imgChanged ){
+            bitmap = null;
+        }else{
+            bitmap = b;
+        }
 
         mOnlyImage = onlyImage;
-		if(bitmap != null){
+		if(bitmap != null ){
 			imageView.setImageBitmap(bitmap);
 		}else if (cancelPotentialWork(note, imageView)) {
 	        final ImageLoaderTask task = new ImageLoaderTask(imageView);

@@ -8,6 +8,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:background="@drawable/key"
+        android:layout_below="@+id/textView_appname2"
+        android:layout_centerHorizontal="true" />
+
     <EditText
         android:id="@+id/editText_password"
         android:hint="@string/hint_edtx"

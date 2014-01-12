@@ -13,6 +13,7 @@ import com.hooloovoo.securenotes.object.SingletonParametersBridge;
 
 
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -89,11 +90,17 @@ public class MainActivity extends Activity {
 	}
 	
 	private void setLayout(){
+
+        TextView txt = (TextView)findViewById(R.id.textView_appname2);
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/EarlyGameBoy.ttf");
+        txt.setTypeface(font);
+
 		final EditText edt = (EditText) findViewById(R.id.editText_password);
 		 txv = (TextView) findViewById(R.id.textView_esito);
 		
 		
 		accedi = (Button) findViewById(R.id.button_accedi);
+        accedi.setTypeface(font);
 		accedi.setOnClickListener(new OnClickListener() {
 			
 			@Override

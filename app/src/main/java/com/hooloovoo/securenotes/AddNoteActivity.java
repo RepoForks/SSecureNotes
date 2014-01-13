@@ -13,6 +13,7 @@ import com.hooloovoo.securenotes.object.SingletonParametersBridge;
 import com.hooloovoo.securenotes.widget.UndoBarController;
 
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -74,12 +75,15 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 
     boolean toDestroy;
 
+    Typeface font;
 	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_note);
+        //Inzialize font
+        font = Typeface.createFromAsset(getAssets(), "fonts/EarlyGameBoy.ttf");
 		setNavigationBar();
 		setLayout();
         populateLayout();

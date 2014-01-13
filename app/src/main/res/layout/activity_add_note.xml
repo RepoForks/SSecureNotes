@@ -10,7 +10,13 @@
     android:orientation="vertical">
 
 
-
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:background="@drawable/key_mod"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:id="@+id/imageView1_addnote"
@@ -39,7 +45,9 @@
         android:layout_height="match_parent"
         android:background="@android:color/white"
         android:alpha="0.7"
-     />
+        android:layout_below="@+id/imageView1_addnote"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <ImageButton
         android:layout_width="match_parent"
@@ -69,6 +77,9 @@
             android:id="@+id/editText_titolo_addnote"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:textColorHint="#4c4c4c"
             android:layout_marginTop="5dp"
             android:ems="10"
             android:textStyle="bold"
@@ -89,7 +100,8 @@
             android:id="@+id/editText_text_addnote"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
             android:layout_marginTop="14dp"
             android:background="#00000000"
             android:ems="10"

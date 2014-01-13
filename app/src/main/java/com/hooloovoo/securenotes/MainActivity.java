@@ -46,6 +46,9 @@ public class MainActivity extends Activity {
     //Encryptor
     Encryptor mEncryptor ;
 	//SecureCypher cypher;
+
+    //Custom font used to font view
+    Typeface font;
 	 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +56,8 @@ public class MainActivity extends Activity {
 		Log.d("SucureNotes","Avvio Applicazione");
         setEncryptor();
 
-
+        //Inzialize font
+        font = Typeface.createFromAsset(getAssets(), "fonts/EarlyGameBoy.ttf");
 
 		bytePassword = DAO.readFilePassword(this);
 
@@ -92,12 +96,12 @@ public class MainActivity extends Activity {
 	private void setLayout(){
 
         TextView txt = (TextView)findViewById(R.id.textView_appname2);
-        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/EarlyGameBoy.ttf");
         txt.setTypeface(font);
 
 		final EditText edt = (EditText) findViewById(R.id.editText_password);
 		 txv = (TextView) findViewById(R.id.textView_esito);
-		
+        txv = (TextView) findViewById(R.id.textView_esito);
+		edt.setTypeface(font);
 		
 		accedi = (Button) findViewById(R.id.button_accedi);
         accedi.setTypeface(font);
@@ -154,10 +158,17 @@ public class MainActivity extends Activity {
 	}
 	
 	private void setNuovaSessioneLayout(){
+        TextView txt = (TextView)findViewById(R.id.textView_appname2);
+        txt.setTypeface(font);
+
 		txv = (TextView) findViewById(R.id.textView_esito_signin);
+        txv.setTypeface(font);
 		nuovaPass = (EditText) findViewById(R.id.editText_ins_password);
+        nuovaPass.setTypeface(font);
 		reNuovaPass = (EditText) findViewById(R.id.editText_reins_password);
+        nuovaPass.setTypeface(font);
 		signin = (Button) findViewById(R.id.button_signin);
+        signin.setTypeface(font);
 		signin.setOnClickListener(new OnClickListener() {
 			
 			@Override

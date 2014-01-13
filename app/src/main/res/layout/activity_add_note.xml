@@ -6,6 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background=""
     tools:context=".AddNoteActivity"
     android:orientation="vertical">
 
@@ -14,8 +15,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
-        android:background="@drawable/key_mod"
-        android:layout_alignParentBottom="true"
+        android:background="@drawable/key"
+        android:layout_centerInParent="true"
         android:layout_centerHorizontal="true" />
 
     <ImageView
@@ -26,6 +27,16 @@
 
         android:contentDescription="@string/image_view_presentation"
         />
+
+    <View
+        android:id="@+id/trasparent_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:alpha="0.7"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -39,15 +50,7 @@
         android:src="@drawable/ic_cancel"/>
 
 
-    <View
-        android:id="@+id/trasparent_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/white"
-        android:alpha="0.7"
-        android:layout_below="@+id/imageView1_addnote"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+
 
     <ImageButton
         android:layout_width="match_parent"

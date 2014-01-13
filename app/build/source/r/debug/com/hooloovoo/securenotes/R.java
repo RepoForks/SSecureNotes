@@ -44,15 +44,12 @@ public final class R {
         public static final int ic_save_accept=0x7f020010;
         public static final int ic_undobar_undo=0x7f020011;
         public static final int key=0x7f020012;
-        public static final int key_mod=0x7f020013;
-        public static final int listview_back=0x7f020014;
-        public static final int lock=0x7f020015;
-        public static final int lock_mod=0x7f020016;
-        public static final int undobar=0x7f020017;
-        public static final int undobar_button=0x7f020018;
-        public static final int undobar_button_focused=0x7f020019;
-        public static final int undobar_button_pressed=0x7f02001a;
-        public static final int undobar_divider=0x7f02001b;
+        public static final int listview_back=0x7f020013;
+        public static final int undobar=0x7f020014;
+        public static final int undobar_button=0x7f020015;
+        public static final int undobar_button_focused=0x7f020016;
+        public static final int undobar_button_pressed=0x7f020017;
+        public static final int undobar_divider=0x7f020018;
     }
     public static final class id {
         public static final int action_add=0x7f0c001f;
@@ -73,7 +70,7 @@ public final class R {
         public static final int editText_text_addnote=0x7f0c0007;
         public static final int editText_titolo_addnote=0x7f0c0006;
         public static final int imageButton_addnote=0x7f0c0004;
-        public static final int imageButton_delete_img=0x7f0c0002;
+        public static final int imageButton_delete_img=0x7f0c0003;
         public static final int imageView=0x7f0c0000;
         public static final int imageView1_addnote=0x7f0c0001;
         public static final int imageView1_listnotes=0x7f0c0019;
@@ -86,7 +83,7 @@ public final class R {
         public static final int textView_data_addnote=0x7f0c0008;
         public static final int textView_esito=0x7f0c000f;
         public static final int textView_esito_signin=0x7f0c0012;
-        public static final int trasparent_view=0x7f0c0003;
+        public static final int trasparent_view=0x7f0c0002;
         public static final int undobar=0x7f0c0009;
         public static final int undobar_button=0x7f0c000b;
         public static final int undobar_message=0x7f0c000a;

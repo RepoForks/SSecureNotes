@@ -28,10 +28,10 @@
     <option name="TOOL_WINDOW_CUSTOM_FILTER" value="securen" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10f8e60d-1714-48e4-af83-806690304b0e" name="Default" comment="data nelle note - 13 gen 14&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java" />
+    <list default="true" id="10f8e60d-1714-48e4-af83-806690304b0e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/pre-dexed/debug/support-v4-19.0.1-135c16d6a05f6f46bfb92318992f2a7f30cc190c.jar" afterPath="$PROJECT_DIR$/app/build/pre-dexed/debug/support-v4-19.0.1-135c16d6a05f6f46bfb92318992f2a7f30cc190c.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/source/r/debug/com/hooloovoo/securenotes/R.java" afterPath="$PROJECT_DIR$/app/build/source/r/debug/com/hooloovoo/securenotes/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_note.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_note.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SecureNotes.iws" />
@@ -108,33 +108,37 @@
       <file leaf-file-name="NoteAdapter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/widget/NoteAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="107" column="10" selection-start="2920" selection-end="2920" vertical-scroll-proportion="0.0" vertical-offset="795" max-vertical-offset="2535">
+            <state line="107" column="10" selection-start="2920" selection-end="2920" vertical-scroll-proportion="0.0" vertical-offset="1605" max-vertical-offset="2835">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddNoteActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AddNoteActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="358" column="55" selection-start="11200" selection-end="11200" vertical-scroll-proportion="0.79548025" vertical-offset="3991" max-vertical-offset="7350">
-              <folding>
-                <element signature="e#9249#9280#0" expanded="true" />
-                <element signature="e#10677#10718#0" expanded="true" />
-                <element signature="e#11088#11117#0" expanded="true" />
-              </folding>
+            <state line="358" column="55" selection-start="11175" selection-end="11175" vertical-scroll-proportion="0.0" vertical-offset="3210" max-vertical-offset="7395">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_add_note.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="activity_add_note.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_note.xml">
           <provider editor-type-id="android-designer">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="38" selection-start="3563" selection-end="3563" vertical-scroll-proportion="-26.692308" vertical-offset="971" max-vertical-offset="2010">
-              <folding />
+            <state line="19" column="49" selection-start="550" selection-end="823" vertical-scroll-proportion="0.27939466" vertical-offset="45" max-vertical-offset="2235">
+              <folding>
+                <element signature="e#233#266#0" expanded="true" />
+                <element signature="e#291#326#0" expanded="true" />
+                <element signature="e#352#387#0" expanded="true" />
+                <element signature="e#411#444#0" expanded="true" />
+                <element signature="e#1057#1090#0" expanded="true" />
+                <element signature="e#3011#3030#0" expanded="true" />
+                <element signature="e#3647#3665#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,7 +146,7 @@
       <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="42" selection-start="4818" selection-end="4818" vertical-scroll-proportion="0.0" vertical-offset="705" max-vertical-offset="1620">
+            <state line="93" column="42" selection-start="4818" selection-end="4818" vertical-scroll-proportion="0.0" vertical-offset="1395" max-vertical-offset="1620">
               <folding />
             </state>
           </provider>
@@ -151,7 +155,7 @@
       <file leaf-file-name="NotesActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/NotesActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="301" column="28" selection-start="9270" selection-end="9270" vertical-scroll-proportion="0.0" vertical-offset="1575" max-vertical-offset="8685">
+            <state line="301" column="28" selection-start="9270" selection-end="9270" vertical-scroll-proportion="0.0" vertical-offset="4515" max-vertical-offset="9420">
               <folding />
             </state>
           </provider>
@@ -160,7 +164,7 @@
       <file leaf-file-name="ExportDialogFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/ExportDialogFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="78" selection-start="822" selection-end="892" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="900">
+            <state line="33" column="78" selection-start="822" selection-end="892" vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="1125">
               <folding />
             </state>
           </provider>
@@ -574,9 +578,9 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/InfoActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/NotesActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_note.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_note.xml" />
       </list>
     </option>
   </component>
@@ -1055,6 +1059,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1080,19 +1097,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1237,7 +1241,11 @@
       <created>1389610730771</created>
       <updated>1389610730771</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="yesterday e today nella data delle note - 13 gen 14&#10;">
+      <created>1389630907571</created>
+      <updated>1389630907571</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1267,7 +1275,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34429824" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894015" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32894015" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1284,7 +1292,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20977485" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20977485" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32785088" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="1432" y="536" width="487" height="543" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1317,7 +1325,8 @@
     <MESSAGE value="delete addnote activity - cambio immagine- 13 gen 14&#10;" />
     <MESSAGE value="note dalla + nuova a +vecchia- 13 gen 14&#10;" />
     <MESSAGE value="data nelle note - 13 gen 14&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="data nelle note - 13 gen 14&#10;" />
+    <MESSAGE value="yesterday e today nella data delle note - 13 gen 14&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="yesterday e today nella data delle note - 13 gen 14&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1619,10 +1628,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/apptheme_textfield_activated_holo_light.9.png">
-      <provider editor-type-id="images">
+      <provider selected="true" editor-type-id="ninepatcheditor">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="ninepatcheditor">
+      <provider editor-type-id="images">
         <state />
       </provider>
     </entry>
@@ -1679,16 +1688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_note.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="38" selection-start="3563" selection-end="3563" vertical-scroll-proportion="-26.692308" vertical-offset="971" max-vertical-offset="2010">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/widget/NoteAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="107" column="10" selection-start="2920" selection-end="2920" vertical-scroll-proportion="0.0" vertical-offset="1051" max-vertical-offset="2535">
@@ -1719,11 +1718,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="358" column="55" selection-start="11200" selection-end="11200" vertical-scroll-proportion="0.79548025" vertical-offset="3991" max-vertical-offset="7350">
+        <state line="358" column="55" selection-start="11175" selection-end="11175" vertical-scroll-proportion="0.0" vertical-offset="5370" max-vertical-offset="7395">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_note.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="49" selection-start="550" selection-end="823" vertical-scroll-proportion="0.27939466" vertical-offset="45" max-vertical-offset="2235">
           <folding>
-            <element signature="e#9249#9280#0" expanded="true" />
-            <element signature="e#10677#10718#0" expanded="true" />
-            <element signature="e#11088#11117#0" expanded="true" />
+            <element signature="e#233#266#0" expanded="true" />
+            <element signature="e#291#326#0" expanded="true" />
+            <element signature="e#352#387#0" expanded="true" />
+            <element signature="e#411#444#0" expanded="true" />
+            <element signature="e#1057#1090#0" expanded="true" />
+            <element signature="e#3011#3030#0" expanded="true" />
+            <element signature="e#3647#3665#0" expanded="true" />
           </folding>
         </state>
       </provider>

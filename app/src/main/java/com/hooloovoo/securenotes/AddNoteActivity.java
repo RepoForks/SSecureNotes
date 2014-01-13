@@ -3,6 +3,7 @@ package com.hooloovoo.securenotes;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -315,7 +316,7 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
             newNote = (Note) bun.getParcelable("noteToUpdate");
             titolo.setText(newNote.getmName());
             text.setText(newNote.getmDesc());
-            mData = getString(R.string.element_data_modified)+": "+newNote.getmDataString();
+            mData = getDateLastModification();
 
             //creo immagine da byte[]
             if(newNote.getmImage().length != 1){
@@ -341,6 +342,27 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 
         }
         image.setImageBitmap(toAdd);
+    }
+
+    private String getDateLastModification(){
+        String toReturn = getString(R.string.element_data_modified)+": ";
+        String sdataNote = newNote.getmDataString();
+        String scurrentDate = DateFormat.getDateInstance().format(new Date());
+
+        Date nota = newNote.getmDate();
+        Date current = new Date();
+        //diifference in day
+        long diff = (current.getTime() - nota.getTime())/(24 * 60 * 60 * 1000);
+        if(diff < 1){
+            toReturn += getString(R.string.today_mod);
+        }else if(diff<2){
+            toReturn+= getString(R.string.yesterday_mod);
+        }else{
+            toReturn+=sdataNote;
+        }
+
+        Log.d("DATA CORRENTE", scurrentDate);
+        return toReturn;
     }
 
 

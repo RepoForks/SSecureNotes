@@ -90,6 +90,8 @@
     <string name="sure_delete_img">Are you sure to delete image? </string>
     <string name="img_deleted">Image deleted</string>
     <string name="element_data_modified">Modified</string>
+    <string name="today_mod">Today</string>
+    <string name="yesterday_mod">Yesterday</string>
 
     <string-array name="choices_img">
         <item name="delete_img">Delete Image</item>

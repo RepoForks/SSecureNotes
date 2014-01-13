@@ -37,6 +37,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -55,6 +56,7 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
     ImageButton deleteImg;
     LinearLayout listView;
     View mView;
+    TextView data;
     boolean openListView;
 
     UndoBarController mUndoBarController;
@@ -67,6 +69,7 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 	
 	String mTitolo;
 	String mText;
+    String mData;
 
     boolean toDestroy;
 
@@ -133,6 +136,7 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 		
 		if(mTitolo != null && !mTitolo.equals("") ) titolo.setText(mTitolo);
 		if(mText != null && !mText.equals("")) text.setText(mText);
+        if(mData != null && !mData.equals("")) data.setText(mData);
 	}
 
 
@@ -196,6 +200,7 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
         outState.putCharSequence("text",mText);
         outState.putByteArray("bitmap", imgCompressed);
         outState.putBoolean("tocompress",imgChanged);
+        outState.putCharSequence("data",mData);
     }
 
     @Override
@@ -204,6 +209,7 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
         if(savedInstanceState != null){
             mTitolo = savedInstanceState.getString("titolo","");
             mText = savedInstanceState.getString("text","");
+            mData = savedInstanceState.getString("data","");
             imgCompressed = savedInstanceState.getByteArray("bitmap");
             imgChanged = savedInstanceState.getBoolean("tocompress", false);
             new ReloadImageTask().execute();
@@ -243,6 +249,7 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 		text = (EditText) findViewById(R.id.editText_text_addnote);
 		image = (ImageView) findViewById(R.id.imageView1_addnote);
         listView = (LinearLayout) findViewById(R.id.popup_window);
+        data = (TextView) findViewById(R.id.textView_data_addnote);
         mView =  findViewById(R.id.trasparent_view);
         mView.setVisibility(View.VISIBLE);
         listView.setVisibility(View.VISIBLE);
@@ -308,6 +315,7 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
             newNote = (Note) bun.getParcelable("noteToUpdate");
             titolo.setText(newNote.getmName());
             text.setText(newNote.getmDesc());
+            mData = getString(R.string.element_data_modified)+": "+newNote.getmDataString();
 
             //creo immagine da byte[]
             if(newNote.getmImage().length != 1){

@@ -3,6 +3,8 @@ SSecureNotes
 
 Welcome to SSecure Notes Github Page. This is a project relative to android platform.
 
+The project has been created with Android Studio v0.3.2.
+
 SSecureNotes allows to storage, in safe way, your personal notes. Each note, once they has been created,
 is crypted into telephone. Only with the password (the password is choosen at first run of application)
 it is possibile to retrieve the notes that user has created. 

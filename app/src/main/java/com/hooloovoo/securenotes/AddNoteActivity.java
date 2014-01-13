@@ -80,6 +80,7 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 		setLayout();
         populateLayout();
         toDestroy = false;
+        if(imgCompressed == null) imgCompressed = new byte[1];
 		Log.d("ADDNOTEACTIVITY","Start Add noteactivity");
 		
 	}
@@ -206,6 +207,8 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
             imgCompressed = savedInstanceState.getByteArray("bitmap");
             imgChanged = savedInstanceState.getBoolean("tocompress", false);
             new ReloadImageTask().execute();
+        }else{
+            imgCompressed = new byte[1];
         }
 
     }

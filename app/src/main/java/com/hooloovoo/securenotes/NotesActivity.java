@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -298,7 +299,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 				mData.add(positionRemovedNote,newNote);
 			}else{
 				newNote.setmId(jint);
-				mData.add(newNote);
+				mData.add(0,newNote);
 			}
 		}else{
 			Toast.makeText(getApplicationContext(), R.string.error_write_db, Toast.LENGTH_LONG).show();
@@ -473,6 +474,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
             progressDialog.dismiss();
             if(esito){
                 //aggiorno listview
+                Collections.reverse(mData);
                 mAdapter.data = mData;
                 mAdapter.notifyDataSetChanged();
             }else{
@@ -600,6 +602,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
         protected void onPostExecute(Boolean aVoid) {
             super.onPostExecute(aVoid);
             progressDialog.dismiss();
+            Collections.reverse(mData);
             if(aVoid){
                 if(mAdapter.getCount()==0) mAdapter.data = mData;
                 mAdapter.notifyDataSetChanged();

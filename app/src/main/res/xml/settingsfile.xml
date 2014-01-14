@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
     
-    <PreferenceCategory android:title="Security" android:enabled="true" android:selectable="false">
+    <PreferenceCategory android:title="@string/security_menu" android:enabled="true" android:selectable="false">
         <Preference android:title="@string/imposta_password" android:key="setPasswordKey"/>
         <ListPreference android:summary="@string/desc_preferences_second_to_wait_for_finish" android:title="@string/second_to_wait_for_finish" android:entries="@array/seconds_wait" android:key="secondWaitToFinish" android:entryValues="@array/seconds_wait_values" android:defaultValue="10"/>
 
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="Others" android:enabled="true" android:selectable="false">
-        <Preference android:title="Info" android:summary="About SecureNotes">
+    <PreferenceCategory android:title="@string/other_menu" android:enabled="true" android:selectable="false">
+        <Preference android:title="Info" android:summary="@string/about_sn">
             <intent android:action="com.hooloovoo.Info"></intent>
         </Preference>
-        <Preference android:title="Baracca Software" android:summary="About BaraccaSoftware" android:key="infobaracca" />
+        <Preference android:title="BaraccaSoftware" android:summary="@string/about_bs" android:key="infobaracca" />
 
 
     </PreferenceCategory>

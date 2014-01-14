@@ -67,6 +67,11 @@
         <item name="pkcs12">1</item>
     </string-array>
 
+    <string name="security_menu">Security</string>
+    <string name="other_menu">Others</string>
+    <string name="about_bs">About BaraccaSoftware</string>
+    <string name="about_sn">About SecureNotes</string>
+
     <!-- stringhe per l'activity password -->
     <string name="title_activity_password">PasswordActivity</string>
     <string name="ins_password">Please insert a new password</string>
@@ -84,6 +89,7 @@
 
     <!-- stringhe per activity addnote -->
     <string name="title_activity_add_note">New Note</string>
+    <string name="title_activity_add_note_mod">Update Note</string>
     <string name="add_title"><b>Title</b></string>
     <string name="add_text"><i>Note</i></string>
     <string name="device_camera">devicecamera</string>

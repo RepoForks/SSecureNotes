@@ -28,10 +28,9 @@
     <option name="TOOL_WINDOW_CUSTOM_FILTER" value="securen" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10f8e60d-1714-48e4-af83-806690304b0e" name="Default" comment="traduzione in italiano - impostazione  - 13 gen 14&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/pre-dexed/debug/support-v4-19.0.1-135c16d6a05f6f46bfb92318992f2a7f30cc190c.jar" afterPath="$PROJECT_DIR$/app/build/pre-dexed/debug/support-v4-19.0.1-135c16d6a05f6f46bfb92318992f2a7f30cc190c.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/source/r/debug/com/hooloovoo/securenotes/R.java" afterPath="$PROJECT_DIR$/app/build/source/r/debug/com/hooloovoo/securenotes/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+    <list default="true" id="10f8e60d-1714-48e4-af83-806690304b0e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/xml/settingsfile.xml" afterPath="$PROJECT_DIR$/app/src/main/res/xml/settingsfile.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values-it/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-it/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -116,10 +115,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddNoteActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AddNoteActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="440" column="34" selection-start="13283" selection-end="13283" vertical-scroll-proportion="0.0" vertical-offset="6600" max-vertical-offset="8205">
+            <state line="319" column="67" selection-start="9857" selection-end="9857" vertical-scroll-proportion="0.7090909" vertical-offset="3900" max-vertical-offset="7410">
               <folding />
             </state>
           </provider>
@@ -140,16 +139,30 @@
       <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="43" selection-start="4330" selection-end="4330" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1620">
+            <state line="72" column="33" selection-start="3512" selection-end="3512" vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="1710">
+              <folding>
+                <marker date="1389727527000" expanded="true" signature="2632:2818" placeholder="..." />
+                <marker date="1389727527000" expanded="true" signature="2864:3018" placeholder="..." />
+                <marker date="1389727527000" expanded="true" signature="3066:3171" placeholder="..." />
+                <marker date="1389727527000" expanded="true" signature="3226:3320" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values-it/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="71" column="56" selection-start="3376" selection-end="3586" vertical-scroll-proportion="0.0" vertical-offset="480" max-vertical-offset="1695">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values-it/strings.xml">
+      <file leaf-file-name="settingsfile.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/settingsfile.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="94" selection-start="2653" selection-end="2653" vertical-scroll-proportion="0.22033899" vertical-offset="495" max-vertical-offset="1620">
+            <state line="3" column="60" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
               <folding />
             </state>
           </provider>
@@ -556,7 +569,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/object/Encryptor.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/object/Note.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_info.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/xml/settingsfile.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/SettingsFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/SettingsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/sv_layout_listview_item_img_text.xml" />
@@ -572,10 +584,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/InfoActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/NotesActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_note.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-it/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/xml/settingsfile.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java" />
       </list>
     </option>
   </component>
@@ -683,6 +696,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SecureNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SecureNotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xml" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1060,7 +1103,11 @@
       <created>1389652386833</created>
       <updated>1389652386833</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="traduzione in italiano - impostazione titoli app  - 13 gen 14&#10;">
+      <created>1389726989902</created>
+      <updated>1389726989902</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1100,7 +1147,7 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.66885966" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.66885966" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943678" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24986272" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1142,7 +1189,8 @@
     <MESSAGE value="data nelle note - 13 gen 14&#10;" />
     <MESSAGE value="yesterday e today nella data delle note - 13 gen 14&#10;" />
     <MESSAGE value="modifica view bianca - 13 gen 14&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifica view bianca - 13 gen 14&#10;" />
+    <MESSAGE value="traduzione in italiano - impostazione titoli app  - 13 gen 14&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="traduzione in italiano - impostazione titoli app  - 13 gen 14&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1363,13 +1411,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/settingsfile.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="120" selection-start="1018" selection-end="1018" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/SettingsFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="0" selection-start="514" selection-end="514" vertical-scroll-proportion="0.0" vertical-offset="61" max-vertical-offset="975">
@@ -1503,13 +1544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="440" column="34" selection-start="13283" selection-end="13283" vertical-scroll-proportion="0.0" vertical-offset="5745" max-vertical-offset="7395">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_note.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="56" selection-start="444" selection-end="444" vertical-scroll-proportion="5.1923075" vertical-offset="240" max-vertical-offset="2220">
@@ -1527,16 +1561,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-it/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="43" selection-start="4330" selection-end="4330" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1620">
+        <state line="71" column="56" selection-start="3376" selection-end="3586" vertical-scroll-proportion="0.0" vertical-offset="480" max-vertical-offset="1695">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-it/strings.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="94" selection-start="2653" selection-end="2653" vertical-scroll-proportion="0.22033899" vertical-offset="495" max-vertical-offset="1620">
+        <state line="72" column="33" selection-start="3512" selection-end="3512" vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="1710">
+          <folding>
+            <marker date="1389727527000" expanded="true" signature="2632:2818" placeholder="..." />
+            <marker date="1389727527000" expanded="true" signature="2864:3018" placeholder="..." />
+            <marker date="1389727527000" expanded="true" signature="3066:3171" placeholder="..." />
+            <marker date="1389727527000" expanded="true" signature="3226:3320" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/settingsfile.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="60" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="319" column="67" selection-start="9857" selection-end="9857" vertical-scroll-proportion="0.7090909" vertical-offset="3900" max-vertical-offset="7410">
           <folding />
         </state>
       </provider>

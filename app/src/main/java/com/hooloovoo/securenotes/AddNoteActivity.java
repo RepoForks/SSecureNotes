@@ -317,6 +317,7 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
         mBitmap = null;
         boolean exiImg = false;
         if((bun = getIntent().getExtras())!=null){
+            setTitle(getString(R.string.title_activity_add_note_mod));
             newNote = (Note) bun.getParcelable("noteToUpdate");
             titolo.setText(newNote.getmName());
             text.setText(newNote.getmDesc());

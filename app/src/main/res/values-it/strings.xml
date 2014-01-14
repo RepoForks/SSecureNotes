@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">SecureNotes</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Preferenze</string>
     <string name="hello_world">Hello world!</string>
 
     <!-- Stringhe per la iniziale activity -->
@@ -40,8 +40,8 @@
 
     <!-- stringhe per activity preferences -->
     <string name="title_activity_settings"> Preferenze</string>
-    <string name="imposta_password">imposta Password</string>
-    <string name="second_to_wait_for_finish">Tempo di autoblocco dell\'applicazione</string>
+    <string name="imposta_password">Imposta Password</string>
+    <string name="second_to_wait_for_finish">Tempo di accesso </string>
     <string name="desc_preferences_second_to_wait_for_finish">Dopo aver cambiato app, per quanto tempo SecureNotes deve stare sbloccata?</string>
     <string name="name_encryption_algorithms">Algoritmi per criptare i dati</string>
     <string name="desc_encryption_algorithms">Scelgi l\'algoritmo per criptare Password e Dati</string>
@@ -66,6 +66,10 @@
         <item name="pbkdf2">0</item>
         <item name="pkcs12">1</item>
     </string-array>
+    <string name="security_menu">Sicurezza</string>
+    <string name="other_menu">Altro</string>
+    <string name="about_bs">Info su BaraccaSoftware</string>
+    <string name="about_sn">Info su SecureNotes</string>
 
     <!-- stringhe per l'activity password -->
     <string name="title_activity_password">PasswordActivity</string>
@@ -84,6 +88,7 @@
 
     <!-- stringhe per activity addnote -->
     <string name="title_activity_add_note">Nuova Nota</string>
+    <string name="title_activity_add_note_mod">Modifica Nota</string>
     <string name="add_title"><b>Titolo</b></string>
     <string name="add_text"><i>Nota</i></string>
     <string name="device_camera">devicecamera</string>

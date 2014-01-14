@@ -7,16 +7,16 @@
 
     <!-- Stringhe per la iniziale activity -->
     <string name="app_name_2">Secure Notes</string>
-    <string name="disabled">Disabled</string>
-    <string name="accedi">Enter</string>
-    <string name="annulla">Cancel</string>
+    <string name="disabled">Disabilitato</string>
+    <string name="accedi">Accedi</string>
+    <string name="annulla">Annulla</string>
     <string name="signin">Sign in</string>
-    <string name="no_more_input">You Have been entered too many wrong passwords: access denied for 30 seconds</string>
+    <string name="no_more_input">Troppi Errori: Inserimento bloccato per 30 secondi</string>
     <string name="esito_ok">OK!</string>
-    <string name="esito_no">Wrong Password!</string>
-    <string name="freeze_activity">Inserting Disabled</string>
+    <string name="esito_no">Password Errata!</string>
+    <string name="freeze_activity">Inserimento Disabilitato</string>
     <string name="hint_edtx">password…</string>
-    <string name="empty_input_field">You must insert a password</string>
+    <string name="empty_input_field">Bisogna inserire una Password</string>
 
     <!-- Stringhe per l'activity notes -->
     <string name="title_activity_notes">NotesActivity</string>
@@ -69,23 +69,23 @@
 
     <!-- stringhe per l'activity password -->
     <string name="title_activity_password">PasswordActivity</string>
-    <string name="ins_password">Please insert a new password</string>
-    <string name="reins_password">Confirm password</string>
-    <string name="ins_old_password">Insert current password</string>
-    <string name="hint_ins_password">New password</string>
-    <string name="hint_old_password">Current Password</string>
-    <string name="annulla_button">Cancel</string>
-    <string name="ok_button">Save</string>
-    <string name="attenzione_password_obbligatoria">The password must be inserted before to proceed</string>
-    <string name="password_impostata">Password set</string>
-    <string name="password_diverse">Please check your input</string>
-    <string name="titolo_alert_dialog_nuova_password">Set password</string>
-    <string name="titolo_alert_dialog_mod_password">Modify Password</string>
+    <string name="ins_password">Inserisci Nuova Password</string>
+    <string name="reins_password">Conferma Password</string>
+    <string name="ins_old_password">Inserisci Password Attuale</string>
+    <string name="hint_ins_password">Nuova Password</string>
+    <string name="hint_old_password">Attuale Password</string>
+    <string name="annulla_button">Annulla</string>
+    <string name="ok_button">Salva</string>
+    <string name="attenzione_password_obbligatoria">La Password deve essere impostata necessariamente</string>
+    <string name="password_impostata">Nuova Password Impostata</string>
+    <string name="password_diverse">Ricontrollare le Password inserite</string>
+    <string name="titolo_alert_dialog_nuova_password">Imposta Password</string>
+    <string name="titolo_alert_dialog_mod_password">Modifica Password</string>
 
     <!-- stringhe per activity addnote -->
     <string name="title_activity_add_note">AddNoteActivity</string>
-    <string name="add_title"><b>Title</b></string>
-    <string name="add_text"><i>Note</i></string>
+    <string name="add_title"><b>Titolo</b></string>
+    <string name="add_text"><i>Nota</i></string>
     <string name="device_camera">devicecamera</string>
     <string name="sure_delete_img">Are you sure to delete image? </string>
     <string name="img_deleted">Image deleted</string>

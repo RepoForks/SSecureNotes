@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
@@ -61,20 +62,18 @@ public class MainActivity extends Activity {
 
 		bytePassword = DAO.readFilePassword(this);
 
-		if(bytePassword == null) {
-			//password mai messa
-			setContentView(R.layout.activity_main_signin);
-//			startPasswordDialog();
-			setNuovaSessioneLayout();
-			//creo DB
-			DAO.getInstance(getApplicationContext());
-			
-		}else{
-			settedpass = true;
-			Log.d("Password", bytePassword);
-			setContentView(R.layout.activity_main);
-			setLayout();
-		}
+        setContentView(R.layout.splash_screen_layout);
+        getActionBar().hide();
+
+        int secondsDelayed = 5;
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+                loadTypeLayout();
+            }
+        }, secondsDelayed * 1000);
+
+
+
 		
 		
 	}
@@ -92,6 +91,24 @@ public class MainActivity extends Activity {
 		//getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+
+    private void loadTypeLayout(){
+        getActionBar().show();
+        if(bytePassword == null) {
+            //password mai messa
+            setContentView(R.layout.activity_main_signin);
+//			startPasswordDialog();
+            setNuovaSessioneLayout();
+            //creo DB
+            DAO.getInstance(getApplicationContext());
+
+        }else{
+            settedpass = true;
+            Log.d("Password", bytePassword);
+            setContentView(R.layout.activity_main);
+            setLayout();
+        }
+    }
 	
 	private void setLayout(){
 

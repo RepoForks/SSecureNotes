@@ -104,5 +104,13 @@
     </string-array>
 
     <string name="title_activity_info">InfoActivity</string>
+    <string name="tips_title_add_note">Add a new Note</string>
+    <string name="tips_add_note">Click on \"+\" button to add a new note</string>
+    <string name="show_tips">show_tips</string>
+    <string name="tips_title_hidden_note">Hide note</string>
+    <string name="tips_hide_note">Press on \"^\"  to hide current note</string>
+    <string name="help_menu">Help</string>
+    <string name="show_hints">Screens suggestion</string>
+    <string name="summary_hints">Choose to display hint screens</string>
 
 </resources>

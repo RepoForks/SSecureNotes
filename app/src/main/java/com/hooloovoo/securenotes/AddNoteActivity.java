@@ -8,11 +8,15 @@ import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.espian.showcaseview.ShowcaseView;
+import com.espian.showcaseview.targets.ActionItemTarget;
+import com.espian.showcaseview.targets.ViewTarget;
 import com.hooloovoo.securenotes.object.Note;
 import com.hooloovoo.securenotes.object.SingletonParametersBridge;
 import com.hooloovoo.securenotes.object.TimerUnlock;
 import com.hooloovoo.securenotes.widget.UndoBarController;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.net.Uri;
@@ -263,6 +267,16 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 
 
         button = (ImageButton) findViewById(R.id.imageButton_addnote);
+
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean hints_value = sharedPref.getBoolean("hints_value", true); 
+        if(hints_value){
+            ViewTarget ac = new ViewTarget(button);
+            ShowcaseView.insertShowcaseView(ac, this, R.string.tips_title_hidden_note, R.string.tips_hide_note);
+        }
+
+
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

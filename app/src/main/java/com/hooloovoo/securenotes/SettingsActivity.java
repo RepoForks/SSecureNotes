@@ -36,7 +36,7 @@ public class SettingsActivity extends Activity {
 		ActionBar mActionBar = getActionBar();
 		mActionBar.setDisplayHomeAsUpEnabled(true);
 	}
-	
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {	

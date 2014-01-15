@@ -5,8 +5,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Timer;
-import java.util.TimerTask;
+
 
 
 import com.hooloovoo.securenotes.object.DAO;
@@ -14,16 +13,14 @@ import com.hooloovoo.securenotes.object.Encryptor;
 import com.hooloovoo.securenotes.object.Note;
 import com.hooloovoo.securenotes.object.PBKDF2Encryptor;
 import com.hooloovoo.securenotes.object.SingletonParametersBridge;
+import com.hooloovoo.securenotes.object.TimerUnlock;
 import com.hooloovoo.securenotes.widget.NoteAdapter;
 import com.hooloovoo.securenotes.widget.SwipeDismissListViewTouchListener;
 import com.hooloovoo.securenotes.widget.UndoBarController;
 
 
-import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -36,7 +33,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.Toast;
 import android.widget.ListView;
@@ -61,9 +57,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 	int positionUpdatedNote;
 	
 	boolean sameApp;
-	
-	Timer tPause;
-	int seconds = 0;
+
 
     Encryptor encryptor;
     ProgressDialog progressDialog;
@@ -90,7 +84,12 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 	}
 	
 	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent intent){	
+	protected void onActivityResult(int requestCode, int resultCode, Intent intent){
+        //delete timer to close application
+        TimerUnlock timer = TimerUnlock.getInstance();
+        timer.resetTimer();
+
+
 		sameApp = false;
 		if(resultCode==RESULT_OK){
 			Bundle bun = intent.getExtras();
@@ -114,7 +113,8 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 		//boolean orientation = (getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE)?
 			//	true:false;
         //setActionBar();
-		if(tPause != null){ tPause.cancel(); tPause.purge(); Log.d("NOTES ACTIVITY","Timer closed");}
+		TimerUnlock timer = TimerUnlock.getInstance();
+        timer.resetTimer();
 
 
         try{
@@ -150,16 +150,19 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
         if(progressDialog != null && progressDialog.isShowing()) progressDialog.dismiss();
 		if(!sameApp){
 			//timer
-			tPause = setTimeFinish();
+			setTimeFinish();
 		}
 	}
 	
 	@Override
 	public void onDestroy(){
 		super.onDestroy();
-		if(tPause != null) { tPause.cancel(); tPause.purge(); Log.d("NOTES ACTIVITY","Timer closed on Destroy");
-            SingletonParametersBridge.getInstance().addParameter("cachenotes",null);
-        }
+        /*
+		TimerUnlock timerUnlock = TimerUnlock.getInstance();
+        timerUnlock.resetTimer();
+        Log.d("NOTES ACTIVITY","Timer closed on Destroy");
+        SingletonParametersBridge.getInstance().addParameter("cachenotes",null);*/
+
 	}
 	
 	@Override
@@ -410,39 +413,14 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
         mUndoBarController = new UndoBarController(findViewById(R.id.undobar), this);
 	}
 	
-	private Timer setTimeFinish(){
-		final Timer t;
+	private void setTimeFinish(){
+
 		mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-		final int endSeconds = Integer.parseInt(mSharedPreferences.getString("secondWaitToFinish", "10"));
+		int endSeconds = Integer.parseInt(mSharedPreferences.getString("secondWaitToFinish", "10"));
 		Log.d("NOTESACTIVITY", "Second to wait: "+ endSeconds);
-		t = new Timer();
-		t.scheduleAtFixedRate(new TimerTask() {
-			
-			@Override
-			public void run() {
-				runOnUiThread(new Runnable() {
-					
-					@Override
-					public void run() {
-						
-						if( seconds == endSeconds ){
-							
-							t.cancel();
-							t.purge();
-							seconds = 0;
-							finish();
-						}
-						seconds += 1;
-					}
-				});
-				
-			}
-		}, 0, 1000);
-		
-		return t;
+		TimerUnlock timerUnlock = TimerUnlock.getInstance();
+        timerUnlock.startTime(this,endSeconds);
 
-
-	
 	}
 
     /**

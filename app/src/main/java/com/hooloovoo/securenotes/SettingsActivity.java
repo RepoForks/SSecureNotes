@@ -10,6 +10,8 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 
+import com.hooloovoo.securenotes.object.TimerUnlock;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -17,7 +19,8 @@ import java.util.TimerTask;
 public class SettingsActivity extends Activity {
 
     SharedPreferences mSharedPreferences;
-    int seconds;
+    boolean browserActivity = false;
+    //boolean sameApp = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -56,10 +59,17 @@ public class SettingsActivity extends Activity {
     @Override
     protected void onPause() {
         super.onPause();
-
+        int moreSeconds = 0;
+        if(browserActivity) moreSeconds = 40;
+        setTimeFinish(moreSeconds);
     }
 
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        TimerUnlock timerUnlock = TimerUnlock.getInstance();
+        timerUnlock.resetTimer();
+    }
 
     //	private void startPasswordActivity(){
 //		Intent intent = new Intent(this,PasswordActivity.class);
@@ -74,37 +84,13 @@ public class SettingsActivity extends Activity {
 	}
 
 
-    public Timer setTimeFinish(){
-        final Timer t;
+    public void setTimeFinish(int plusSeconds){
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        final int endSeconds = Integer.parseInt(mSharedPreferences.getString("secondWaitToFinish", "10"));
-        Log.d("NOTESACTIVITY", "Second to wait: " + endSeconds);
-        t = new Timer();
-        t.scheduleAtFixedRate(new TimerTask() {
-
-            @Override
-            public void run() {
-                runOnUiThread(new Runnable() {
-
-                    @Override
-                    public void run() {
-
-                        if( seconds == endSeconds ){
-
-                            t.cancel();
-                            t.purge();
-                            seconds = 0;
-                            finishAffinity();
-                        }
-                        seconds += 1;
-                    }
-                });
-
-            }
-        }, 0, 1000);
-
-        return t;
-
+        int endSeconds = Integer.parseInt(mSharedPreferences.getString("secondWaitToFinish", "10"));
+        endSeconds += plusSeconds;
+        Log.d("SETTINGSACTIVITY", "Second to wait: " + endSeconds);
+        TimerUnlock timerUnlock = TimerUnlock.getInstance();
+        timerUnlock.startTime(this,endSeconds);
 
 
     }

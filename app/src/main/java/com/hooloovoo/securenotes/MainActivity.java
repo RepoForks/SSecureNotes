@@ -65,7 +65,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.splash_screen_layout);
         getActionBar().hide();
 
-        int secondsDelayed = 5;
+        int secondsDelayed = 3;
         new Handler().postDelayed(new Runnable() {
             public void run() {
                 loadTypeLayout();

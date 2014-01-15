@@ -3,7 +3,10 @@ package com.hooloovoo.securenotes;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,7 +14,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 
+import com.hooloovoo.securenotes.object.TimerUnlock;
+
 public class InfoActivity extends Activity {
+
+    SharedPreferences mSharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +53,20 @@ public class InfoActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("INFOACTIVITY", "close Timer");
+        TimerUnlock timerUnlock = TimerUnlock.getInstance();
+        timerUnlock.resetTimer();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        setTimeFinish();
+    }
+
     private void setNavigationBar(){
         ActionBar mActionBar = getActionBar();
         mActionBar.setDisplayHomeAsUpEnabled(true);
@@ -65,6 +86,15 @@ public class InfoActivity extends Activity {
             View rootView = inflater.inflate(R.layout.fragment_info, container, false);
             return rootView;
         }
+    }
+
+    private void setTimeFinish(){
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        int endSeconds = Integer.parseInt(mSharedPreferences.getString("secondWaitToFinish", "10"));
+
+        Log.d("NOTESACTIVITY", "Second to wait: " + endSeconds);
+        TimerUnlock timerUnlock = TimerUnlock.getInstance();
+        timerUnlock.startTime(this,endSeconds);
     }
 
 }

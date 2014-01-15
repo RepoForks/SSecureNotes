@@ -39,7 +39,19 @@ public class SettingsFragment extends PreferenceFragment {
             public boolean onPreferenceClick(Preference preference) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.baraccasoftware.com"));
                 startActivity(browserIntent);
-                mActivity.setTimeFinish();
+
+                mActivity.browserActivity=true;
+                return true;
+            }
+        });
+
+        Preference infoActivity = (Preference) getPreferenceScreen().findPreference("infoactivityrun");
+        infoActivity.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                Intent infoIntent = new Intent(mActivity,InfoActivity.class);
+                startActivity(infoIntent);
+                //mActivity.sameApp = true;
                 return true;
             }
         });

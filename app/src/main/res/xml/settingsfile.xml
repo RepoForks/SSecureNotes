@@ -8,9 +8,9 @@
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/other_menu" android:enabled="true" android:selectable="false">
-        <Preference android:title="Info" android:summary="@string/about_sn">
-            <intent android:action="com.hooloovoo.Info"></intent>
-        </Preference>
+        <Preference android:title="Info" android:summary="@string/about_sn" android:key="infoactivityrun"/>
+
+
         <Preference android:title="BaraccaSoftware" android:summary="@string/about_bs" android:key="infobaracca" />
 
 

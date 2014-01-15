@@ -10,6 +10,7 @@ import java.util.TimerTask;
 
 import com.hooloovoo.securenotes.object.Note;
 import com.hooloovoo.securenotes.object.SingletonParametersBridge;
+import com.hooloovoo.securenotes.object.TimerUnlock;
 import com.hooloovoo.securenotes.widget.UndoBarController;
 
 import android.content.SharedPreferences;
@@ -73,7 +74,8 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 	String mText;
     String mData;
 
-    boolean toDestroy;
+    //this boolean say whether onPause is caused from camera Activity or not
+    boolean cameraApp = false;
 
     Typeface font;
 	
@@ -87,7 +89,6 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 		setNavigationBar();
 		setLayout();
         populateLayout();
-        toDestroy = false;
         if(imgCompressed == null) imgCompressed = new byte[1];
 		Log.d("ADDNOTEACTIVITY","Start Add noteactivity");
 		
@@ -106,7 +107,7 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 		
 		case R.id.action_add_img:
 			Log.d("menu", "action_add_img");
-            toDestroy = false;
+            cameraApp = true;
 			startCameraActivity();
 			break;
 		case R.id.action_save_note:
@@ -160,7 +161,7 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
     		text.getText().clear();
     	}
 
-        //if (toDestroy) setTimeFinish();
+        setTimeFinish();
 	}
 
     @Override
@@ -174,7 +175,7 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 	public void onActivityResult(int requestCode, int resultCode, Intent data){
 		if (requestCode == CAMERA_PIC_REQUEST && resultCode == RESULT_OK) {  
 			BitmapFactory.Options op = new BitmapFactory.Options();
-            toDestroy = true;
+            cameraApp = false;
 			op.inSampleSize = 2;
 	    	mBitmap = BitmapFactory.decodeFile(mFileImagePath,op);
             imgCompressed = compressBitmap(mBitmap);
@@ -481,36 +482,14 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 		}
 	}
 
-    public Timer setTimeFinish(){
-        final Timer t;
+    public void setTimeFinish(){
+
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        final int endSeconds = Integer.parseInt(mSharedPreferences.getString("secondWaitToFinish", "10"));
+        int endSeconds = Integer.parseInt(mSharedPreferences.getString("secondWaitToFinish", "10"));
+        if(cameraApp) endSeconds+=60;
         Log.d("NOTESACTIVITY", "Second to wait: " + endSeconds);
-        t = new Timer();
-        t.scheduleAtFixedRate(new TimerTask() {
-
-            @Override
-            public void run() {
-                runOnUiThread(new Runnable() {
-
-                    @Override
-                    public void run() {
-
-                        if( seconds == endSeconds ){
-
-                            t.cancel();
-                            t.purge();
-                            seconds = 0;
-                            finishAffinity();
-                        }
-                        seconds += 1;
-                    }
-                });
-
-            }
-        }, 0, 1000);
-
-        return t;
+        TimerUnlock timerUnlock = TimerUnlock.getInstance();
+        timerUnlock.startTime(this,endSeconds);
 
 
 

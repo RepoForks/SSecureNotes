@@ -4,19 +4,21 @@ package com.hooloovoo.securenotes;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 
 public class SettingsFragment extends PreferenceFragment {
+    private static final String KEY_HINT_PREF = "hints_value" ;
     SettingsActivity mActivity;
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
         setPreferences();
-		
+
 	}
 
 	@Override
@@ -70,5 +72,16 @@ public class SettingsFragment extends PreferenceFragment {
         newf.mContenxt = mActivity.getApplicationContext();
         newf.show(getFragmentManager(), "password");
     }
+
+//    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+//        if (key.equals(KEY_HINT_PREF)) {
+//            SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+//            SharedPreferences.Editor editor = settings.edit();
+//            editor.putBoolean("silentMode", mSilentMode);
+//
+//            // Commit the edits!
+//            editor.commit();
+//        }
+//    }
 
 }

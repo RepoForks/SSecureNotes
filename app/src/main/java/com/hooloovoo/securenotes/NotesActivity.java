@@ -8,6 +8,11 @@ import java.util.Collections;
 
 
 
+import com.espian.showcaseview.ShowcaseView;
+import com.espian.showcaseview.ShowcaseViews;
+import com.espian.showcaseview.targets.ActionItemTarget;
+import com.espian.showcaseview.targets.ActionViewTarget;
+import com.espian.showcaseview.targets.ViewTarget;
 import com.hooloovoo.securenotes.object.DAO;
 import com.hooloovoo.securenotes.object.Encryptor;
 import com.hooloovoo.securenotes.object.Note;
@@ -63,7 +68,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
     ProgressDialog progressDialog;
 
     Context mContext;
-	
+    static final ShowcaseView.ConfigOptions co = new ShowcaseView.ConfigOptions();
 	
 
 	@Override
@@ -77,8 +82,9 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 //		dao.openDB();
 //		setDataArrayList();
 		setWidgetListener();
+        co.shotType = ShowcaseView.TYPE_ONE_SHOT;
 
-		Log.d("NOTEACTIVITY","Start noteactivity");
+       		Log.d("NOTEACTIVITY", "Start noteactivity");
 
 
 	}
@@ -169,11 +175,29 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.notes, menu);
+//        View showcasedView = findViewById(R.id.action_add);
+//        ViewTarget target = new ViewTarget(showcasedView);
+//        ShowcaseView.insertShowcaseView(target, this, R.string.accedi, R.string.accedi);
+
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean hints_value = sharedPref.getBoolean("hints_value",true);
+        if(hints_value){
+        ActionItemTarget ac = new ActionItemTarget(this,R.id.action_add);
+        ShowcaseView.insertShowcaseView(ac,this,R.string.tips_title_add_note, R.string.tips_add_note);
+        }
+        //ShowcaseView.insertShowcaseViewWithType(ShowcaseView.ITEM_ACTION_ITEM, R.id.action_add, this, );
 		return true;
 	}
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item){
+
+
+
+
+
+
+
 		switch (item.getItemId()) {
 		case R.id.action_settings:
 			sameApp = true;

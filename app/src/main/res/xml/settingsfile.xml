@@ -7,6 +7,17 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory android:title="@string/help_menu" android:enabled="true" android:selectable="false">
+        <CheckBoxPreference
+            android:key="hints_value"
+            android:defaultValue="true"
+            android:summary="@string/summary_hints"
+            android:title="@string/show_hints"
+            />
+
+    </PreferenceCategory>
+
+
     <PreferenceCategory android:title="@string/other_menu" android:enabled="true" android:selectable="false">
         <Preference android:title="Info" android:summary="@string/about_sn" android:key="infoactivityrun"/>
 

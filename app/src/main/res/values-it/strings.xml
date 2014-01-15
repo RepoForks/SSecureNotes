@@ -103,5 +103,13 @@
     </string-array>
 
     <string name="title_activity_info">Info</string>
+    <string name="tips_title_add_note">Aggiungi una nuova nota</string>
+    <string name="tips_add_note">Usa il pulsante \"+\" per aggiungere una nuova nota</string>
+    <string name="tips_hide_note">Premi su \"^\" per nascondere la nota</string>
+    <string name="show_tips">show_tips</string>
+    <string name="tips_title_hidden_note">Nascondi Nota</string>
+    <string name="help_menu">Help</string>
+    <string name="show_hints">Mostra suggerimenti</string>
+    <string name="summary_hints">Scegli se i suggerimenti devono essere visualizzati</string>
 
 </resources>

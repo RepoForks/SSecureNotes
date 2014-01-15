@@ -61,9 +61,12 @@ public class MainActivity extends Activity {
         font = Typeface.createFromAsset(getAssets(), "fonts/EarlyGameBoy.ttf");
 
 		bytePassword = DAO.readFilePassword(this);
-
-        setContentView(R.layout.splash_screen_layout);
         getActionBar().hide();
+        setContentView(R.layout.splash_screen_layout);
+        ((TextView)findViewById(R.id.present_title)).setTypeface(font);
+        ((TextView)findViewById(R.id.secure_notes_title)).setTypeface(font);
+
+
 
         int secondsDelayed = 3;
         new Handler().postDelayed(new Runnable() {
@@ -73,7 +76,25 @@ public class MainActivity extends Activity {
         }, secondsDelayed * 1000);
 
 
-
+//        if(bytePassword == null) {
+//            SharedPreferences sharedPref = getPreferences(getBaseContext().MODE_PRIVATE);
+//            SharedPreferences.Editor editor = sharedPref.edit();
+//            editor.putInt(getString(R.string.show_tips), 1);
+//            editor.commit();
+//
+//            //password mai messa
+//            setContentView(R.layout.activity_main_signin);
+////			startPasswordDialog();
+//            setNuovaSessioneLayout();
+//            //creo DB
+//            DAO.getInstance(getApplicationContext());
+//
+//        }else{
+//            settedpass = true;
+//            Log.d("Password", bytePassword);
+//            setContentView(R.layout.activity_main);
+//            setLayout();
+//        }
 		
 		
 	}
@@ -97,7 +118,6 @@ public class MainActivity extends Activity {
         if(bytePassword == null) {
             //password mai messa
             setContentView(R.layout.activity_main_signin);
-//			startPasswordDialog();
             setNuovaSessioneLayout();
             //creo DB
             DAO.getInstance(getApplicationContext());
@@ -109,7 +129,8 @@ public class MainActivity extends Activity {
             setLayout();
         }
     }
-	
+
+
 	private void setLayout(){
 
         TextView txt = (TextView)findViewById(R.id.textView_appname2);

@@ -3,6 +3,7 @@ package com.hooloovoo.securenotes.object;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v4.app.ActivityCompat;
+import android.util.Log;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -26,6 +27,7 @@ public class TimerUnlock {
     }
 
     public void startTime(Activity activity, int toSeconds){
+        Log.d("TIMERUNLOCK", "start timer");
         t = new Timer();
         final Activity mActivity = activity;
         final int endSeconds = toSeconds;
@@ -44,6 +46,8 @@ public class TimerUnlock {
                             resetTimer();
                             seconds = 0;
                             //mActivity.setResult(RESULT_TIME_UNLOCK);
+                            //tolgo la password
+                            Log.d("TIMERUNLOCK", "sto per chiudere");
                             ActivityCompat compat = new ActivityCompat();
                             compat.finishAffinity(mActivity);
                             mActivity.finish();

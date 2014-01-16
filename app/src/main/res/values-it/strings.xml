@@ -111,5 +111,8 @@
     <string name="help_menu">Help</string>
     <string name="show_hints">Mostra suggerimenti</string>
     <string name="summary_hints">Scegli se i suggerimenti devono essere visualizzati</string>
+    <string name="tips_unlock_time_tile">Tempo di Autolock</string>
+    <string name="tips_unlock">Scegli, dal menu\'\ dei settings, quanto tempo deve passare prima che l\'\app venga rimossa dalle applicazioni in background
+</string>
 
 </resources>

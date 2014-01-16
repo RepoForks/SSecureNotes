@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 
-
+import com.espian.showcaseview.OnShowcaseEventListener;
 import com.espian.showcaseview.ShowcaseView;
 import com.espian.showcaseview.ShowcaseViews;
 import com.espian.showcaseview.targets.ActionItemTarget;
@@ -24,6 +24,7 @@ import com.hooloovoo.securenotes.widget.SwipeDismissListViewTouchListener;
 import com.hooloovoo.securenotes.widget.UndoBarController;
 
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -182,10 +183,22 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         boolean hints_value = sharedPref.getBoolean("hints_value",true);
         if(hints_value){
-        ActionItemTarget ac = new ActionItemTarget(this,R.id.action_add);
-        ShowcaseView.insertShowcaseView(ac,this,R.string.tips_title_add_note, R.string.tips_add_note);
+            final Activity activity = this;
+//        ActionItemTarget ac = new ActionItemTarget(this,R.id.action_add);
+//        ShowcaseView showcaseView = ShowcaseView.insertShowcaseView(ac,this,R.string.tips_title_add_note, R.string.tips_add_note);
+
+
+
+            ShowcaseViews showcaseViews = new ShowcaseViews(this);
+            showcaseViews.addView(new ShowcaseViews.ItemViewProperties(R.id.action_add,R.string.tips_title_add_note, R.string.tips_add_note,ShowcaseView.ITEM_ACTION_ITEM));
+            showcaseViews.addView(new ShowcaseViews.ItemViewProperties(R.id.action_add,R.string.tips_unlock_time_tile, R.string.tips_unlock,ShowcaseView.ITEM_ACTION_ITEM));
+
+            showcaseViews.show();
+
+
+
         }
-        //ShowcaseView.insertShowcaseViewWithType(ShowcaseView.ITEM_ACTION_ITEM, R.id.action_add, this, );
+
 		return true;
 	}
 	

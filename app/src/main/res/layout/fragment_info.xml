@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:text="Version 1.0"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_above="@+id/textView"
+        android:layout_above="@+id/license"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Apache license"
-        android:id="@+id/textView"
+        android:id="@+id/license"
         android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/textView_versione"
         android:layout_alignStart="@+id/textView_versione" />

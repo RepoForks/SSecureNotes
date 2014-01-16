@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -13,12 +14,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.TextView;
 
 import com.hooloovoo.securenotes.object.TimerUnlock;
 
 public class InfoActivity extends Activity {
 
     SharedPreferences mSharedPreferences;
+    Typeface font;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,8 @@ public class InfoActivity extends Activity {
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
+
+      font = Typeface.createFromAsset(getAssets(), "fonts/EarlyGameBoy.ttf");
     }
 
 
@@ -84,6 +89,11 @@ public class InfoActivity extends Activity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_info, container, false);
+            Typeface font = Typeface.createFromAsset(rootView.getContext().getAssets(), "fonts/EarlyGameBoy.ttf");
+            ((TextView)rootView.findViewById(R.id.textView_appname2)).setTypeface(font);
+            ((TextView)rootView.findViewById(R.id.textView_versione)).setTypeface(font);
+            ((TextView)rootView.findViewById(R.id.license)).setTypeface(font);
+
             return rootView;
         }
     }

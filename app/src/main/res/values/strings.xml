@@ -112,5 +112,7 @@
     <string name="help_menu">Help</string>
     <string name="show_hints">Screens suggestion</string>
     <string name="summary_hints">Choose to display hint screens</string>
+    <string name="tips_unlock_time_tile">Autolock Time</string>
+    <string name="tips_unlock">Go to settings menu to choose, after the activity has been closed, how much time must pass before the app is removed from background applications</string>
 
 </resources>

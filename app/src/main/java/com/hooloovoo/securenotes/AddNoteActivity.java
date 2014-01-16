@@ -273,6 +273,7 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
         if(hints_value){
             ViewTarget ac = new ViewTarget(button);
             ShowcaseView.insertShowcaseView(ac, this, R.string.tips_title_hidden_note, R.string.tips_hide_note);
+            sharedPref.edit().putBoolean("hints_value", false).commit();
         }
 
 

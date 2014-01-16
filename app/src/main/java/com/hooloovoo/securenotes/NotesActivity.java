@@ -17,6 +17,7 @@ import com.hooloovoo.securenotes.object.DAO;
 import com.hooloovoo.securenotes.object.Encryptor;
 import com.hooloovoo.securenotes.object.Note;
 import com.hooloovoo.securenotes.object.PBKDF2Encryptor;
+import com.hooloovoo.securenotes.object.PasswordPreference;
 import com.hooloovoo.securenotes.object.SingletonParametersBridge;
 import com.hooloovoo.securenotes.object.TimerUnlock;
 import com.hooloovoo.securenotes.widget.NoteAdapter;
@@ -79,7 +80,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 		dao = DAO.getInstance(getApplicationContext());
         mContext = this;
 
-        setEncryptor();
+//        setEncryptor();
 //		dao.openDB();
 //		setDataArrayList();
 		setWidgetListener();
@@ -120,12 +121,15 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 		//boolean orientation = (getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE)?
 			//	true:false;
         //setActionBar();
+        Log.d("FFFFFFFFFFF ON RESUME","PRIMA DI SETTARE ENCRYPTOR");
+        setEncryptor();
 		TimerUnlock timer = TimerUnlock.getInstance();
         timer.resetTimer();
 
 
         try{
             mData = (ArrayList<Note>) SingletonParametersBridge.getInstance().getParameter("cachenotes");
+            if(mData == null) Log.d("FFFFFFFFFFF","DATA NULL");
             //mAdapter = new NoteAdapter(this,mData);
             mAdapter = (NoteAdapter) SingletonParametersBridge.getInstance().getParameter("adapter");
             mAdapter.data = mData;
@@ -140,7 +144,9 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 
         try{
             if((Boolean) SingletonParametersBridge.getInstance().getParameter("settedpassword") || setEncryptor()){
-                new RefreshNoteIntoDBTask().execute();
+                Toast.makeText(getApplicationContext(),R.string.wait_for_update_note,Toast.LENGTH_LONG).show();
+                RefreshNoteIntoDBTask rf = new RefreshNoteIntoDBTask(getApplicationContext());
+                rf.execute();
                 Log.d("NOTEACTIVITY","We need refresh note into db");
             }
         }catch(NullPointerException ex){
@@ -169,6 +175,8 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
         timerUnlock.resetTimer();
         Log.d("NOTES ACTIVITY","Timer closed on Destroy");
         SingletonParametersBridge.getInstance().addParameter("cachenotes",null);*/
+
+        Log.d("ON DESTROY","this activity is destroied by another one");
 
 	}
 	
@@ -204,14 +212,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item){
-
-
-
-
-
-
-
-		switch (item.getItemId()) {
+        switch (item.getItemId()) {
 		case R.id.action_settings:
 			sameApp = true;
 			openSettings();
@@ -296,7 +297,8 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 	
     private boolean setEncryptor(){
         try{
-        encryptor = (Encryptor) SingletonParametersBridge.getInstance().getParameter("encrypt");
+            encryptor = (Encryptor) SingletonParametersBridge.getInstance().getParameter("encrypt");
+            Log.d("Need to throws exception", encryptor.getRawKey());
         }catch (NullPointerException ex){
             ex.printStackTrace();
             encryptor = new PBKDF2Encryptor();
@@ -395,6 +397,14 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
      * @return decrypted note
      */
     private Note decryptNote(Note toDecrypt){
+        if(toDecrypt == null) Log.d("FFFFFFFFFFFFFFFFF", "TODECRYPT NULL");
+        if(encryptor == null) Log.d("FFFFFFFFFFFFFFFFF", "ENCRYPTOR NULL");
+        if(Encryptor.password == null){
+            Log.d("FFFFFFFFFFFFF","PASSWORD NULL");
+            PasswordPreference preference = new PasswordPreference(getApplicationContext());
+            Encryptor.password = preference.getPassword();
+            Log.d("PASSWORD IN PREFERENCE", Encryptor.password);
+        }
         String nameEn = encryptor.decrypt(toDecrypt.getmName(), Encryptor.password);
         String descEn = encryptor.decrypt(toDecrypt.getmDesc(), Encryptor.password);
         Note decrypted;
@@ -505,6 +515,11 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
      */
     private class RefreshNoteIntoDBTask extends AsyncTask<Void,Void,Void>{
 
+        Context mContext;
+
+        public RefreshNoteIntoDBTask(Context context){
+            mContext = context;
+        }
         @Override
         protected Void doInBackground(Void... voids) {
             dao.openDB();
@@ -513,6 +528,12 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
             }
             dao.closeDB();
             return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            Toast.makeText(mContext,R.string.updating_completed,Toast.LENGTH_LONG).show();
         }
     }
 

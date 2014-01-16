@@ -37,6 +37,8 @@
     <string name="text_import_notes">Per importare le note devi essere sicuro che la tua password sia la stessa con cui sono state criptate</string>
     <string name="generated_file">File generato: </string>
     <string name="import_ok_esito">Caricamento completato:</string>
+    <string name="wait_for_update_note">hai aggiornato la password, attendi che si aggiornino le note nel DB</string>
+    <string name="updating_completed">Note aggiornate nel DB</string>
 
     <!-- stringhe per activity preferences -->
     <string name="title_activity_settings"> Preferenze</string>

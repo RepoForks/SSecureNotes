@@ -9,6 +9,7 @@ import com.hooloovoo.securenotes.object.DAO;
 import com.hooloovoo.securenotes.object.Encryptor;
 import com.hooloovoo.securenotes.object.PBKDF2Encryptor;
 import com.hooloovoo.securenotes.object.PKCS12Encryptor;
+import com.hooloovoo.securenotes.object.PasswordPreference;
 import com.hooloovoo.securenotes.object.SingletonParametersBridge;
 
 
@@ -172,7 +173,7 @@ public class MainActivity extends Activity {
 					txv.setText(R.string.esito_ok);
 					txv.setTextColor(Color.GREEN);
 					tentativi = 0;
-                    Encryptor.password = input_password;
+                    rememberPassword(input_password);
 					startNoteActivity();
 				}else{
 					txv.setText(R.string.esito_no);
@@ -216,7 +217,8 @@ public class MainActivity extends Activity {
 					//salvo password
                     String toStore  = nuovaPass.getText().toString().trim();
                     String toStoreCripted = mEncryptor.encrypt(toStore, toStore);
-                    Encryptor.password = toStore;
+                    rememberPassword(toStore);
+
                     Log.d("PASSWORD TO WRITE", toStoreCripted);
 					DAO.writeFilePassword(getApplicationContext(),  toStoreCripted);
 					startNoteActivity();
@@ -228,6 +230,17 @@ public class MainActivity extends Activity {
 			}
 		});
 	}
+
+    /**
+     * this method store temporally password in sharepreference for this session, when app will be closed password will be forget
+     * @param password
+     */
+    private void rememberPassword(String password){
+        PasswordPreference preference = new PasswordPreference(getApplicationContext());
+        preference.savePassword(password);
+        Log.d("PASSWORD SAVED",password);
+        Encryptor.password = password;
+    }
 
     private boolean setEncryptor(){
         /*SharedPreferences mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);

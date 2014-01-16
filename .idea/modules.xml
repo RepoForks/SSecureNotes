@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SecureNotes.iml" filepath="$PROJECT_DIR$/SecureNotes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TipScreen/TipScreen.iml" filepath="$PROJECT_DIR$/TipScreen/TipScreen.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

@@ -4,6 +4,7 @@ package com.hooloovoo.securenotes;
 import com.hooloovoo.securenotes.object.DAO;
 import com.hooloovoo.securenotes.object.Encryptor;
 import com.hooloovoo.securenotes.object.PBKDF2Encryptor;
+import com.hooloovoo.securenotes.object.PasswordPreference;
 import com.hooloovoo.securenotes.object.SingletonParametersBridge;
 
 import android.app.AlertDialog;
@@ -15,6 +16,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -101,6 +103,9 @@ public class PasswordDialogFragment extends DialogFragment {
 	private void savePassword(String password){
 		this.password = password;
 		this.pass_setted = 1;
+        PasswordPreference p = new PasswordPreference(mContenxt);
+        p.savePassword(password);
+        Log.d("NUOVA PASSWORD",password);
 		DAO.writeFilePassword(mContenxt, encryptor.encrypt(password,password));
 	}
 

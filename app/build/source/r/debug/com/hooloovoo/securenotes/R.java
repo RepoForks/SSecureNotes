@@ -16,6 +16,59 @@ public final class R {
         public static final int seconds_wait_values=0x7f050004;
     }
     public static final class attr {
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int showcaseViewStyle=0x7f010000;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int sv_backgroundColor=0x7f010001;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int sv_buttonBackgroundColor=0x7f010004;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int sv_buttonForegroundColor=0x7f010005;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+         */
+        public static final int sv_buttonText=0x7f010006;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int sv_detailTextAppearance=0x7f010007;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int sv_detailTextColor=0x7f010002;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int sv_showcaseColor=0x7f010009;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int sv_titleTextAppearance=0x7f010008;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int sv_titleTextColor=0x7f010003;
     }
     public static final class color {
         public static final int orange=0x7f060000;
@@ -31,69 +84,85 @@ public final class R {
         public static final int apptheme_textfield_disabled_focused_holo_light=0x7f020003;
         public static final int apptheme_textfield_disabled_holo_light=0x7f020004;
         public static final int apptheme_textfield_focused_holo_light=0x7f020005;
-        public static final int ic_add_new=0x7f020006;
-        public static final int ic_but=0x7f020007;
-        public static final int ic_cancel=0x7f020008;
-        public static final int ic_collapse=0x7f020009;
-        public static final int ic_content_new_event=0x7f02000a;
-        public static final int ic_content_picture=0x7f02000b;
-        public static final int ic_device_access_camera=0x7f02000c;
-        public static final int ic_expand=0x7f02000d;
-        public static final int ic_launcher=0x7f02000e;
-        public static final int ic_load_img=0x7f02000f;
-        public static final int ic_logo_bs=0x7f020010;
-        public static final int ic_save_accept=0x7f020011;
-        public static final int ic_undobar_undo=0x7f020012;
-        public static final int key=0x7f020013;
-        public static final int key_mod=0x7f020014;
-        public static final int listview_back=0x7f020015;
-        public static final int lock=0x7f020016;
-        public static final int lock_mod=0x7f020017;
-        public static final int undobar=0x7f020018;
-        public static final int undobar_button=0x7f020019;
-        public static final int undobar_button_focused=0x7f02001a;
-        public static final int undobar_button_pressed=0x7f02001b;
-        public static final int undobar_divider=0x7f02001c;
+        public static final int btn_cling_normal=0x7f020006;
+        public static final int btn_cling_pressed=0x7f020007;
+        public static final int cling=0x7f020008;
+        public static final int cling_bleached=0x7f020009;
+        public static final int cling_button_bg=0x7f02000a;
+        public static final int dc=0x7f02000b;
+        public static final int hand=0x7f02000c;
+        public static final int ic_add_new=0x7f02000d;
+        public static final int ic_but=0x7f02000e;
+        public static final int ic_cancel=0x7f02000f;
+        public static final int ic_collapse=0x7f020010;
+        public static final int ic_content_new_event=0x7f020011;
+        public static final int ic_content_picture=0x7f020012;
+        public static final int ic_device_access_camera=0x7f020013;
+        public static final int ic_expand=0x7f020014;
+        public static final int ic_launcher=0x7f020015;
+        public static final int ic_load_img=0x7f020016;
+        public static final int ic_logo_bs=0x7f020017;
+        public static final int ic_logo_bs_mod=0x7f020018;
+        public static final int ic_save_accept=0x7f020019;
+        public static final int ic_undobar_undo=0x7f02001a;
+        public static final int key=0x7f02001b;
+        public static final int key_mod=0x7f02001c;
+        public static final int listview_back=0x7f02001d;
+        public static final int lock=0x7f02001e;
+        public static final int lock_mod=0x7f02001f;
+        public static final int undobar=0x7f020020;
+        public static final int undobar_button=0x7f020021;
+        public static final int undobar_button_focused=0x7f020022;
+        public static final int undobar_button_pressed=0x7f020023;
+        public static final int undobar_divider=0x7f020024;
     }
     public static final class id {
-        public static final int action_add=0x7f0c001f;
-        public static final int action_add_img=0x7f0c001d;
-        public static final int action_export=0x7f0c0020;
-        public static final int action_import=0x7f0c0021;
-        public static final int action_save_note=0x7f0c001c;
-        public static final int action_settings=0x7f0c001e;
-        public static final int button_accedi=0x7f0c0010;
-        public static final int button_signin=0x7f0c0014;
-        public static final int container=0x7f0c000c;
-        public static final int editText_export_notes_fragment=0x7f0c0016;
-        public static final int editText_ins_password=0x7f0c0011;
-        public static final int editText_pass1_alertdialog_password=0x7f0c0018;
-        public static final int editText_pass2_alertdialog_password=0x7f0c0017;
-        public static final int editText_password=0x7f0c000e;
-        public static final int editText_reins_password=0x7f0c0013;
-        public static final int editText_text_addnote=0x7f0c0007;
-        public static final int editText_titolo_addnote=0x7f0c0006;
-        public static final int imageButton_addnote=0x7f0c0004;
-        public static final int imageButton_delete_img=0x7f0c0003;
-        public static final int imageView=0x7f0c0000;
-        public static final int imageView1_addnote=0x7f0c0001;
-        public static final int imageView1_listnotes=0x7f0c0019;
-        public static final int imposta_password=0x7f0c0022;
-        public static final int popup_window=0x7f0c0005;
-        public static final int textView=0x7f0c0015;
-        public static final int textView_Desc=0x7f0c001b;
-        public static final int textView_Nome=0x7f0c001a;
-        public static final int textView_appname2=0x7f0c000d;
-        public static final int textView_data_addnote=0x7f0c0008;
-        public static final int textView_esito=0x7f0c000f;
-        public static final int textView_esito_signin=0x7f0c0012;
-        public static final int trasparent_view=0x7f0c0002;
-        public static final int undobar=0x7f0c0009;
-        public static final int undobar_button=0x7f0c000b;
-        public static final int undobar_message=0x7f0c000a;
+        public static final int action_add=0x7f080027;
+        public static final int action_add_img=0x7f080025;
+        public static final int action_export=0x7f080028;
+        public static final int action_import=0x7f080029;
+        public static final int action_save_note=0x7f080024;
+        public static final int action_settings=0x7f080026;
+        public static final int button_accedi=0x7f080013;
+        public static final int button_signin=0x7f080017;
+        public static final int container=0x7f08000f;
+        public static final int editText_export_notes_fragment=0x7f080019;
+        public static final int editText_ins_password=0x7f080014;
+        public static final int editText_pass1_alertdialog_password=0x7f08001e;
+        public static final int editText_pass2_alertdialog_password=0x7f08001d;
+        public static final int editText_password=0x7f080011;
+        public static final int editText_reins_password=0x7f080016;
+        public static final int editText_text_addnote=0x7f08000a;
+        public static final int editText_titolo_addnote=0x7f080009;
+        public static final int imageButton_addnote=0x7f080007;
+        public static final int imageButton_delete_img=0x7f080006;
+        public static final int imageView=0x7f080003;
+        public static final int imageView1_addnote=0x7f080004;
+        public static final int imageView1_listnotes=0x7f080021;
+        public static final int imposta_password=0x7f08002a;
+        public static final int popup_window=0x7f080008;
+        public static final int present_title=0x7f08001f;
+        public static final int secure_notes_title=0x7f080020;
+        public static final int showcase_button=0x7f080000;
+        public static final int showcase_sub_text=0x7f080001;
+        public static final int showcase_title_text=0x7f080002;
+        public static final int textView=0x7f080018;
+        public static final int textView2=0x7f08001b;
+        public static final int textView3=0x7f08001c;
+        public static final int textView_Desc=0x7f080023;
+        public static final int textView_Nome=0x7f080022;
+        public static final int textView_appname2=0x7f080010;
+        public static final int textView_data_addnote=0x7f08000b;
+        public static final int textView_esito=0x7f080012;
+        public static final int textView_esito_signin=0x7f080015;
+        public static final int textView_versione=0x7f08001a;
+        public static final int trasparent_view=0x7f080005;
+        public static final int undobar=0x7f08000c;
+        public static final int undobar_button=0x7f08000e;
+        public static final int undobar_message=0x7f08000d;
     }
     public static final class integer {
-        public static final int undobar_hide_delay=0x7f080000;
+        public static final int undobar_hide_delay=0x7f090000;
     }
     public static final class layout {
         public static final int activity_add_note=0x7f030000;
@@ -104,86 +173,99 @@ public final class R {
         public static final int activity_settings=0x7f030005;
         public static final int export_dialog_fragment_layout=0x7f030006;
         public static final int fragment_info=0x7f030007;
-        public static final int password_alert_dialog_layout=0x7f030008;
-        public static final int splash_screen_layout=0x7f030009;
-        public static final int sv_layout_listview_item_img=0x7f03000a;
-        public static final int sv_layout_listview_item_img_text=0x7f03000b;
-        public static final int sv_layout_listview_item_text=0x7f03000c;
+        public static final int handy=0x7f030008;
+        public static final int password_alert_dialog_layout=0x7f030009;
+        public static final int showcase_button=0x7f03000a;
+        public static final int splash_screen_layout=0x7f03000b;
+        public static final int sv_layout_listview_item_img=0x7f03000c;
+        public static final int sv_layout_listview_item_img_text=0x7f03000d;
+        public static final int sv_layout_listview_item_text=0x7f03000e;
     }
     public static final class menu {
-        public static final int add_note=0x7f0b0000;
-        public static final int main=0x7f0b0001;
-        public static final int new_add_note=0x7f0b0002;
-        public static final int notes=0x7f0b0003;
-        public static final int settings=0x7f0b0004;
+        public static final int add_note=0x7f0c0000;
+        public static final int main=0x7f0c0001;
+        public static final int new_add_note=0x7f0c0002;
+        public static final int notes=0x7f0c0003;
+        public static final int settings=0x7f0c0004;
     }
     public static final class string {
-        public static final int about_bs=0x7f090000;
-        public static final int about_sn=0x7f090001;
-        public static final int accedi=0x7f090002;
-        public static final int action_export=0x7f090003;
-        public static final int action_inport=0x7f090004;
-        public static final int action_settings=0x7f090005;
-        public static final int add_text=0x7f090006;
-        public static final int add_title=0x7f090007;
-        public static final int add_value=0x7f090008;
-        public static final int annulla=0x7f090009;
-        public static final int annulla_button=0x7f09000a;
-        public static final int app_name=0x7f09000b;
-        public static final int app_name_2=0x7f09000c;
-        public static final int attenzione_password_obbligatoria=0x7f09000d;
-        public static final int desc_encryption_algorithms=0x7f09000e;
-        public static final int desc_preferences_second_to_wait_for_finish=0x7f09000f;
-        public static final int device_camera=0x7f090010;
-        public static final int disabled=0x7f090011;
-        public static final int element_data_modified=0x7f090012;
-        public static final int empty_input_field=0x7f090013;
-        public static final int error_export_db=0x7f090014;
-        public static final int error_update_db=0x7f090015;
-        public static final int error_write_db=0x7f090016;
-        public static final int esito_no=0x7f090017;
-        public static final int esito_ok=0x7f090018;
-        public static final int export_ok=0x7f090019;
-        public static final int exporting_notes=0x7f09001a;
-        public static final int freeze_activity=0x7f09001b;
-        public static final int generated_file=0x7f09001c;
-        public static final int hello_world=0x7f09001d;
-        public static final int hint_edtx=0x7f09001e;
-        public static final int hint_ins_password=0x7f09001f;
-        public static final int hint_old_password=0x7f090020;
-        public static final int image_view_presentation=0x7f090021;
-        public static final int img_deleted=0x7f090022;
-        public static final int import_notes=0x7f090023;
-        public static final int import_ok=0x7f090024;
-        public static final int import_ok_esito=0x7f090025;
-        public static final int imposta_password=0x7f090026;
-        public static final int ins_old_password=0x7f090027;
-        public static final int ins_password=0x7f090028;
-        public static final int loading_notes=0x7f090029;
-        public static final int name_encryption_algorithms=0x7f09002a;
-        public static final int no_more_input=0x7f09002b;
-        public static final int ok_button=0x7f09002c;
-        public static final int other_menu=0x7f09002d;
-        public static final int password_diverse=0x7f09002e;
-        public static final int password_impostata=0x7f09002f;
-        public static final int reins_password=0x7f090030;
-        public static final int second_to_wait_for_finish=0x7f090031;
-        public static final int security_menu=0x7f090032;
-        public static final int signin=0x7f090033;
-        public static final int sure_delete_img=0x7f090034;
-        public static final int text_import_notes=0x7f090035;
-        public static final int title_activity_add_note=0x7f090036;
-        public static final int title_activity_add_note_mod=0x7f090037;
-        public static final int title_activity_info=0x7f090038;
-        public static final int title_activity_notes=0x7f090039;
-        public static final int title_activity_password=0x7f09003a;
-        public static final int title_activity_settings=0x7f09003b;
-        public static final int titolo_alert_dialog_mod_password=0x7f09003c;
-        public static final int titolo_alert_dialog_nuova_password=0x7f09003d;
-        public static final int today_mod=0x7f09003e;
-        public static final int undo=0x7f09003f;
-        public static final int undobar_message=0x7f090040;
-        public static final int yesterday_mod=0x7f090041;
+        public static final int about_bs=0x7f0a0000;
+        public static final int about_sn=0x7f0a0001;
+        public static final int accedi=0x7f0a0002;
+        public static final int action_export=0x7f0a0003;
+        public static final int action_inport=0x7f0a0004;
+        public static final int action_settings=0x7f0a0005;
+        public static final int add_text=0x7f0a0006;
+        public static final int add_title=0x7f0a0007;
+        public static final int add_value=0x7f0a0008;
+        public static final int annulla=0x7f0a0009;
+        public static final int annulla_button=0x7f0a000a;
+        public static final int app_name=0x7f0a000b;
+        public static final int app_name_2=0x7f0a000c;
+        public static final int attenzione_password_obbligatoria=0x7f0a000d;
+        public static final int desc_encryption_algorithms=0x7f0a000e;
+        public static final int desc_preferences_second_to_wait_for_finish=0x7f0a000f;
+        public static final int device_camera=0x7f0a0010;
+        public static final int disabled=0x7f0a0011;
+        public static final int element_data_modified=0x7f0a0012;
+        public static final int empty_input_field=0x7f0a0013;
+        public static final int error_export_db=0x7f0a0014;
+        public static final int error_update_db=0x7f0a0015;
+        public static final int error_write_db=0x7f0a0016;
+        public static final int esito_no=0x7f0a0017;
+        public static final int esito_ok=0x7f0a0018;
+        public static final int export_ok=0x7f0a0019;
+        public static final int exporting_notes=0x7f0a001a;
+        public static final int freeze_activity=0x7f0a001b;
+        public static final int generated_file=0x7f0a001c;
+        public static final int hello_world=0x7f0a001d;
+        public static final int help_menu=0x7f0a001e;
+        public static final int hint_edtx=0x7f0a001f;
+        public static final int hint_ins_password=0x7f0a0020;
+        public static final int hint_old_password=0x7f0a0021;
+        public static final int image_view_presentation=0x7f0a0022;
+        public static final int img_deleted=0x7f0a0023;
+        public static final int import_notes=0x7f0a0024;
+        public static final int import_ok=0x7f0a0025;
+        public static final int import_ok_esito=0x7f0a0026;
+        public static final int imposta_password=0x7f0a0027;
+        public static final int ins_old_password=0x7f0a0028;
+        public static final int ins_password=0x7f0a0029;
+        public static final int loading_notes=0x7f0a002a;
+        public static final int name_encryption_algorithms=0x7f0a002b;
+        public static final int no_more_input=0x7f0a002c;
+        public static final int ok=0x7f0a002d;
+        public static final int ok_button=0x7f0a002e;
+        public static final int other_menu=0x7f0a002f;
+        public static final int password_diverse=0x7f0a0030;
+        public static final int password_impostata=0x7f0a0031;
+        public static final int reins_password=0x7f0a0032;
+        public static final int second_to_wait_for_finish=0x7f0a0033;
+        public static final int security_menu=0x7f0a0034;
+        public static final int show_hints=0x7f0a0035;
+        public static final int show_tips=0x7f0a0036;
+        public static final int signin=0x7f0a0037;
+        public static final int summary_hints=0x7f0a0038;
+        public static final int sure_delete_img=0x7f0a0039;
+        public static final int text_import_notes=0x7f0a003a;
+        public static final int tips_add_note=0x7f0a003b;
+        public static final int tips_hide_note=0x7f0a003c;
+        public static final int tips_title_add_note=0x7f0a003d;
+        public static final int tips_title_hidden_note=0x7f0a003e;
+        public static final int title_activity_add_note=0x7f0a003f;
+        public static final int title_activity_add_note_mod=0x7f0a0040;
+        public static final int title_activity_info=0x7f0a0041;
+        public static final int title_activity_notes=0x7f0a0042;
+        public static final int title_activity_password=0x7f0a0043;
+        public static final int title_activity_settings=0x7f0a0044;
+        public static final int titolo_alert_dialog_mod_password=0x7f0a0045;
+        public static final int titolo_alert_dialog_nuova_password=0x7f0a0046;
+        public static final int today_mod=0x7f0a0047;
+        public static final int undo=0x7f0a0048;
+        public static final int undobar_message=0x7f0a0049;
+        public static final int updating_completed=0x7f0a004a;
+        public static final int wait_for_update_note=0x7f0a004b;
+        public static final int yesterday_mod=0x7f0a004c;
     }
     public static final class style {
         /** 
@@ -194,16 +276,183 @@ public final class R {
  API 11 theme customizations can go here. 
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f0a0000;
-        public static final int AppTheme=0x7f0a0001;
-        public static final int EditTextAppTheme=0x7f0a0002;
-        public static final int MyActionBar=0x7f0a0003;
-        public static final int MyButton=0x7f0a0004;
-        public static final int UndoBar=0x7f0a0005;
-        public static final int UndoBarButton=0x7f0a0006;
-        public static final int UndoBarMessage=0x7f0a0007;
+        public static final int AppBaseTheme=0x7f0b0000;
+        public static final int AppTheme=0x7f0b0001;
+        public static final int CustomShowcaseTheme=0x7f0b0002;
+        public static final int EditTextAppTheme=0x7f0b0003;
+        public static final int MyActionBar=0x7f0b0004;
+        public static final int MyButton=0x7f0b0005;
+        public static final int ShowcaseButton=0x7f0b0006;
+        public static final int ShowcaseView=0x7f0b0007;
+        public static final int ShowcaseView_Light=0x7f0b0008;
+        public static final int TextAppearance_ShowcaseView_Detail=0x7f0b0009;
+        public static final int TextAppearance_ShowcaseView_Detail_Light=0x7f0b000a;
+        public static final int TextAppearance_ShowcaseView_Title=0x7f0b000b;
+        public static final int TextAppearance_ShowcaseView_Title_Light=0x7f0b000c;
+        public static final int UndoBar=0x7f0b000d;
+        public static final int UndoBarButton=0x7f0b000e;
+        public static final int UndoBarMessage=0x7f0b000f;
     }
     public static final class xml {
         public static final int settingsfile=0x7f040000;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a CustomTheme.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CustomTheme_showcaseViewStyle com.hooloovoo.securenotes:showcaseViewStyle}</code></td><td></td></tr>
+           </table>
+           @see #CustomTheme_showcaseViewStyle
+         */
+        public static final int[] CustomTheme = {
+            0x7f010000
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.hooloovoo.securenotes.R.attr#showcaseViewStyle}
+          attribute's value can be found in the {@link #CustomTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.hooloovoo.securenotes:showcaseViewStyle
+        */
+        public static final int CustomTheme_showcaseViewStyle = 0;
+        /** Attributes that can be used with a ShowcaseView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ShowcaseView_sv_backgroundColor com.hooloovoo.securenotes:sv_backgroundColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #ShowcaseView_sv_buttonBackgroundColor com.hooloovoo.securenotes:sv_buttonBackgroundColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #ShowcaseView_sv_buttonForegroundColor com.hooloovoo.securenotes:sv_buttonForegroundColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #ShowcaseView_sv_buttonText com.hooloovoo.securenotes:sv_buttonText}</code></td><td></td></tr>
+           <tr><td><code>{@link #ShowcaseView_sv_detailTextAppearance com.hooloovoo.securenotes:sv_detailTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #ShowcaseView_sv_detailTextColor com.hooloovoo.securenotes:sv_detailTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #ShowcaseView_sv_showcaseColor com.hooloovoo.securenotes:sv_showcaseColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #ShowcaseView_sv_titleTextAppearance com.hooloovoo.securenotes:sv_titleTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #ShowcaseView_sv_titleTextColor com.hooloovoo.securenotes:sv_titleTextColor}</code></td><td></td></tr>
+           </table>
+           @see #ShowcaseView_sv_backgroundColor
+           @see #ShowcaseView_sv_buttonBackgroundColor
+           @see #ShowcaseView_sv_buttonForegroundColor
+           @see #ShowcaseView_sv_buttonText
+           @see #ShowcaseView_sv_detailTextAppearance
+           @see #ShowcaseView_sv_detailTextColor
+           @see #ShowcaseView_sv_showcaseColor
+           @see #ShowcaseView_sv_titleTextAppearance
+           @see #ShowcaseView_sv_titleTextColor
+         */
+        public static final int[] ShowcaseView = {
+            0x7f010001, 0x7f010002, 0x7f010003, 0x7f010004,
+            0x7f010005, 0x7f010006, 0x7f010007, 0x7f010008,
+            0x7f010009
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.hooloovoo.securenotes.R.attr#sv_backgroundColor}
+          attribute's value can be found in the {@link #ShowcaseView} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.hooloovoo.securenotes:sv_backgroundColor
+        */
+        public static final int ShowcaseView_sv_backgroundColor = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.hooloovoo.securenotes.R.attr#sv_buttonBackgroundColor}
+          attribute's value can be found in the {@link #ShowcaseView} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.hooloovoo.securenotes:sv_buttonBackgroundColor
+        */
+        public static final int ShowcaseView_sv_buttonBackgroundColor = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.hooloovoo.securenotes.R.attr#sv_buttonForegroundColor}
+          attribute's value can be found in the {@link #ShowcaseView} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.hooloovoo.securenotes:sv_buttonForegroundColor
+        */
+        public static final int ShowcaseView_sv_buttonForegroundColor = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.hooloovoo.securenotes.R.attr#sv_buttonText}
+          attribute's value can be found in the {@link #ShowcaseView} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+          @attr name com.hooloovoo.securenotes:sv_buttonText
+        */
+        public static final int ShowcaseView_sv_buttonText = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.hooloovoo.securenotes.R.attr#sv_detailTextAppearance}
+          attribute's value can be found in the {@link #ShowcaseView} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.hooloovoo.securenotes:sv_detailTextAppearance
+        */
+        public static final int ShowcaseView_sv_detailTextAppearance = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.hooloovoo.securenotes.R.attr#sv_detailTextColor}
+          attribute's value can be found in the {@link #ShowcaseView} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.hooloovoo.securenotes:sv_detailTextColor
+        */
+        public static final int ShowcaseView_sv_detailTextColor = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.hooloovoo.securenotes.R.attr#sv_showcaseColor}
+          attribute's value can be found in the {@link #ShowcaseView} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.hooloovoo.securenotes:sv_showcaseColor
+        */
+        public static final int ShowcaseView_sv_showcaseColor = 8;
+        /**
+          <p>This symbol is the offset where the {@link com.hooloovoo.securenotes.R.attr#sv_titleTextAppearance}
+          attribute's value can be found in the {@link #ShowcaseView} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.hooloovoo.securenotes:sv_titleTextAppearance
+        */
+        public static final int ShowcaseView_sv_titleTextAppearance = 7;
+        /**
+          <p>This symbol is the offset where the {@link com.hooloovoo.securenotes.R.attr#sv_titleTextColor}
+          attribute's value can be found in the {@link #ShowcaseView} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.hooloovoo.securenotes:sv_titleTextColor
+        */
+        public static final int ShowcaseView_sv_titleTextColor = 2;
+    };
 }

@@ -11,7 +11,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="52sp"
-        android:text="Angelo"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:singleLine="false"
         android:typeface="sans"
         android:id="@+id/textView_Nome"
         android:layout_marginLeft="5dp"
@@ -23,6 +25,9 @@
         android:layout_height="wrap_content"
         android:textSize="26sp"
         android:typeface="sans"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:singleLine="false"
         android:id="@+id/textView_Desc"
         android:layout_marginLeft="5dp"/>
 

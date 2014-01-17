@@ -13,9 +13,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
         android:background="@drawable/key"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp" />
+        android:layout_below="@+id/textView_appname2"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:id="@+id/editText_password"
@@ -24,7 +23,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/textView_esito"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -34,8 +33,7 @@
         android:text="@string/app_name_2"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="96dp" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/textView_esito"
@@ -56,4 +54,3 @@
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
-<!-- From: file:/C:/Users/Lorenzo/AndroidStudioProjects/SSecureNotes/app/src/main/res/layout/activity_main.xml -->

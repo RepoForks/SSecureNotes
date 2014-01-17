@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:background="@drawable/key_mod"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+
+    <TextView
+        android:id="@+id/textView_appname2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name_2"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_above="@+id/textView_versione"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView_versione"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Version 1.0"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_above="@+id/license"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Apache license"
+        android:id="@+id/license"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/textView_versione"
+        android:layout_alignStart="@+id/textView_versione" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="github.com/chemickypes/SSecureNotes"
+        android:textColor="@android:color/holo_blue_light"
+        android:id="@+id/textView_code"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Code:"
+        android:id="@+id/textView3"
+        android:layout_above="@+id/textView_code"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+</RelativeLayout>

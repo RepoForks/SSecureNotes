@@ -168,7 +168,7 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
     		text.getText().clear();
     	}
 
-        setTimeFinish();
+        if(!cameraApp) setTimeFinish();
 	}
 
     @Override
@@ -180,6 +180,7 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 
     @Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data){
+        cameraApp = false;
 		if (requestCode == CAMERA_PIC_REQUEST && resultCode == RESULT_OK) {  
 			BitmapFactory.Options op = new BitmapFactory.Options();
             cameraApp = false;

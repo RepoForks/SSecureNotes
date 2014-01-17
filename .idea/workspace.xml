@@ -42,7 +42,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10f8e60d-1714-48e4-af83-806690304b0e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/sv_layout_listview_item_text.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/sv_layout_listview_item_text.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SecureNotes.iws" />
@@ -131,15 +131,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sv_layout_listview_item_text.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="sv_layout_listview_item_text.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-large/sv_layout_listview_item_text.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="34" selection-start="963" selection-end="963" vertical-scroll-proportion="1.7469879" vertical-offset="0" max-vertical-offset="585">
+            <state line="29" column="34" selection-start="963" selection-end="963" vertical-scroll-proportion="-16.73077" vertical-offset="0" max-vertical-offset="585">
               <folding />
             </state>
           </provider>
           <provider editor-type-id="android-designer">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TimerUnlock.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/object/TimerUnlock.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="51" column="0" selection-start="1456" selection-end="1456" vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="915">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddNoteActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="170" column="23" selection-start="4739" selection-end="4739" vertical-scroll-proportion="2.4" vertical-offset="1215" max-vertical-offset="7425">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -923,7 +941,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/object/PasswordPreference.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/PasswordDialogFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/object/TimerUnlock.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-it/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/InfoActivity.java" />
@@ -936,6 +953,7 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout-large/sv_layout_listview_item_text.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-xlarge/sv_layout_listview_item_text.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/sv_layout_listview_item_text.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java" />
       </list>
     </option>
   </component>
@@ -1826,7 +1844,11 @@
       <created>1389994533453</created>
       <updated>1389994533453</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="fix some bug - controllata lunghezza delle stringhe nella listview - 17 gen 13&#10;">
+      <created>1389994862372</created>
+      <updated>1389994862372</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1851,12 +1873,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="25" width="1871" height="1054" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34429824" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32785988" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32785988" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1866,7 +1888,7 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.6681319" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.6681319" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943678" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24986272" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1917,7 +1939,8 @@
     <MESSAGE value="fixati alcuni bug - aggiornamento note al cambio password - PasswordPreference - 15 gen 14&#10;" />
     <MESSAGE value="fixati alcuni bug - controllata exception password sbagliata- 17 gen 14&#10;" />
     <MESSAGE value="controllata lunghezza delle stringhe nella listview - 17 gen 13&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="controllata lunghezza delle stringhe nella listview - 17 gen 13&#10;" />
+    <MESSAGE value="fix some bug - controllata lunghezza delle stringhe nella listview - 17 gen 13&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix some bug - controllata lunghezza delle stringhe nella listview - 17 gen 13&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2148,13 +2171,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/object/TimerUnlock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="0" selection-start="1456" selection-end="1456" vertical-scroll-proportion="0.66101694" vertical-offset="0" max-vertical-offset="915">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values-it/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="41" column="49" selection-start="2300" selection-end="2300" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="1905">
@@ -2165,13 +2181,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/SettingsFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="45" selection-start="1154" selection-end="1299" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1170">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="139" column="33" selection-start="3821" selection-end="3821" vertical-scroll-proportion="0.0" vertical-offset="1980" max-vertical-offset="7410">
           <folding />
         </state>
       </provider>
@@ -2276,12 +2285,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-large/sv_layout_listview_item_text.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="34" selection-start="963" selection-end="963" vertical-scroll-proportion="1.7469879" vertical-offset="0" max-vertical-offset="585">
+        <state line="29" column="34" selection-start="963" selection-end="963" vertical-scroll-proportion="-16.73077" vertical-offset="0" max-vertical-offset="585">
           <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/object/TimerUnlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="0" selection-start="1456" selection-end="1456" vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="915">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="170" column="23" selection-start="4739" selection-end="4739" vertical-scroll-proportion="2.4" vertical-offset="1215" max-vertical-offset="7425">
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

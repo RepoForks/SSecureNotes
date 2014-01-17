@@ -42,11 +42,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10f8e60d-1714-48e4-af83-806690304b0e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/source/r/debug/com/hooloovoo/securenotes/R.java" afterPath="$PROJECT_DIR$/app/build/source/r/debug/com/hooloovoo/securenotes/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/sv_layout_listview_item_img_text.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/sv_layout_listview_item_img_text.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/sv_layout_listview_item_text.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/sv_layout_listview_item_text.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout-large/sv_layout_listview_item_text.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout-large/sv_layout_listview_item_text.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout-xlarge/sv_layout_listview_item_text.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout-xlarge/sv_layout_listview_item_text.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SecureNotes.iws" />
@@ -111,51 +107,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="sv_layout_listview_item_img_text.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="sv_layout_listview_item_img_text.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/sv_layout_listview_item_img_text.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="38" selection-start="821" selection-end="916" vertical-scroll-proportion="1.5060241" vertical-offset="0" max-vertical-offset="675">
+            <state line="25" column="38" selection-start="821" selection-end="916" vertical-scroll-proportion="-14.423077" vertical-offset="0" max-vertical-offset="675">
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="sv_layout_listview_item_text.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/sv_layout_listview_item_text.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="38" selection-start="1191" selection-end="1191" vertical-scroll-proportion="-20.192308" vertical-offset="0" max-vertical-offset="675">
+            <state line="9" column="14" selection-start="294" selection-end="294" vertical-scroll-proportion="-5.1923075" vertical-offset="0" max-vertical-offset="615">
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sv_layout_listview_item_text.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="sv_layout_listview_item_text.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-large/sv_layout_listview_item_text.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="34" selection-start="963" selection-end="963" vertical-scroll-proportion="-16.73077" vertical-offset="0" max-vertical-offset="585">
+            <state line="29" column="34" selection-start="963" selection-end="963" vertical-scroll-proportion="1.7469879" vertical-offset="0" max-vertical-offset="585">
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="sv_layout_listview_item_text.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-xlarge/sv_layout_listview_item_text.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state line="29" column="34" selection-start="963" selection-end="963" vertical-scroll-proportion="-16.73077" vertical-offset="0" max-vertical-offset="585">
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -937,9 +933,9 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main_signin.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/sv_layout_listview_item_img_text.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/sv_layout_listview_item_text.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-large/sv_layout_listview_item_text.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-xlarge/sv_layout_listview_item_text.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/sv_layout_listview_item_text.xml" />
       </list>
     </option>
   </component>
@@ -995,6 +991,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1537,7 +1534,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1600,6 +1596,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1625,19 +1634,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1826,7 +1822,11 @@
       <created>1389921734376</created>
       <updated>1389921734376</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="controllata lunghezza delle stringhe nella listview - 17 gen 13&#10;">
+      <created>1389994533453</created>
+      <updated>1389994533453</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1851,7 +1851,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="25" width="1871" height="1054" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34429824" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1866,7 +1866,7 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.6681319" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.6681319" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943678" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24986272" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1916,7 +1916,8 @@
     <MESSAGE value="manifest - 15 gen 14&#10;" />
     <MESSAGE value="fixati alcuni bug - aggiornamento note al cambio password - PasswordPreference - 15 gen 14&#10;" />
     <MESSAGE value="fixati alcuni bug - controllata exception password sbagliata- 17 gen 14&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixati alcuni bug - controllata exception password sbagliata- 17 gen 14&#10;" />
+    <MESSAGE value="controllata lunghezza delle stringhe nella listview - 17 gen 13&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="controllata lunghezza delle stringhe nella listview - 17 gen 13&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1928,11 +1929,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/password_alert_dialog_layout.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525" />
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-18/android.jar!/android/widget/ListView.class">
@@ -1973,11 +1974,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/export_dialog_fragment_layout.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="47" selection-start="377" selection-end="377" vertical-scroll-proportion="0.14851485" vertical-offset="0" max-vertical-offset="909" />
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/object/DAO.java">
@@ -2008,19 +2009,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/apptheme_textfield_activated_holo_light.9.png">
-      <provider selected="true" editor-type-id="ninepatcheditor">
+      <provider editor-type-id="images">
         <state />
       </provider>
-      <provider editor-type-id="images">
+      <provider selected="true" editor-type-id="ninepatcheditor">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/sv_layout_listview_item_img.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state line="14" column="17" selection-start="542" selection-end="542" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300" />
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_expand.png">
@@ -2029,11 +2030,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_notes.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="44" selection-start="432" selection-end="432" vertical-scroll-proportion="0.19208382" vertical-offset="0" max-vertical-offset="859" />
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/ExportDialogFragment.java">
@@ -2057,11 +2058,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_note.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="45" selection-start="705" selection-end="705" vertical-scroll-proportion="0.16187051" vertical-offset="105" max-vertical-offset="2220" />
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/SettingsActivity.java">
@@ -2103,13 +2104,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/splash_screen_layout.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="0" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="645">
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/widget/NoteAdapter.java">
@@ -2183,13 +2184,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_info.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="859">
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/NotesActivity.java">
@@ -2200,23 +2201,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_info.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state line="58" column="4" selection-start="2357" selection-end="2357" vertical-scroll-proportion="0.0" vertical-offset="266" max-vertical-offset="1140">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main_signin.xml">
       <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main_signin.xml">
       <provider editor-type-id="text-editor">
         <state line="51" column="4" selection-start="2035" selection-end="2035" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1245">
           <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/PasswordDialogFragment.java">
@@ -2227,13 +2228,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="0" selection-start="722" selection-end="722" vertical-scroll-proportion="-3.0384614" vertical-offset="161" max-vertical-offset="1020">
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/MainActivity.java">
@@ -2243,44 +2244,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-xlarge/sv_layout_listview_item_text.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/sv_layout_listview_item_img_text.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="34" selection-start="963" selection-end="963" vertical-scroll-proportion="-16.73077" vertical-offset="0" max-vertical-offset="585">
+        <state line="25" column="38" selection-start="821" selection-end="916" vertical-scroll-proportion="-14.423077" vertical-offset="0" max-vertical-offset="675">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-large/sv_layout_listview_item_text.xml">
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="34" selection-start="963" selection-end="963" vertical-scroll-proportion="-16.73077" vertical-offset="0" max-vertical-offset="585">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/sv_layout_listview_item_text.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="38" selection-start="1191" selection-end="1191" vertical-scroll-proportion="-20.192308" vertical-offset="0" max-vertical-offset="675">
+        <state line="9" column="14" selection-start="294" selection-end="294" vertical-scroll-proportion="-5.1923075" vertical-offset="0" max-vertical-offset="615">
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/sv_layout_listview_item_img_text.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-xlarge/sv_layout_listview_item_text.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="34" selection-start="963" selection-end="963" vertical-scroll-proportion="-16.73077" vertical-offset="0" max-vertical-offset="585">
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-large/sv_layout_listview_item_text.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="38" selection-start="821" selection-end="916" vertical-scroll-proportion="1.5060241" vertical-offset="0" max-vertical-offset="675">
+        <state line="29" column="34" selection-start="963" selection-end="963" vertical-scroll-proportion="1.7469879" vertical-offset="0" max-vertical-offset="585">
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
   </component>

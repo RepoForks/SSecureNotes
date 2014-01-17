@@ -144,6 +144,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 
         try{
             if((Boolean) SingletonParametersBridge.getInstance().getParameter("settedpassword") || setEncryptor()){
+                SingletonParametersBridge.getInstance().addParameter("settedpassword",false);
                 Toast.makeText(getApplicationContext(),R.string.wait_for_update_note,Toast.LENGTH_LONG).show();
                 RefreshNoteIntoDBTask rf = new RefreshNoteIntoDBTask(getApplicationContext());
                 rf.execute();
@@ -405,8 +406,10 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
             Encryptor.password = preference.getPassword();
             Log.d("PASSWORD IN PREFERENCE", Encryptor.password);
         }
+
         String nameEn = encryptor.decrypt(toDecrypt.getmName(), Encryptor.password);
         String descEn = encryptor.decrypt(toDecrypt.getmDesc(), Encryptor.password);
+
         Note decrypted;
         /*if (toDecrypt.getImageLen()>1){
             byte[] imgEn = toDecrypt.getmImage();
@@ -607,8 +610,9 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
                 for(Note note:data){
                     int jint ;
                     dao.openDB();
+                    Note newNote = decryptNote(note);
                     if((jint = (int) dao.addNoteToDB(note, false))!=-1){
-                        Note newNote = decryptNote(note);
+
                         newNote.setmId(jint);
                         mData.add(newNote);
                         esito = true;
@@ -630,6 +634,9 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
             } catch (IOException e) {
                 e.printStackTrace();
                 esito = false;
+            } catch (RuntimeException e){
+                e.printStackTrace();
+                esito = false;
             }
             return esito;
         }
@@ -645,7 +652,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 
                 Toast.makeText(getApplicationContext(),getString(R.string.import_ok_esito)+filename,Toast.LENGTH_LONG).show();
             }else{
-                Toast.makeText(getApplicationContext(), getString(R.string.error_write_db), Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.error_import_note), Toast.LENGTH_LONG).show();
             }
         }
     }

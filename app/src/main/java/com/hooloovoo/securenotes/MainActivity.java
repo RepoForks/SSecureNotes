@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
 	int tentativi = 0;
 	String bytePassword;
 	boolean settedpass;
-	boolean startedDialog = false;
+	boolean toshowSplashScreen = true;
 	
 	//password gia' messa
 	Button accedi;
@@ -47,7 +47,7 @@ public class MainActivity extends Activity {
 	EditText reNuovaPass;
     //Encryptor
     Encryptor mEncryptor ;
-	//SecureCypher cypher;
+
 
     //Custom font used to font view
     Typeface font;
@@ -62,57 +62,56 @@ public class MainActivity extends Activity {
         font = Typeface.createFromAsset(getAssets(), "fonts/EarlyGameBoy.ttf");
 
 		bytePassword = DAO.readFilePassword(this);
-        getActionBar().hide();
-        setContentView(R.layout.splash_screen_layout);
-        ((TextView)findViewById(R.id.present_title)).setTypeface(font);
-        ((TextView)findViewById(R.id.secure_notes_title)).setTypeface(font);
 
-
-
-        int secondsDelayed = 3;
-        new Handler().postDelayed(new Runnable() {
-            public void run() {
-                loadTypeLayout();
-            }
-        }, secondsDelayed * 1000);
-
-
-//        if(bytePassword == null) {
-//            SharedPreferences sharedPref = getPreferences(getBaseContext().MODE_PRIVATE);
-//            SharedPreferences.Editor editor = sharedPref.edit();
-//            editor.putInt(getString(R.string.show_tips), 1);
-//            editor.commit();
-//
-//            //password mai messa
-//            setContentView(R.layout.activity_main_signin);
-////			startPasswordDialog();
-//            setNuovaSessioneLayout();
-//            //creo DB
-//            DAO.getInstance(getApplicationContext());
-//
-//        }else{
-//            settedpass = true;
-//            Log.d("Password", bytePassword);
-//            setContentView(R.layout.activity_main);
-//            setLayout();
-//        }
-		
-		
 	}
 	
 	@Override
 	public void onResume(){
 		super.onResume();
 
+        //set appropriate layout
+        if(toshowSplashScreen){
+            setSplashScreenLayout();
+            int secondsDelayed = 3;
+            new Handler().postDelayed(new Runnable() {
+                public void run() {
+                    toshowSplashScreen = false;
+                    loadTypeLayout();
+                }
+            }, secondsDelayed * 1000);
+        }else{
+            loadTypeLayout();
+        }
 	}
-	
 
-	@Override
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean("splashscreen", toshowSplashScreen);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        if(savedInstanceState != null){
+            toshowSplashScreen = savedInstanceState.getBoolean("splashscreen");
+        }
+    }
+
+    @Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// devo mettere le info nel menu
 		//getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+
+    private void setSplashScreenLayout(){
+        getActionBar().hide();
+        setContentView(R.layout.splash_screen_layout);
+        ((TextView)findViewById(R.id.present_title)).setTypeface(font);
+        ((TextView)findViewById(R.id.secure_notes_title)).setTypeface(font);
+
+    }
 
     private void loadTypeLayout(){
         getActionBar().show();
@@ -138,9 +137,9 @@ public class MainActivity extends Activity {
         txt.setTypeface(font);
 
 		final EditText edt = (EditText) findViewById(R.id.editText_password);
-		 txv = (TextView) findViewById(R.id.textView_esito);
         txv = (TextView) findViewById(R.id.textView_esito);
 		edt.setTypeface(font);
+        txv.setTypeface(font);
 		
 		accedi = (Button) findViewById(R.id.button_accedi);
         accedi.setTypeface(font);

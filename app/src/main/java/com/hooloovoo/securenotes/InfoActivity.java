@@ -3,8 +3,10 @@ package com.hooloovoo.securenotes;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -22,6 +24,8 @@ public class InfoActivity extends Activity {
 
     SharedPreferences mSharedPreferences;
     Typeface font;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,8 +85,15 @@ public class InfoActivity extends Activity {
      * A placeholder fragment containing a simple view.
      */
     public static class PlaceholderFragment extends Fragment {
-
+        TextView code;
+        InfoActivity mActivity;
         public PlaceholderFragment() {
+        }
+
+        @Override
+        public void onAttach(Activity activity) {
+            super.onAttach(activity);
+            mActivity = (InfoActivity) activity;
         }
 
         @Override
@@ -93,7 +104,13 @@ public class InfoActivity extends Activity {
             ((TextView)rootView.findViewById(R.id.textView_appname2)).setTypeface(font);
             ((TextView)rootView.findViewById(R.id.textView_versione)).setTypeface(font);
             ((TextView)rootView.findViewById(R.id.license)).setTypeface(font);
-
+            code = (TextView) rootView.findViewById(R.id.textView_code);
+            code.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mActivity.startBroserActivity(code.getText().toString());
+                }
+            });
             return rootView;
         }
     }
@@ -105,6 +122,12 @@ public class InfoActivity extends Activity {
         Log.d("NOTESACTIVITY", "Second to wait: " + endSeconds);
         TimerUnlock timerUnlock = TimerUnlock.getInstance();
         timerUnlock.startTime(this,endSeconds);
+    }
+
+    private void startBroserActivity(String url){
+        String mUrl = "https://"+url;
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mUrl));
+        startActivity(browserIntent);
     }
 
 }

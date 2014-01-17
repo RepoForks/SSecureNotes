@@ -22,7 +22,7 @@
     <string name="title_activity_notes">Notes</string>
     <string name="add_value">Add Note</string>
     <string name="error_write_db">Problem to write on DB</string>
-    <string name="error_update_db">Problema to update DB</string>
+    <string name="error_update_db">Problem to update DB</string>
     <string name="undobar_message">Note Deleted</string>
     <string name="undo">Undo</string>
     <string name="image_view_presentation">imgimg</string>
@@ -39,6 +39,7 @@
     <string name="import_ok_esito">Import Completed:</string>
     <string name="wait_for_update_note">You have updated password, wait for updating notes into DB</string>
     <string name="updating_completed">Notes updated into DB</string>
+    <string name="error_import_note">Problem to import notes. Check Password. </string>
 
     <!-- stringhe per activity preferences -->
     <string name="title_activity_settings"> Settings</string>

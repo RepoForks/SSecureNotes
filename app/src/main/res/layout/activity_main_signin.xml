@@ -21,11 +21,11 @@
         android:hint="@string/hint_ins_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="151dp"
         android:ems="10"
-        android:inputType="textPassword">
+        android:inputType="textPassword"
+        android:layout_alignBaseline="@+id/textView_esito_signin"
+        android:layout_alignBottom="@+id/textView_esito_signin"
+        android:layout_centerHorizontal="true">
         <requestFocus />
         </EditText>
 
@@ -56,19 +56,22 @@
         android:ems="10"
         android:hint="@string/reins_password"
         android:inputType="textPassword"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/editText_ins_password"
         android:layout_alignLeft="@+id/editText_ins_password"
-        android:layout_alignStart="@+id/editText_ins_password" />
+        android:layout_alignStart="@+id/editText_ins_password"
+        android:layout_marginTop="17dp" />
 
 
     <Button
         android:id="@+id/button_signin"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText_reins_password"
-        android:layout_alignRight="@+id/editText_reins_password"
+        android:layout_marginTop="16dp"
+        android:text="@string/signin"
         android:layout_below="@+id/editText_reins_password"
-        android:layout_marginTop="23dp"
-        android:text="@string/signin" />
+        android:layout_alignLeft="@+id/editText_reins_password"
+        android:layout_alignStart="@+id/editText_reins_password"
+        android:layout_alignRight="@+id/editText_reins_password"
+        android:layout_alignEnd="@+id/editText_reins_password" />
 
 </RelativeLayout>

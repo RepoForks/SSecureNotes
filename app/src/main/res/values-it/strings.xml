@@ -39,6 +39,7 @@
     <string name="import_ok_esito">Caricamento completato:</string>
     <string name="wait_for_update_note">hai aggiornato la password, attendi che si aggiornino le note nel DB</string>
     <string name="updating_completed">Note aggiornate nel DB</string>
+    <string name="error_import_note">Errore nell\'importare le note. Ricontrolla la Password. </string>
 
     <!-- stringhe per activity preferences -->
     <string name="title_activity_settings"> Preferenze</string>

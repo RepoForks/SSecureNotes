@@ -13,19 +13,19 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
         android:background="@drawable/key"
-        android:layout_below="@+id/textView_appname2"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignTop="@+id/textView_appname2"
+
+        android:layout_centerInParent="true"/>
 
     <EditText
         android:id="@+id/editText_password"
         android:hint="@string/hint_edtx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="151dp"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:layout_below="@+id/textView_esito"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/textView_appname2"
@@ -51,9 +51,12 @@
         android:id="@+id/button_accedi"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:text="@string/accedi"
+        android:layout_below="@+id/editText_password"
         android:layout_alignLeft="@+id/editText_password"
+        android:layout_alignStart="@+id/editText_password"
+        android:layout_marginTop="30dp"
         android:layout_alignRight="@+id/editText_password"
-        android:layout_centerVertical="true"
-        android:text="@string/accedi" />
+        android:layout_alignEnd="@+id/editText_password" />
 
 </RelativeLayout>

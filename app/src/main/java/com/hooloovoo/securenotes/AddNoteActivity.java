@@ -135,6 +135,9 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 	@Override
 	public void onResume(){
 		super.onResume();
+        //disattivo timer
+        TimerUnlock timerUnlock = TimerUnlock.getInstance();
+        timerUnlock.resetTimer();
 		//creo file
 		final String dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES) + "/picFolder/"; 
 	    File newdir = new File(dir); 

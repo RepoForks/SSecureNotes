@@ -12,8 +12,8 @@ import com.espian.showcaseview.ShowcaseView;
 import com.espian.showcaseview.targets.ActionItemTarget;
 import com.espian.showcaseview.targets.ViewTarget;
 import com.hooloovoo.securenotes.object.Note;
+import com.hooloovoo.securenotes.object.PasswordPreference;
 import com.hooloovoo.securenotes.object.SingletonParametersBridge;
-import com.hooloovoo.securenotes.object.TimerUnlock;
 import com.hooloovoo.securenotes.widget.UndoBarController;
 
 import android.content.Context;
@@ -24,6 +24,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Parcelable;
+import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.app.ActionBar;
@@ -33,6 +34,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
+import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.view.Display;
 import android.view.Menu;
@@ -40,6 +42,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -80,6 +83,8 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 
     //this boolean say whether onPause is caused from camera Activity or not
     boolean cameraApp = false;
+    boolean sameApp = false;
+    boolean layout_setted = false;
 
     Typeface font;
 	
@@ -87,12 +92,11 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_add_note);
+
         //Inzialize font
         font = Typeface.createFromAsset(getAssets(), "fonts/EarlyGameBoy.ttf");
-		setNavigationBar();
-		setLayout();
-        populateLayout();
+		//setNavigationBar();
+
         if(imgCompressed == null) imgCompressed = new byte[1];
 		Log.d("ADDNOTEACTIVITY","Start Add noteactivity");
 		
@@ -116,10 +120,15 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 			break;
 		case R.id.action_save_note:
 			Log.d("menu", "action_save_note");
+            sameApp = true;
 			int esito = (createNote())?RESULT_OK:RESULT_CANCELED;
             deleteFileImage();
 			finishThisActivity(esito);
 			break;
+        case android.R.id.home:
+            sameApp = true;
+            NavUtils.navigateUpFromSameTask(this);
+            break;
 		default:
             return super.onOptionsItemSelected(item);
 		}
@@ -135,21 +144,19 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 	@Override
 	public void onResume(){
 		super.onResume();
-        //disattivo timer
-        TimerUnlock timerUnlock = TimerUnlock.getInstance();
-        timerUnlock.resetTimer();
-		//creo file
-		final String dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES) + "/picFolder/"; 
-	    File newdir = new File(dir); 
-	    newdir.mkdirs();
-	    mFileImagePath = dir+"file.jpg";
 
-	    //mBitmap = (Bitmap) SingletonParametersBridge.getInstance().getParameter("bitmaptornc");
-		if(mBitmap != null) setmBitmapImage(mBitmap, true);
-		
-		if(mTitolo != null && !mTitolo.equals("") ) titolo.setText(mTitolo);
-		if(mText != null && !mText.equals("")) text.setText(mText);
-        if(mData != null && !mData.equals("")) data.setText(mData);
+        if(!layout_setted){
+            PasswordPreference preference = new PasswordPreference(getApplicationContext());
+            if(preference.isAppLocked()){
+                setContentView(R.layout.locked_app_layout);
+                setLockedLayout();
+            }else{
+                setContentView(R.layout.activity_add_note);
+                setLayout();
+                populateLayout();
+                restoreSituation();
+            }
+        }
 	}
 
 
@@ -168,7 +175,14 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
     		text.getText().clear();
     	}
 
-        if(!cameraApp) setTimeFinish();
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean toLock = mSharedPreferences.getBoolean("lockapponpause",false);
+        if(!cameraApp && !sameApp && toLock){
+            //lockAPP
+            Log.d("NOTEACTIVITY", "lockApp");
+            PasswordPreference preference = new PasswordPreference(getApplicationContext());
+            preference.setLockedPassword(true);
+        }
 	}
 
     @Override
@@ -181,7 +195,13 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
     @Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data){
         cameraApp = false;
-		if (requestCode == CAMERA_PIC_REQUEST && resultCode == RESULT_OK) {  
+        Log.d("ADDNOTEACTIVITY", "onActivityResult");
+        setContentView(R.layout.activity_add_note);
+        setLayout();
+        restoreSituation();
+        layout_setted = true;
+		if (requestCode == CAMERA_PIC_REQUEST && resultCode == RESULT_OK) {
+            Log.d("ADDNOTEACTIVITY", "onActivityResult");
 			BitmapFactory.Options op = new BitmapFactory.Options();
             cameraApp = false;
 			op.inSampleSize = 2;
@@ -220,13 +240,21 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
+        Log.d("ADDNOTEACTIVITY", "onRestoreInstanceState");
         if(savedInstanceState != null){
+            setContentView(R.layout.activity_add_note);
+            setLayout();
+            PasswordPreference preference = new PasswordPreference(getApplicationContext());
+            preference.setLockedPassword(false);
             mTitolo = savedInstanceState.getString("titolo","");
             mText = savedInstanceState.getString("text","");
             mData = savedInstanceState.getString("data","");
-            imgCompressed = savedInstanceState.getByteArray("bitmap");
+
+            if(imgCompressed.length==1) imgCompressed = savedInstanceState.getByteArray("bitmap");
             imgChanged = savedInstanceState.getBoolean("tocompress", false);
             new ReloadImageTask().execute();
+
+
         }else{
             imgCompressed = new byte[1];
         }
@@ -255,19 +283,38 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 		mActionBar.setDisplayHomeAsUpEnabled(true);
 	}
 
+    private void restoreSituation(){
+        //creo file
+        final String dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES) + "/picFolder/";
+        File newdir = new File(dir);
+        newdir.mkdirs();
+        mFileImagePath = dir+"file.jpg";
+
+        sameApp = false;
+
+        //mBitmap = (Bitmap) SingletonParametersBridge.getInstance().getParameter("bitmaptornc");
+        if(mBitmap != null) setmBitmapImage(mBitmap, true);
+
+        if(mTitolo != null && !mTitolo.equals("") ) titolo.setText(mTitolo);
+        if(mText != null && !mText.equals("")) text.setText(mText);
+        if(mData != null && !mData.equals("")) data.setText(mData);
+    }
+
 
 
 	private void setLayout(){
         openListView = true;
 		titolo = (EditText) findViewById(R.id.editText_titolo_addnote);
 		text = (EditText) findViewById(R.id.editText_text_addnote);
-		image = (ImageView) findViewById(R.id.imageView1_addnote);
+         image = (ImageView) findViewById(R.id.imageView1_addnote);
+         mView = findViewById(R.id.trasparent_view);
         listView = (LinearLayout) findViewById(R.id.popup_window);
         data = (TextView) findViewById(R.id.textView_data_addnote);
-        mView =  findViewById(R.id.trasparent_view);
+
         mView.setVisibility(View.VISIBLE);
         listView.setVisibility(View.VISIBLE);
-        mUndoBarController = new UndoBarController(findViewById(R.id.undobar), this);
+        setWidgetLayout();
+
 
 
         button = (ImageButton) findViewById(R.id.imageButton_addnote);
@@ -329,6 +376,30 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 		
 	}
 
+    private void setLockedLayout(){
+        Button button = (Button) findViewById(R.id.button_unlock_app);
+        final EditText editText = (EditText) findViewById(R.id.editText_password_locked_app);
+        final PasswordPreference preference = new PasswordPreference(getApplicationContext());
+        final String pass = preference.getPassword();
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(pass.equals(editText.getText().toString().trim())){
+                    preference.setLockedPassword(false);
+                    setContentView(R.layout.activity_add_note);
+                    setLayout();
+                    restoreSituation();
+                }else{
+                    Toast.makeText(getApplicationContext(),R.string.esito_no,Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+    }
+
+    private void setWidgetLayout(){
+        mUndoBarController = new UndoBarController(findViewById(R.id.undobar), this);
+    }
+
     /**
      * this method inserts into textview and imageview info passed by possible note
      */
@@ -358,7 +429,10 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
     }
 
     private void setmBitmapImage(Bitmap toAdd, boolean visible){
+        //if(image == null) image = (ImageView) findViewById(R.id.imageView1_addnote);
+        //if(mView == null) mView = findViewById(R.id.trasparent_view);
         if(visible){
+            if(image == null) Log.d("NULL","imageview");
             image.setVisibility(View.VISIBLE);
             mView.setVisibility(View.VISIBLE);
         }else{
@@ -501,18 +575,6 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 		}
 	}
 
-    public void setTimeFinish(){
-
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        int endSeconds = Integer.parseInt(mSharedPreferences.getString("secondWaitToFinish", "10"));
-        if(cameraApp) endSeconds+=60;
-        Log.d("NOTESACTIVITY", "Second to wait: " + endSeconds);
-        TimerUnlock timerUnlock = TimerUnlock.getInstance();
-        timerUnlock.startTime(this,endSeconds);
-
-
-
-    }
 
     private class ReloadImageTask extends AsyncTask<Void,Void,Void>{
 
@@ -531,6 +593,19 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
             super.onPostExecute(aVoid);
             setmBitmapImage(mBitmap,true);
 
+        }
+    }
+
+    private void chooseLayout(){
+        PasswordPreference preference = new PasswordPreference(getApplicationContext());
+        if(preference.isAppLocked()){
+            setContentView(R.layout.locked_app_layout);
+            setLockedLayout();
+        }else{
+            setContentView(R.layout.activity_add_note);
+            setLayout();
+            //populateLayout();
+            //restoreSituation();
         }
     }
 

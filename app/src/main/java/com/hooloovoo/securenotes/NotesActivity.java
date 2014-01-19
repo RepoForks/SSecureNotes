@@ -19,7 +19,6 @@ import com.hooloovoo.securenotes.object.Note;
 import com.hooloovoo.securenotes.object.PBKDF2Encryptor;
 import com.hooloovoo.securenotes.object.PasswordPreference;
 import com.hooloovoo.securenotes.object.SingletonParametersBridge;
-import com.hooloovoo.securenotes.object.TimerUnlock;
 import com.hooloovoo.securenotes.widget.NoteAdapter;
 import com.hooloovoo.securenotes.widget.SwipeDismissListViewTouchListener;
 import com.hooloovoo.securenotes.widget.UndoBarController;
@@ -31,6 +30,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.app.ListActivity;
 import android.content.Intent;
@@ -41,6 +41,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.ListView;
 
@@ -76,14 +78,14 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_notes);
+        //setContentView(R.layout.activity_notes);
 		dao = DAO.getInstance(getApplicationContext());
         mContext = this;
 
 //        setEncryptor();
 //		dao.openDB();
 //		setDataArrayList();
-		setWidgetListener();
+		//setWidgetListener();
         co.shotType = ShowcaseView.TYPE_ONE_SHOT;
 
        		Log.d("NOTEACTIVITY", "Start noteactivity");
@@ -93,9 +95,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent intent){
-        //delete timer to close application
-        TimerUnlock timer = TimerUnlock.getInstance();
-        timer.resetTimer();
+
 
 
 		sameApp = false;
@@ -123,36 +123,18 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
         //setActionBar();
         Log.d("FFFFFFFFFFF ON RESUME","PRIMA DI SETTARE ENCRYPTOR");
         setEncryptor();
-		TimerUnlock timer = TimerUnlock.getInstance();
-        timer.resetTimer();
-
-
-        try{
-            mData = (ArrayList<Note>) SingletonParametersBridge.getInstance().getParameter("cachenotes");
-            if(mData == null) Log.d("FFFFFFFFFFF","DATA NULL");
-            //mAdapter = new NoteAdapter(this,mData);
-            mAdapter = (NoteAdapter) SingletonParametersBridge.getInstance().getParameter("adapter");
-            mAdapter.data = mData;
-            setListAdapter(mAdapter);
-        }catch (NullPointerException ex){
-            ex.printStackTrace();
-            mAdapter = new NoteAdapter(this);
-            setListAdapter(mAdapter);
-            new NoteLoaderTask().execute();
-
+        Log.d("NOTESACTIVITY", "close timer");
+        PasswordPreference preference = new PasswordPreference(getApplicationContext());
+        if(preference.isAppLocked()){
+            setContentView(R.layout.locked_app_layout);
+            setLockedLayout();
+            setListAdapter(null);
+        }else{
+            setContentView(R.layout.activity_notes);
+            setWidgetListener();
+            restoreSituation();
         }
 
-        try{
-            if((Boolean) SingletonParametersBridge.getInstance().getParameter("settedpassword") || setEncryptor()){
-                SingletonParametersBridge.getInstance().addParameter("settedpassword",false);
-                Toast.makeText(getApplicationContext(),R.string.wait_for_update_note,Toast.LENGTH_LONG).show();
-                RefreshNoteIntoDBTask rf = new RefreshNoteIntoDBTask(getApplicationContext());
-                rf.execute();
-                Log.d("NOTEACTIVITY","We need refresh note into db");
-            }
-        }catch(NullPointerException ex){
-            ex.printStackTrace();
-        }
 	}
 	
 	@Override
@@ -162,9 +144,13 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
         SingletonParametersBridge.getInstance().addParameter("adapter",mAdapter);
         SingletonParametersBridge.getInstance().addParameter("cachenotes",mData);
         if(progressDialog != null && progressDialog.isShowing()) progressDialog.dismiss();
-		if(!sameApp){
-			//timer
-			setTimeFinish();
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean toLock = mSharedPreferences.getBoolean("lockapponpause",false);
+		if(!sameApp && toLock){
+			//lockAPP
+            Log.d("NOTEACTIVITY", "lockApp");
+			PasswordPreference preference = new PasswordPreference(getApplicationContext());
+            preference.setLockedPassword(true);
 		}
 	}
 	
@@ -273,6 +259,26 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 
 	}
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean("foo", true); 
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        if(savedInstanceState != null){
+            PasswordPreference preference = new PasswordPreference(getApplicationContext());
+            preference.setLockedPassword(false);
+         }
+
+    }
+
+
+
+
     public void exportNotes(String filename){
         ExportNotesTask task = new ExportNotesTask(filename);
         task.execute();
@@ -281,6 +287,62 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
     public void importNotes(String filename){
         ImportNotesTask task = new ImportNotesTask(filename);
         task.execute();
+    }
+
+    /**
+     * this method restore old situation on resume activity
+     */
+    private void restoreSituation(){
+        try{
+            mData = (ArrayList<Note>) SingletonParametersBridge.getInstance().getParameter("cachenotes");
+            if(mData == null) Log.d("FFFFFFFFFFF","DATA NULL");
+            //mAdapter = new NoteAdapter(this,mData);
+            mAdapter = (NoteAdapter) SingletonParametersBridge.getInstance().getParameter("adapter");
+            mAdapter.data = mData;
+            setListAdapter(mAdapter);
+        }catch (NullPointerException ex){
+            ex.printStackTrace();
+            mAdapter = new NoteAdapter(this);
+            setListAdapter(mAdapter);
+            new NoteLoaderTask().execute();
+
+        }
+
+        try{
+            if((Boolean) SingletonParametersBridge.getInstance().getParameter("settedpassword") || setEncryptor()){
+                SingletonParametersBridge.getInstance().addParameter("settedpassword",false);
+                Toast.makeText(getApplicationContext(),R.string.wait_for_update_note,Toast.LENGTH_LONG).show();
+                RefreshNoteIntoDBTask rf = new RefreshNoteIntoDBTask(getApplicationContext());
+                rf.execute();
+                Log.d("NOTEACTIVITY","We need refresh note into db");
+            }
+        }catch(NullPointerException ex){
+            ex.printStackTrace();
+        }
+    }
+
+    /**
+     * this method set layout if app locked
+     */
+    private void setLockedLayout(){
+        Button button = (Button) findViewById(R.id.button_unlock_app);
+        final EditText editText = (EditText) findViewById(R.id.editText_password_locked_app);
+        final PasswordPreference preference = new PasswordPreference(getApplicationContext());
+        final String pass = preference.getPassword();
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(pass.equals(editText.getText().toString().trim())){
+                    preference.setLockedPassword(false);
+                    setContentView(R.layout.activity_notes);
+                    setWidgetListener();
+                    restoreSituation();
+                }else{
+                    Toast.makeText(getApplicationContext(),R.string.esito_no,Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
     }
 	
 	private void addNote(){
@@ -463,15 +525,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
         mUndoBarController = new UndoBarController(findViewById(R.id.undobar), this);
 	}
 	
-	private void setTimeFinish(){
 
-		mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-		int endSeconds = Integer.parseInt(mSharedPreferences.getString("secondWaitToFinish", "10"));
-		Log.d("NOTESACTIVITY", "Second to wait: "+ endSeconds);
-		TimerUnlock timerUnlock = TimerUnlock.getInstance();
-        timerUnlock.startTime(this,endSeconds);
-
-	}
 
     /**
      * this method set prograss dialog

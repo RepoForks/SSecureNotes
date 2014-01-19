@@ -8,7 +8,9 @@ import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.Preference;
 import android.preference.PreferenceManager;
+import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -16,14 +18,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.hooloovoo.securenotes.object.TimerUnlock;
+import com.hooloovoo.securenotes.object.PasswordPreference;
 
 public class InfoActivity extends Activity {
 
     SharedPreferences mSharedPreferences;
     Typeface font;
+
+    boolean sameApp;
 
 
 
@@ -31,12 +38,8 @@ public class InfoActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
-        setNavigationBar();
-        if (savedInstanceState == null) {
-            getFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
-        }
+        //setNavigationBar();
+
 
       font = Typeface.createFromAsset(getAssets(), "fonts/EarlyGameBoy.ttf");
     }
@@ -56,29 +59,82 @@ public class InfoActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        /*if (id == R.id.action_settings) {
+        if (id == android.R.id.home) {
+            sameApp = true;
+            NavUtils.navigateUpFromSameTask(this);
             return true;
-        }*/
+        }
         return super.onOptionsItemSelected(item);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d("INFOACTIVITY", "close Timer");
-        TimerUnlock timerUnlock = TimerUnlock.getInstance();
-        timerUnlock.resetTimer();
+        PasswordPreference preference = new PasswordPreference(getApplicationContext());
+        if(preference.isAppLocked()){
+            setContentView(R.layout.locked_app_layout);
+            setLockedLayout();
+        }else{
+            getFragmentManager().beginTransaction()
+                    .add(R.id.container, new PlaceholderFragment())
+                    .commit();
+        }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        setTimeFinish();
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean toLock = mSharedPreferences.getBoolean("lockapponpause",false);
+        if(!sameApp && toLock){
+            //lockAPP
+            Log.d("NOTEACTIVITY", "lockApp");
+            PasswordPreference preference = new PasswordPreference(getApplicationContext());
+            preference.setLockedPassword(true);
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean("foo", true);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        if(savedInstanceState != null){
+            PasswordPreference preference = new PasswordPreference(getApplicationContext());
+            preference.setLockedPassword(false);
+        }
+
     }
 
     private void setNavigationBar(){
         ActionBar mActionBar = getActionBar();
         mActionBar.setDisplayHomeAsUpEnabled(true);
+    }
+
+    private void setLockedLayout(){
+        Button button = (Button) findViewById(R.id.button_unlock_app);
+        final EditText editText = (EditText) findViewById(R.id.editText_password_locked_app);
+        final PasswordPreference preference = new PasswordPreference(getApplicationContext());
+        final String pass = preference.getPassword();
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(pass.equals(editText.getText().toString().trim())){
+                    preference.setLockedPassword(false);
+                    setContentView(R.layout.activity_info);
+                    getFragmentManager().beginTransaction()
+                            .add(R.id.container, new PlaceholderFragment())
+                            .commit();
+                }else{
+                    Toast.makeText(getApplicationContext(), R.string.esito_no, Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
     /**
@@ -115,14 +171,7 @@ public class InfoActivity extends Activity {
         }
     }
 
-    private void setTimeFinish(){
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        int endSeconds = Integer.parseInt(mSharedPreferences.getString("secondWaitToFinish", "10"));
 
-        Log.d("NOTESACTIVITY", "Second to wait: " + endSeconds);
-        TimerUnlock timerUnlock = TimerUnlock.getInstance();
-        timerUnlock.startTime(this,endSeconds);
-    }
 
     private void startBroserActivity(String url){
         String mUrl = "https://"+url;

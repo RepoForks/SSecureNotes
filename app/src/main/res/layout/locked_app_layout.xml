@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawSelectorOnTop="false"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="4dp"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:background="@drawable/lockapp_background">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/title_alert_dialog_locked_app"
+                android:id="@+id/textView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="2dp"
+                />
+        </RelativeLayout>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/editText_password_locked_app"
+            android:hint="@string/hint_edtx"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/unlock_app_positive_button"
+            android:id="@+id/button_unlock_app"
+            android:layout_below="@+id/editText_password_locked_app"
+            android:layout_alignLeft="@+id/editText_password_locked_app"
+            android:layout_alignStart="@+id/editText_password_locked_app"
+            android:layout_alignRight="@+id/editText_password_locked_app"
+            android:layout_alignEnd="@+id/editText_password_locked_app"
+            android:layout_margin="5dp"/>
+
+    </LinearLayout>
+</RelativeLayout>

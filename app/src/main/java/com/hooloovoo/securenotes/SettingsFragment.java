@@ -53,7 +53,7 @@ public class SettingsFragment extends PreferenceFragment {
             public boolean onPreferenceClick(Preference preference) {
                 Intent infoIntent = new Intent(mActivity,InfoActivity.class);
                 startActivity(infoIntent);
-                //mActivity.sameApp = true;
+                mActivity.sameApp = true;
                 return true;
             }
         });

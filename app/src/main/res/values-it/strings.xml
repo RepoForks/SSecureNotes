@@ -48,6 +48,8 @@
     <string name="desc_preferences_second_to_wait_for_finish">Dopo aver cambiato app, per quanto tempo SecureNotes deve stare sbloccata?</string>
     <string name="name_encryption_algorithms">Algoritmi per criptare i dati</string>
     <string name="desc_encryption_algorithms">Scelgi l\'algoritmo per criptare Password e Dati</string>
+    <string name="enable_auto_lock">Abilita Autolock</string>
+    <string name="summary_enable_auto_lock">Blocca App se viene chiusa</string>
 
     <string-array name="seconds_wait">
         <item name="5">5 seconds</item>
@@ -117,5 +119,9 @@
     <string name="tips_unlock_time_tile">Tempo di Autolock</string>
     <string name="tips_unlock">Scegli, dal menu\'\ dei settings, quanto tempo deve passare prima che l\'\app venga rimossa dalle applicazioni in background
 </string>
+
+    <string name="title_alert_dialog_locked_app">App Bloccata</string>
+    <string name="unlock_app_positive_button">Sblocca</string>
+
 
 </resources>

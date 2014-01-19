@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
  */
 public class PasswordPreference {
     public static final String KEY_PREFS_PASSWORD = "password_key";
+    public static final String KEY_PREFS_LOCKED_APP="lockedapp";
     private static final String APP_SHARED_PREFS = "passwordpreference"; //  Name of the file -.xml
     private SharedPreferences _sharedPrefs;
     private SharedPreferences.Editor _prefsEditor;
@@ -26,5 +27,14 @@ public class PasswordPreference {
     public void savePassword(String password){
         _prefsEditor.putString(KEY_PREFS_PASSWORD,password);
         _prefsEditor.commit();
+    }
+
+    public void setLockedPassword(boolean locked){
+        _prefsEditor.putBoolean(KEY_PREFS_LOCKED_APP,locked);
+        _prefsEditor.commit();
+    }
+
+    public boolean isAppLocked(){
+        return _sharedPrefs.getBoolean(KEY_PREFS_LOCKED_APP,false);
     }
 }

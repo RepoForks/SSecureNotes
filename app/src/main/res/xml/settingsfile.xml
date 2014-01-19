@@ -3,7 +3,7 @@
     
     <PreferenceCategory android:title="@string/security_menu" android:enabled="true" android:selectable="false">
         <Preference android:title="@string/imposta_password" android:key="setPasswordKey"/>
-        <ListPreference android:summary="@string/desc_preferences_second_to_wait_for_finish" android:title="@string/second_to_wait_for_finish" android:entries="@array/seconds_wait" android:key="secondWaitToFinish" android:entryValues="@array/seconds_wait_values" android:defaultValue="10"/>
+        <CheckBoxPreference android:key="lockapponpause" android:title="@string/enable_auto_lock" android:summary="@string/summary_enable_auto_lock" android:defaultValue="true"/>
 
     </PreferenceCategory>
 
@@ -29,5 +29,6 @@
     
 <!-- <ListPreference android:summary="@string/desc_encryption_algorithms" android:title="@string/name_encryption_algorithms" android:entries="@array/encryption_algorithms" android:key="encryptionAlgorithms" android:entryValues="@array/encryption_algorithms_values" android:defaultValue="0"/>
 <intent android:action="android.intent.action.VIEW" android:data="http://www.baraccasoftware.com"/>
+<ListPreference android:summary="@string/desc_preferences_second_to_wait_for_finish" android:title="@string/second_to_wait_for_finish" android:entries="@array/seconds_wait" android:key="secondWaitToFinish" android:entryValues="@array/seconds_wait_values" android:defaultValue="10"/>
 -->
 </PreferenceScreen>

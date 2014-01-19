@@ -242,6 +242,7 @@ public class MainActivity extends Activity {
     private void rememberPassword(String password){
         PasswordPreference preference = new PasswordPreference(getApplicationContext());
         preference.savePassword(password);
+        preference.setLockedPassword(false);
         Log.d("PASSWORD SAVED",password);
         Encryptor.password = password;
     }

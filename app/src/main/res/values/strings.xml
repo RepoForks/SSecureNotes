@@ -48,6 +48,8 @@
     <string name="desc_preferences_second_to_wait_for_finish">After switching to another app, how long shold SecureNotes stay unlocked?</string>
     <string name="name_encryption_algorithms">Algorithm to encrypt data</string>
     <string name="desc_encryption_algorithms">Choose Algorithm to encrypt Password and Data</string>
+    <string name="enable_auto_lock">Enable autolock</string>
+    <string name="summary_enable_auto_lock">Lock App if close it</string>
 
     <string-array name="seconds_wait">
         <item name="5">5 seconds</item>
@@ -117,5 +119,8 @@
     <string name="summary_hints">Choose to display hint screens</string>
     <string name="tips_unlock_time_tile">Autolock Time</string>
     <string name="tips_unlock">Go to settings menu to choose, after the activity has been closed, how much time must pass before the app is removed from background applications</string>
+
+    <string name="title_alert_dialog_locked_app">App Locked</string>
+    <string name="unlock_app_positive_button">Unlock</string>
 
 </resources>

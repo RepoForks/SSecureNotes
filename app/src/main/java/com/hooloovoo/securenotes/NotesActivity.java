@@ -550,7 +550,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 
 
         public ExportNotesTask(String filename){
-            this.filename = filename+".xml";
+            this.filename = filename;
         }
         @Override
         protected void onPreExecute() {
@@ -564,7 +564,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
             boolean esito;
             dao.openDB();
             try{
-                path = dao.exportDB(getApplicationContext(),filename);
+                path = dao.exportDBCSV(getApplicationContext(),filename);
                 esito = true;
             }catch (IOException ex){
                 esito = false;
@@ -580,7 +580,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
             progressDialog.dismiss();
             if(aVoid){
                 //Toast ok
-                Toast.makeText(getApplicationContext(),getResources().getString(R.string.generated_file)+path+"/"+filename,Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),getResources().getString(R.string.generated_file)+path+"/"+filename+".csv",Toast.LENGTH_LONG).show();
             }else{
                 Toast.makeText(getApplicationContext(),R.string.error_write_db,Toast.LENGTH_LONG).show();
             }
@@ -606,7 +606,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
         @Override
         protected Boolean doInBackground(Void... voids) {
             try{
-                ArrayList<Note> data = dao.importNotesFromFile(getApplicationContext(),filename);
+                ArrayList<Note> data = dao.importNotesFromFileCSV(getApplicationContext(),filename);
                 for(Note note:data){
                     int jint ;
                     dao.openDB();
@@ -616,7 +616,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
                         newNote.setmId(jint);
                         mData.add(newNote);
                         esito = true;
-                    }else{
+                    }else{Log.d("ERRORE IMPORT", "-1 id");
                         esito = false;
                     }
                     dao.closeDB();
@@ -625,10 +625,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
                 esito = false;
-            } catch (XmlPullParserException e) {
-                e.printStackTrace();
-                esito = false;
-            } catch (ParseException e) {
+            }  catch (ParseException e) {
                 e.printStackTrace();
                 esito = false;
             } catch (IOException e) {

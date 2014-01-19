@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
@@ -26,6 +28,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Environment;
 import android.util.Log;
 import android.util.Xml;
+
+import au.com.bytecode.opencsv.CSVWriter;
+import au.com.bytecode.opencsv.CSVReader;
+
 
 public class DAO {
 	private static DAO instance = null;
@@ -235,7 +241,7 @@ public class DAO {
         return bytes;
     }
 
-    public String exportDB(Context context, String filename) throws IOException{
+    public String exportDBXML(Context context, String filename) throws IOException{
         //path into export db
         final String dirIntoExport = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)+ FOLDER;
 
@@ -299,6 +305,96 @@ public class DAO {
 
         return dir.toString();
 
+    }
+    public String exportDBCSV (Context context, String filename) throws IOException{
+        //path into export db
+        final String dirIntoExport = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)+ FOLDER;
+
+        File root = Environment.getExternalStorageDirectory();
+        Log.d("DAO","External storage: "+root);
+        File dir = new File(root.getAbsolutePath(),FOLDER);
+        dir.mkdir();
+        //file to store
+        File fileToStore = new File(dir,filename+".csv");
+
+        fileToStore.createNewFile();
+        CSVWriter csvWrite = new CSVWriter(new FileWriter(fileToStore));
+        List<Note> dataToExport = this.getAllNotes();
+        String[] header = {SecureDatabaseHelper.ID_NOTE,SecureDatabaseHelper.TITLE_NOTE,
+                SecureDatabaseHelper.TEXT_NOTE,SecureDatabaseHelper.DATA_NOTE,SecureDatabaseHelper.IMG_NOTE};
+        csvWrite.writeNext(header);
+        if(dataToExport.size()>1){
+            for(Note nota:dataToExport){
+                String img;
+                if(nota.getImageLen()<=1){
+                    img = "nonono";
+                }else {
+                    img = new String(nota.getmImage());
+                }
+                String nome;
+                if(nota.getmName()==null || nota.getmName().equals("") ){
+                    nome = "nonono";
+                }else{
+                    nome = nota.getmName();
+                }
+
+                String desc;
+                if(nota.getmDesc() == null || nota.getmDesc().equals("")){
+                    desc = "nonono";
+                }else{
+                    desc = nota.getmDesc();
+                }
+
+                String[] ss = {""+nota.getmId(),nome,desc,
+                nota.getmDataString(),img};
+                csvWrite.writeNext(ss);
+            }
+        }
+        csvWrite.close();
+
+        return dir.toString();
+
+    }
+
+    public ArrayList<Note> importNotesFromFileCSV(Context context, String filename)throws IOException,ParseException{
+        //path into import db
+        final String dirIntoExport = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)+ FOLDER;
+
+        File root = Environment.getExternalStorageDirectory();
+        Log.d("DAO","External storage: "+root);
+        File dir = new File(root.getAbsolutePath(),FOLDER);
+        dir.mkdir();
+        File fileToImport = new File(dir,filename);
+        CSVReader reader = new CSVReader(new FileReader(fileToImport));
+        String [] nextLine;
+        ArrayList<Note> dataToImport = new ArrayList<Note>();
+
+        //read file rows
+        while((nextLine = reader.readNext())!= null){
+
+            String id = nextLine[0];
+            String nome = nextLine[1];
+            String desc = nextLine[2];
+            String data = nextLine[3];
+            String imgS = nextLine[4];
+            byte[] img;
+            if(imgS.equals("nonono")){
+                img = new byte[1];
+            }else{
+                img = imgS.getBytes();
+            }
+
+            if (nome.equals("nonono")) nome = "";
+            if (desc.equals("nonono")) desc = "";
+
+            if(nome.equals(SecureDatabaseHelper.TITLE_NOTE)){
+                //do nothing
+            }else{
+
+                dataToImport.add(new Note(Integer.parseInt(id),nome,desc,data,img.length,img));
+            }
+        }
+        return dataToImport;
     }
 
     public ArrayList<Note> importNotesFromFile(Context context, String filename) throws XmlPullParserException,FileNotFoundException,IOException,ParseException{

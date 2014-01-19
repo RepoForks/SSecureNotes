@@ -42,22 +42,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10f8e60d-1714-48e4-af83-806690304b0e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/lockapp_background.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/locked_app_layout.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/object/TimerUnlock.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/pre-dexed/debug/support-v4-19.0.1-135c16d6a05f6f46bfb92318992f2a7f30cc190c.jar" afterPath="$PROJECT_DIR$/app/build/pre-dexed/debug/support-v4-19.0.1-135c16d6a05f6f46bfb92318992f2a7f30cc190c.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/InfoActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/InfoActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/NotesActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/NotesActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/object/PasswordPreference.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/object/PasswordPreference.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/source/r/debug/com/hooloovoo/securenotes/R.java" afterPath="$PROJECT_DIR$/app/build/source/r/debug/com/hooloovoo/securenotes/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/SettingsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/SettingsActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/SettingsFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/SettingsFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/xml/settingsfile.xml" afterPath="$PROJECT_DIR$/app/src/main/res/xml/settingsfile.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values-it/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-it/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SecureNotes.iws" />
@@ -125,7 +114,7 @@
       <file leaf-file-name="NotesActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/NotesActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="140" column="16" selection-start="4109" selection-end="4109" vertical-scroll-proportion="0.33295584" vertical-offset="1116" max-vertical-offset="10095">
+            <state line="440" column="9" selection-start="14847" selection-end="14847" vertical-scroll-proportion="0.18799546" vertical-offset="5699" max-vertical-offset="10185">
               <folding>
                 <element signature="e#6207#6235#0" expanded="true" />
                 <element signature="e#6237#6259#0" expanded="true" />
@@ -137,15 +126,15 @@
                 <element signature="e#11640#11657#0" expanded="true" />
                 <element signature="e#13807#13830#0" expanded="true" />
                 <element signature="e#14167#14191#0" expanded="true" />
-                <element signature="e#17191#17226#0" expanded="true" />
-                <element signature="e#19201#19258#0" expanded="true" />
-                <element signature="e#20549#20576#0" expanded="true" />
-                <element signature="e#21060#21119#0" expanded="true" />
-                <element signature="e#21846#21895#0" expanded="true" />
-                <element signature="e#22022#22045#0" expanded="true" />
-                <element signature="e#22446#22502#0" expanded="true" />
-                <element signature="e#24154#24189#0" expanded="true" />
-                <element signature="e#24301#24338#0" expanded="true" />
+                <element signature="e#17510#17545#0" expanded="true" />
+                <element signature="e#19520#19577#0" expanded="true" />
+                <element signature="e#20868#20895#0" expanded="true" />
+                <element signature="e#21379#21438#0" expanded="true" />
+                <element signature="e#22165#22214#0" expanded="true" />
+                <element signature="e#22341#22364#0" expanded="true" />
+                <element signature="e#22765#22821#0" expanded="true" />
+                <element signature="e#24473#24508#0" expanded="true" />
+                <element signature="e#24620#24657#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -154,17 +143,17 @@
       <file leaf-file-name="AddNoteActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="262" column="0" selection-start="6496" selection-end="7825" vertical-scroll-proportion="0.0" vertical-offset="3171" max-vertical-offset="9180">
+            <state line="141" column="5" selection-start="3828" selection-end="3919" vertical-scroll-proportion="0.0" vertical-offset="1776" max-vertical-offset="9180">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#9938#9969#0" expanded="true" />
-                <element signature="e#9971#9994#0" expanded="true" />
-                <element signature="e#11887#11918#0" expanded="true" />
-                <element signature="e#12835#12852#0" expanded="true" />
-                <element signature="e#13343#13390#0" expanded="true" />
-                <element signature="e#14654#14695#0" expanded="true" />
-                <element signature="e#15065#15094#0" expanded="true" />
-                <element signature="e#15145#15178#0" expanded="true" />
+                <element signature="e#9961#9992#0" expanded="true" />
+                <element signature="e#9994#10017#0" expanded="true" />
+                <element signature="e#11910#11941#0" expanded="true" />
+                <element signature="e#12858#12875#0" expanded="true" />
+                <element signature="e#13366#13413#0" expanded="true" />
+                <element signature="e#14677#14718#0" expanded="true" />
+                <element signature="e#15088#15117#0" expanded="true" />
+                <element signature="e#15168#15201#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -197,9 +186,9 @@
       <file leaf-file-name="InfoActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/InfoActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="5" selection-start="3430" selection-end="3430" vertical-scroll-proportion="0.0" vertical-offset="467" max-vertical-offset="2385">
+            <state line="117" column="5" selection-start="3539" selection-end="3539" vertical-scroll-proportion="0.0" vertical-offset="647" max-vertical-offset="2475">
               <folding>
-                <element signature="e#4501#4518#0" expanded="true" />
+                <element signature="e#4610#4627#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -208,10 +197,10 @@
       <file leaf-file-name="SettingsActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/SettingsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="0" selection-start="3041" selection-end="3041" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="2205">
+            <state line="115" column="5" selection-start="3148" selection-end="3148" vertical-scroll-proportion="0.0" vertical-offset="1035" max-vertical-offset="2265">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4179#4196#0" expanded="true" />
+                <element signature="e#4286#4303#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -999,11 +988,14 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/locked_app_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/lockapp_background.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/NotesActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/InfoActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/SettingsActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/NotesActivity.java" />
       </list>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="49" />
@@ -1456,7 +1448,7 @@
     <property name="recentsLimit" value="5" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="015d4b100a3c0c0a" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="0149C6F60F00600A" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexuss" />
     <property name="options.lastSelected" value="editor.preferences.folding" />
     <property name="options.splitter.main.proportions" value="0.3" />
@@ -1759,7 +1751,11 @@
       <created>1390140821027</created>
       <updated>1390140821027</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="tolto timer, autolock a tempo, inserito lock statico - 19 gen 13&#10;">
+      <created>1390170697395</created>
+      <updated>1390170697395</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1784,7 +1780,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="25" width="1871" height="1054" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34429824" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1802,9 +1798,9 @@
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6681319" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943678" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24958949" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24958949" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32950193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20908593" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32747254" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1883,7 +1879,8 @@
     <MESSAGE value="controllata lunghezza delle stringhe nella listview - 17 gen 13&#10;" />
     <MESSAGE value="fix some bug - controllata lunghezza delle stringhe nella listview - 17 gen 13&#10;" />
     <MESSAGE value="fix import and export note- 19 gen 13&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix import and export note- 19 gen 13&#10;" />
+    <MESSAGE value="tolto timer, autolock a tempo, inserito lock statico - 19 gen 13&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="tolto timer, autolock a tempo, inserito lock statico - 19 gen 13&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1903,15 +1900,15 @@
             <element signature="e#11640#11657#0" expanded="true" />
             <element signature="e#13807#13830#0" expanded="true" />
             <element signature="e#14167#14191#0" expanded="true" />
-            <element signature="e#17191#17226#0" expanded="true" />
-            <element signature="e#19201#19258#0" expanded="true" />
-            <element signature="e#20549#20576#0" expanded="true" />
-            <element signature="e#21060#21119#0" expanded="true" />
-            <element signature="e#21846#21895#0" expanded="true" />
-            <element signature="e#22022#22045#0" expanded="true" />
-            <element signature="e#22446#22502#0" expanded="true" />
-            <element signature="e#24154#24189#0" expanded="true" />
-            <element signature="e#24301#24338#0" expanded="true" />
+            <element signature="e#17510#17545#0" expanded="true" />
+            <element signature="e#19520#19577#0" expanded="true" />
+            <element signature="e#20868#20895#0" expanded="true" />
+            <element signature="e#21379#21438#0" expanded="true" />
+            <element signature="e#22165#22214#0" expanded="true" />
+            <element signature="e#22341#22364#0" expanded="true" />
+            <element signature="e#22765#22821#0" expanded="true" />
+            <element signature="e#24473#24508#0" expanded="true" />
+            <element signature="e#24620#24657#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1921,14 +1918,14 @@
         <state line="419" column="0" selection-start="13557" selection-end="13557" vertical-scroll-proportion="0.0" vertical-offset="6285" max-vertical-offset="8790">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9938#9969#0" expanded="true" />
-            <element signature="e#9971#9994#0" expanded="true" />
-            <element signature="e#11887#11918#0" expanded="true" />
-            <element signature="e#12835#12852#0" expanded="true" />
-            <element signature="e#13343#13390#0" expanded="true" />
-            <element signature="e#14654#14695#0" expanded="true" />
-            <element signature="e#15065#15094#0" expanded="true" />
-            <element signature="e#15145#15178#0" expanded="true" />
+            <element signature="e#9961#9992#0" expanded="true" />
+            <element signature="e#9994#10017#0" expanded="true" />
+            <element signature="e#11910#11941#0" expanded="true" />
+            <element signature="e#12858#12875#0" expanded="true" />
+            <element signature="e#13366#13413#0" expanded="true" />
+            <element signature="e#14677#14718#0" expanded="true" />
+            <element signature="e#15088#15117#0" expanded="true" />
+            <element signature="e#15168#15201#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1937,7 +1934,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="0" selection-start="787" selection-end="787" vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="2565">
           <folding>
-            <element signature="e#4501#4518#0" expanded="true" />
+            <element signature="e#4610#4627#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1947,7 +1944,7 @@
         <state line="18" column="0" selection-start="538" selection-end="538" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="2055">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4179#4196#0" expanded="true" />
+            <element signature="e#4286#4303#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2018,11 +2015,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/object/PBKDF2Encryptor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="0" selection-start="744" selection-end="744" vertical-scroll-proportion="0.0" vertical-offset="250" max-vertical-offset="525" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/object/Crypto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="229" column="0" selection-start="8308" selection-end="8308" vertical-scroll-proportion="0.0" vertical-offset="2220" max-vertical-offset="3870" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_info.xml">
@@ -2294,45 +2286,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/object/Crypto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="229" column="0" selection-start="8308" selection-end="8308" vertical-scroll-proportion="1.9513024" vertical-offset="1367" max-vertical-offset="3870">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/AddNoteActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="262" column="0" selection-start="6496" selection-end="7825" vertical-scroll-proportion="0.0" vertical-offset="3171" max-vertical-offset="9180">
+        <state line="141" column="5" selection-start="3828" selection-end="3919" vertical-scroll-proportion="0.0" vertical-offset="1776" max-vertical-offset="9180">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9938#9969#0" expanded="true" />
-            <element signature="e#9971#9994#0" expanded="true" />
-            <element signature="e#11887#11918#0" expanded="true" />
-            <element signature="e#12835#12852#0" expanded="true" />
-            <element signature="e#13343#13390#0" expanded="true" />
-            <element signature="e#14654#14695#0" expanded="true" />
-            <element signature="e#15065#15094#0" expanded="true" />
-            <element signature="e#15145#15178#0" expanded="true" />
+            <element signature="e#9961#9992#0" expanded="true" />
+            <element signature="e#9994#10017#0" expanded="true" />
+            <element signature="e#11910#11941#0" expanded="true" />
+            <element signature="e#12858#12875#0" expanded="true" />
+            <element signature="e#13366#13413#0" expanded="true" />
+            <element signature="e#14677#14718#0" expanded="true" />
+            <element signature="e#15088#15117#0" expanded="true" />
+            <element signature="e#15168#15201#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/InfoActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="5" selection-start="3430" selection-end="3430" vertical-scroll-proportion="0.0" vertical-offset="467" max-vertical-offset="2385">
+        <state line="117" column="5" selection-start="3539" selection-end="3539" vertical-scroll-proportion="0.0" vertical-offset="647" max-vertical-offset="2475">
           <folding>
-            <element signature="e#4501#4518#0" expanded="true" />
+            <element signature="e#4610#4627#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/SettingsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="0" selection-start="3041" selection-end="3041" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="2205">
+        <state line="115" column="5" selection-start="3148" selection-end="3148" vertical-scroll-proportion="0.0" vertical-offset="1035" max-vertical-offset="2265">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4179#4196#0" expanded="true" />
+            <element signature="e#4286#4303#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/hooloovoo/securenotes/NotesActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="16" selection-start="4109" selection-end="4109" vertical-scroll-proportion="0.33295584" vertical-offset="1116" max-vertical-offset="10095">
+        <state line="440" column="9" selection-start="14847" selection-end="14847" vertical-scroll-proportion="0.18799546" vertical-offset="5699" max-vertical-offset="10185">
           <folding>
             <element signature="e#6207#6235#0" expanded="true" />
             <element signature="e#6237#6259#0" expanded="true" />
@@ -2344,15 +2343,15 @@
             <element signature="e#11640#11657#0" expanded="true" />
             <element signature="e#13807#13830#0" expanded="true" />
             <element signature="e#14167#14191#0" expanded="true" />
-            <element signature="e#17191#17226#0" expanded="true" />
-            <element signature="e#19201#19258#0" expanded="true" />
-            <element signature="e#20549#20576#0" expanded="true" />
-            <element signature="e#21060#21119#0" expanded="true" />
-            <element signature="e#21846#21895#0" expanded="true" />
-            <element signature="e#22022#22045#0" expanded="true" />
-            <element signature="e#22446#22502#0" expanded="true" />
-            <element signature="e#24154#24189#0" expanded="true" />
-            <element signature="e#24301#24338#0" expanded="true" />
+            <element signature="e#17510#17545#0" expanded="true" />
+            <element signature="e#19520#19577#0" expanded="true" />
+            <element signature="e#20868#20895#0" expanded="true" />
+            <element signature="e#21379#21438#0" expanded="true" />
+            <element signature="e#22165#22214#0" expanded="true" />
+            <element signature="e#22341#22364#0" expanded="true" />
+            <element signature="e#22765#22821#0" expanded="true" />
+            <element signature="e#24473#24508#0" expanded="true" />
+            <element signature="e#24620#24657#0" expanded="true" />
           </folding>
         </state>
       </provider>

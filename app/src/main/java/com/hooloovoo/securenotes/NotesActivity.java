@@ -433,6 +433,12 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
      * @return Encrypted note
      */
     private Note encryptNote(Note toEncrypt){
+        if(Encryptor.password == null){
+            Log.d("FFFFFFFFFFFFF","PASSWORD NULL");
+            PasswordPreference preference = new PasswordPreference(getApplicationContext());
+            Encryptor.password = preference.getPassword();
+            Log.d("PASSWORD IN PREFERENCE", Encryptor.password);
+        }
         String nameEn = encryptor.encrypt(toEncrypt.getmName(),Encryptor.password);
         String descEn = encryptor.encrypt(toEncrypt.getmDesc(),Encryptor.password);
 

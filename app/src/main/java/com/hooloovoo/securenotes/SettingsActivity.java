@@ -109,7 +109,11 @@ public class SettingsActivity extends Activity {
 
     }
 
-
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        sameApp = true;
+    }
 	
 	private void startPasswordDialog(){
 		PasswordDialogFragment newf = new PasswordDialogFragment();

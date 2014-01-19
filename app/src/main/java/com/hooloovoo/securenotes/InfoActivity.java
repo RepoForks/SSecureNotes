@@ -111,6 +111,12 @@ public class InfoActivity extends Activity {
 
     }
 
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        sameApp = true;
+    }
+
     private void setNavigationBar(){
         ActionBar mActionBar = getActionBar();
         mActionBar.setDisplayHomeAsUpEnabled(true);

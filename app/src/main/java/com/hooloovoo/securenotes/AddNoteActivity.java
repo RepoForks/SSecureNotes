@@ -138,7 +138,7 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 	@Override
 	public void onBackPressed(){
 		super.onBackPressed();
-
+        sameApp = true;
 	}
 	
 	@Override

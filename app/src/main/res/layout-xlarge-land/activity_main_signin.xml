@@ -28,6 +28,14 @@
         android:layout_centerHorizontal="true">
         <requestFocus />
         </EditText>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Bracca Software Inc."
+        android:id="@+id/baracca_software_presents"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/textView_appname2"
@@ -37,7 +45,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="40dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp" />
 
     <TextView
         android:id="@+id/textView_esito_signin"

@@ -69,19 +69,20 @@ public class MainActivity extends Activity {
 	public void onResume(){
 		super.onResume();
 
-        //set appropriate layout
-        if(toshowSplashScreen){
-            setSplashScreenLayout();
-            int secondsDelayed = 3;
-            new Handler().postDelayed(new Runnable() {
-                public void run() {
-                    toshowSplashScreen = false;
-                    loadTypeLayout();
-                }
-            }, secondsDelayed * 1000);
-        }else{
-            loadTypeLayout();
-        }
+//        //set appropriate layout
+//        if(toshowSplashScreen){
+//            setSplashScreenLayout();
+//            int secondsDelayed = 3;
+//            new Handler().postDelayed(new Runnable() {
+//                public void run() {
+//                    toshowSplashScreen = false;
+//                    loadTypeLayout();
+//                }
+//            }, secondsDelayed * 1000);
+//        }else{
+//
+//        }
+        loadTypeLayout();
 	}
 
     @Override
@@ -199,12 +200,16 @@ public class MainActivity extends Activity {
         TextView txt = (TextView)findViewById(R.id.textView_appname2);
         txt.setTypeface(font);
 
+        TextView bs_presents = (TextView)findViewById(R.id.baracca_software_presents);
+        bs_presents.setTypeface(font);
+
+
 		txv = (TextView) findViewById(R.id.textView_esito_signin);
         txv.setTypeface(font);
 		nuovaPass = (EditText) findViewById(R.id.editText_ins_password);
         nuovaPass.setTypeface(font);
 		reNuovaPass = (EditText) findViewById(R.id.editText_reins_password);
-        nuovaPass.setTypeface(font);
+        reNuovaPass.setTypeface(font);
 		signin = (Button) findViewById(R.id.button_signin);
         signin.setTypeface(font);
 		signin.setOnClickListener(new OnClickListener() {

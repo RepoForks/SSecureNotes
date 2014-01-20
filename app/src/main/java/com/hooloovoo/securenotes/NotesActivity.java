@@ -27,6 +27,7 @@ import com.hooloovoo.securenotes.widget.UndoBarController;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -43,6 +44,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ListView;
 
@@ -189,7 +191,7 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 
             ShowcaseViews showcaseViews = new ShowcaseViews(this);
             showcaseViews.addView(new ShowcaseViews.ItemViewProperties(R.id.action_add,R.string.tips_title_add_note, R.string.tips_add_note,ShowcaseView.ITEM_ACTION_ITEM));
-            showcaseViews.addView(new ShowcaseViews.ItemViewProperties(R.id.action_add,R.string.tips_unlock_time_tile, R.string.tips_unlock,ShowcaseView.ITEM_ACTION_ITEM));
+            //showcaseViews.addView(new ShowcaseViews.ItemViewProperties(R.id.action_add,R.string.tips_unlock_time_tile, R.string.tips_unlock,ShowcaseView.ITEM_ACTION_ITEM));
 
             showcaseViews.show();
 
@@ -329,6 +331,10 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
      */
     private void setLockedLayout(){
         Button button = (Button) findViewById(R.id.button_unlock_app);
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/EarlyGameBoy.ttf");
+        ((TextView)findViewById(R.id.app_locked_title_dialog)).setTypeface(font);
+        ((Button)findViewById(R.id.button_unlock_app)).setTypeface(font);
+        ((TextView)findViewById(R.id.editText_password_locked_app)).setTypeface(font);
         final EditText editText = (EditText) findViewById(R.id.editText_password_locked_app);
         final PasswordPreference preference = new PasswordPreference(getApplicationContext());
         final String pass = preference.getPassword();

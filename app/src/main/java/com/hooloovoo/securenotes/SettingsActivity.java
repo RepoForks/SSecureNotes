@@ -1,6 +1,7 @@
 package com.hooloovoo.securenotes;
 
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NavUtils;
@@ -13,6 +14,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hooloovoo.securenotes.object.PasswordPreference;
@@ -127,6 +129,10 @@ public class SettingsActivity extends Activity {
 
     private void setLockedLayout(){
         Button button = (Button) findViewById(R.id.button_unlock_app);
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/EarlyGameBoy.ttf");
+        ((TextView)findViewById(R.id.app_locked_title_dialog)).setTypeface(font);
+        ((Button)findViewById(R.id.button_unlock_app)).setTypeface(font);
+        ((TextView)findViewById(R.id.editText_password_locked_app)).setTypeface(font);
         final EditText editText = (EditText) findViewById(R.id.editText_password_locked_app);
         final PasswordPreference preference = new PasswordPreference(getApplicationContext());
         final String pass = preference.getPassword();

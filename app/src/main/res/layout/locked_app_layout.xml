@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="@string/title_alert_dialog_locked_app"
-                android:id="@+id/textView"
+                android:id="@+id/app_locked_title_dialog"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="2dp"
                 />

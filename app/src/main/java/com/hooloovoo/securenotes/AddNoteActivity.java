@@ -149,6 +149,10 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
             PasswordPreference preference = new PasswordPreference(getApplicationContext());
             if(preference.isAppLocked()){
                 setContentView(R.layout.locked_app_layout);
+                Typeface font = Typeface.createFromAsset(getAssets(), "fonts/EarlyGameBoy.ttf");
+                ((TextView)findViewById(R.id.app_locked_title_dialog)).setTypeface(font);
+                ((Button)findViewById(R.id.button_unlock_app)).setTypeface(font);
+                ((TextView)findViewById(R.id.editText_password_locked_app)).setTypeface(font);
                 setLockedLayout();
             }else{
                 setContentView(R.layout.activity_add_note);
@@ -378,6 +382,10 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 
     private void setLockedLayout(){
         Button button = (Button) findViewById(R.id.button_unlock_app);
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/EarlyGameBoy.ttf");
+        ((TextView)findViewById(R.id.app_locked_title_dialog)).setTypeface(font);
+        ((Button)findViewById(R.id.button_unlock_app)).setTypeface(font);
+        ((TextView)findViewById(R.id.editText_password_locked_app)).setTypeface(font);
         final EditText editText = (EditText) findViewById(R.id.editText_password_locked_app);
         final PasswordPreference preference = new PasswordPreference(getApplicationContext());
         final String pass = preference.getPassword();
@@ -600,6 +608,10 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
         PasswordPreference preference = new PasswordPreference(getApplicationContext());
         if(preference.isAppLocked()){
             setContentView(R.layout.locked_app_layout);
+            Typeface font = Typeface.createFromAsset(getAssets(), "fonts/EarlyGameBoy.ttf");
+            ((TextView)findViewById(R.id.app_locked_title_dialog)).setTypeface(font);
+            ((Button)findViewById(R.id.button_unlock_app)).setTypeface(font);
+            ((TextView)findViewById(R.id.editText_password_locked_app)).setTypeface(font);
             setLockedLayout();
         }else{
             setContentView(R.layout.activity_add_note);

@@ -15,7 +15,7 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="wrap_content"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
@@ -23,7 +23,9 @@
 
         <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -31,8 +33,10 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="@string/title_alert_dialog_locked_app"
                 android:id="@+id/app_locked_title_dialog"
+                android:singleLine="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="2dp"
+
                 />
         </RelativeLayout>
 
@@ -44,7 +48,9 @@
             android:id="@+id/editText_password_locked_app"
             android:hint="@string/hint_edtx"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
 
         <Button
             android:layout_width="match_parent"
@@ -56,7 +62,8 @@
             android:layout_alignStart="@+id/editText_password_locked_app"
             android:layout_alignRight="@+id/editText_password_locked_app"
             android:layout_alignEnd="@+id/editText_password_locked_app"
-            android:layout_margin="5dp"/>
+            android:layout_margin="10dp"
+            />
 
     </LinearLayout>
 </RelativeLayout>

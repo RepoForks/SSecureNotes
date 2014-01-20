@@ -110,8 +110,11 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 			}else if (requestCode == NOTE_UPDATE_REQUEST){
 				updateNote(newNote);
 			}
-			
-			mAdapter.notifyDataSetChanged(); 
+			try{
+			    mAdapter.notifyDataSetChanged();
+            }catch (NullPointerException ex){
+                ex.printStackTrace();
+            }
 		}
 	}
 
@@ -396,34 +399,30 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
 	 * @param reInsert true if note is to re-insert, false if it's new one
 	 */
 	private void storeNote(Note newNote,boolean reInsert){
-		int jint ;
-        dao.openDB();
-		if((jint = (int) dao.addNoteToDB(encryptNote(newNote), reInsert))!=-1){
-			
-			if(reInsert) {
-				mData.add(positionRemovedNote,newNote);
-			}else{
-				newNote.setmId(jint);
-				mData.add(0,newNote);
-			}
-		}else{
-			Toast.makeText(getApplicationContext(), R.string.error_write_db, Toast.LENGTH_LONG).show();
-		}
-        dao.closeDB();
+        if(reInsert){
+            dao.openDB();
+            long i = dao.addNoteToDB(encryptNote(newNote), reInsert);
+
+            dao.closeDB();
+            if(i == -1 ){
+                Toast.makeText(getApplicationContext(), R.string.error_write_db, Toast.LENGTH_LONG).show();
+            }else {
+                mData.add(positionRemovedNote,newNote);
+                mAdapter.notifyDataSetChanged();
+            }
+        }else {
+            StoreNoteToDBTask task = new StoreNoteToDBTask(newNote);
+            task.execute();
+        }
+
 	}
 	
 	private void updateNote(Note newNote){
-        dao.openDB();
-		Log.d("ToUpdate", "start Update");
-		int d = dao.updateNoteToDB(encryptNote(newNote));
-		Log.d("COMPRESSION IMAGE-NOTEACTIVITy", ""+newNote.getImageLen());
-		if(d==0) {
-			Toast.makeText(getApplicationContext(), R.string.error_update_db, Toast.LENGTH_LONG).show();
-		}else{
-			mAdapter.update(newNote, positionUpdatedNote);
-		}
-		Log.d("ToUpdate", "# Updates: "+d);
-        dao.closeDB();
+
+        //mAdapter.update(newNote, positionUpdatedNote);
+
+        UpdateNoteToDBTask task = new UpdateNoteToDBTask(newNote);
+        task.execute();
 		
 	}
 
@@ -433,6 +432,11 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
      * @return Encrypted note
      */
     private Note encryptNote(Note toEncrypt){
+        if(toEncrypt == null) Log.d("FFFFFFFFFFFFFFFFF", "TODECRYPT NULL");
+        if(encryptor == null){
+            setEncryptor();
+            Log.d("FFFFFFFFFFFFFFFFF", "ENCRYPTOR NULL");
+        }
         if(Encryptor.password == null){
             Log.d("FFFFFFFFFFFFF","PASSWORD NULL");
             PasswordPreference preference = new PasswordPreference(getApplicationContext());
@@ -715,7 +719,93 @@ public class NotesActivity extends ListActivity implements ListView.OnItemClickL
     }
 
 
-	
+    private class UpdateNoteToDBTask  extends AsyncTask<Void,Void,Boolean>{
+        Note note;
+
+        public UpdateNoteToDBTask(Note n){
+            note = n;
+        }
+        @Override
+        protected Boolean doInBackground(Void... voids) {
+            dao.openDB();
+            Note en = encryptNote(note);
+            int i = 0;
+            while(i<3){
+                Log.d("ToUpdate", "start Update");
+                int d = dao.updateNoteToDB(en);
+                Log.d("COMPRESSION IMAGE-NOTEACTIVITy", ""+note.getImageLen());
+                Log.d("ToUpdate", "# Updates: " + d);
+                if(d==0){
+                 i++;
+
+                }else{
+                    return true;
+                 }
+            }
+
+            dao.closeDB();
+                return false;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean aBoolean) {
+            super.onPostExecute(aBoolean);
+            if(!aBoolean){
+                Toast.makeText(getApplicationContext(), R.string.error_update_db, Toast.LENGTH_LONG).show();
+            }else{
+                try{
+                    mAdapter.update(note, positionUpdatedNote);
+                    mAdapter.notifyDataSetChanged();
+                }catch (NullPointerException ex){}
+            }
+        }
+
+
+    }
+
+
+    private class StoreNoteToDBTask  extends AsyncTask<Void,Void,Boolean>{
+        Note mNote;
+
+        public StoreNoteToDBTask(Note n){
+            mNote = n;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... voids) {
+            int jint ;
+            dao.openDB();
+            int i = 0;
+            while(i<3){
+                if((jint = (int) dao.addNoteToDB(encryptNote(mNote), false))!=-1){
+                    mNote.setmId(jint);
+                    dao.closeDB();
+                    return true;
+                }else{
+                    i++;
+                }
+            }
+            dao.closeDB();
+            return false;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean aBoolean) {
+            super.onPostExecute(aBoolean);
+            if(!aBoolean){
+                Toast.makeText(getApplicationContext(), R.string.error_write_db, Toast.LENGTH_LONG).show();
+            }else{
+                mData.add(0,mNote);
+                mAdapter.notifyDataSetChanged();
+            }
+        }
+    }
 
 	
 

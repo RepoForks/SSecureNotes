@@ -526,7 +526,8 @@ public class AddNoteActivity extends Activity implements UndoBarController.UndoL
 		ByteArrayOutputStream stream = new ByteArrayOutputStream();
         byte[] byteC;
 		try{
-			toCompress.compress(Bitmap.CompressFormat.JPEG, 70, stream);
+            //qualità della foto 45 --- 50
+			toCompress.compress(Bitmap.CompressFormat.JPEG, 45, stream);
 			byteC = stream.toByteArray();
 
 		}catch(Exception ex){

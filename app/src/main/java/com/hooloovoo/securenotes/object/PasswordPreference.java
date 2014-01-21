@@ -35,6 +35,6 @@ public class PasswordPreference {
     }
 
     public boolean isAppLocked(){
-        return _sharedPrefs.getBoolean(KEY_PREFS_LOCKED_APP,false);
+        return _sharedPrefs.getBoolean(KEY_PREFS_LOCKED_APP,true);
     }
 }
